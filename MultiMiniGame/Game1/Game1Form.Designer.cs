@@ -28,18 +28,108 @@
         /// </summary>
         private void InitializeComponent()
         {
+            richTextBox1 = new RichTextBox();
+            lblTitle = new Label();
+            textBox1 = new TextBox();
+            btnSend = new Button();
+            btnExit = new Button();
+            btnInfo = new Button();
+            button1 = new Button();
             SuspendLayout();
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            richTextBox1.Location = new Point(25, 60);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(530, 530);
+            richTextBox1.TabIndex = 0;
+            richTextBox1.Text = "";
+            // 
+            // lblTitle
+            // 
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.Location = new Point(190, 15);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(212, 32);
+            lblTitle.TabIndex = 1;
+            lblTitle.Text = "Guess The Word";
+            // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(25, 596);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(446, 34);
+            textBox1.TabIndex = 2;
+            // 
+            // btnSend
+            // 
+            btnSend.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSend.Location = new Point(477, 596);
+            btnSend.Name = "btnSend";
+            btnSend.Size = new Size(80, 34);
+            btnSend.TabIndex = 3;
+            btnSend.Text = "Send";
+            btnSend.UseVisualStyleBackColor = true;
+            // 
+            // btnExit
+            // 
+            btnExit.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnExit.Location = new Point(25, 636);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(100, 34);
+            btnExit.TabIndex = 4;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = true;
+            // 
+            // btnInfo
+            // 
+            btnInfo.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnInfo.Location = new Point(430, 636);
+            btnInfo.Name = "btnInfo";
+            btnInfo.Size = new Size(125, 34);
+            btnInfo.TabIndex = 5;
+            btnInfo.Text = "Game Info";
+            btnInfo.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(131, 636);
+            button1.Name = "button1";
+            button1.Size = new Size(293, 34);
+            button1.TabIndex = 6;
+            button1.Text = "Game Info";
+            button1.UseVisualStyleBackColor = true;
             // 
             // Game1Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(582, 715);
+            Controls.Add(button1);
+            Controls.Add(btnInfo);
+            Controls.Add(btnExit);
+            Controls.Add(btnSend);
+            Controls.Add(textBox1);
+            Controls.Add(lblTitle);
+            Controls.Add(richTextBox1);
             Name = "Game1Form";
-            Text = "Game1Form";
+            Text = "Guess The Word";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private RichTextBox richTextBox1;
+        private Label lblTitle;
+        private TextBox textBox1;
+        private Button btnSend;
+        private Button btnExit;
+        private Button btnInfo;
+        private Button button1;
     }
 }
