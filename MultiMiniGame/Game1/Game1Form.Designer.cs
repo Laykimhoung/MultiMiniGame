@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            richTextBox1 = new RichTextBox();
+            rtbChat = new RichTextBox();
             lblTitle = new Label();
-            textBox1 = new TextBox();
+            txtInput = new TextBox();
             btnSend = new Button();
             btnExit = new Button();
             btnInfo = new Button();
-            button1 = new Button();
+            btnStart = new Button();
             SuspendLayout();
             // 
-            // richTextBox1
+            // rtbChat
             // 
-            richTextBox1.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            richTextBox1.Location = new Point(25, 60);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(530, 530);
-            richTextBox1.TabIndex = 0;
-            richTextBox1.Text = "";
+            rtbChat.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rtbChat.Location = new Point(25, 60);
+            rtbChat.Name = "rtbChat";
+            rtbChat.Size = new Size(530, 530);
+            rtbChat.TabIndex = 0;
+            rtbChat.Text = "";
             // 
             // lblTitle
             // 
@@ -56,13 +56,13 @@
             lblTitle.TabIndex = 1;
             lblTitle.Text = "Guess The Word";
             // 
-            // textBox1
+            // txtInput
             // 
-            textBox1.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(25, 596);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(446, 34);
-            textBox1.TabIndex = 2;
+            txtInput.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtInput.Location = new Point(25, 596);
+            txtInput.Name = "txtInput";
+            txtInput.Size = new Size(446, 34);
+            txtInput.TabIndex = 2;
             // 
             // btnSend
             // 
@@ -73,6 +73,7 @@
             btnSend.TabIndex = 3;
             btnSend.Text = "Send";
             btnSend.UseVisualStyleBackColor = true;
+            btnSend.Click += btnSend_Click;
             // 
             // btnExit
             // 
@@ -83,6 +84,7 @@
             btnExit.TabIndex = 4;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // btnInfo
             // 
@@ -94,28 +96,29 @@
             btnInfo.Text = "Game Info";
             btnInfo.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnStart
             // 
-            button1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(131, 636);
-            button1.Name = "button1";
-            button1.Size = new Size(293, 34);
-            button1.TabIndex = 6;
-            button1.Text = "Game Info";
-            button1.UseVisualStyleBackColor = true;
+            btnStart.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnStart.Location = new Point(131, 636);
+            btnStart.Name = "btnStart";
+            btnStart.Size = new Size(293, 34);
+            btnStart.TabIndex = 6;
+            btnStart.Text = "Start / Restart";
+            btnStart.UseVisualStyleBackColor = true;
+            btnStart.Click += btnStart_Click;
             // 
             // Game1Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(582, 715);
-            Controls.Add(button1);
+            Controls.Add(btnStart);
             Controls.Add(btnInfo);
             Controls.Add(btnExit);
             Controls.Add(btnSend);
-            Controls.Add(textBox1);
+            Controls.Add(txtInput);
             Controls.Add(lblTitle);
-            Controls.Add(richTextBox1);
+            Controls.Add(rtbChat);
             Name = "Game1Form";
             Text = "Guess The Word";
             ResumeLayout(false);
@@ -124,12 +127,12 @@
 
         #endregion
 
-        private RichTextBox richTextBox1;
+        private RichTextBox rtbChat;
         private Label lblTitle;
-        private TextBox textBox1;
+        private TextBox txtInput;
         private Button btnSend;
         private Button btnExit;
         private Button btnInfo;
-        private Button button1;
+        private Button btnStart;
     }
 }
