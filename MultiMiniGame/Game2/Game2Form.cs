@@ -14,5 +14,18 @@ namespace MultiMiniGame.Game2
         {
             InitializeComponent();
         }
+
+        private void Game2Form_Load(object sender, EventArgs e)
+        {
+            btnA.Text = " A.  " + btnA.Text;
+            btnB.Text = " B.  " + btnB.Text;
+            btnC.Text = " C.  " + btnC.Text;
+            btnD.Text = " D.  " + btnD.Text;
+        }
+
+        private void btnA_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

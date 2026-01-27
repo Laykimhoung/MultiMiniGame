@@ -28,12 +28,123 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Game2Form";
+            pictureBox1 = new PictureBox();
+            btnA = new Button();
+            btnB = new Button();
+            btnQuestion = new Button();
+            btnC = new Button();
+            btnD = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = Properties.Resources.Game2_BackGround;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(873, 499);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
+            // btnA
+            // 
+            btnA.BackColor = Color.FromArgb(0, 45, 160);
+            btnA.FlatStyle = FlatStyle.Flat;
+            btnA.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnA.ForeColor = Color.White;
+            btnA.Location = new Point(31, 370);
+            btnA.Name = "btnA";
+            btnA.Size = new Size(386, 54);
+            btnA.TabIndex = 1;
+            btnA.Text = "button1";
+            btnA.TextAlign = ContentAlignment.MiddleLeft;
+            btnA.UseVisualStyleBackColor = false;
+            btnA.Click += btnA_Click;
+            // 
+            // btnB
+            // 
+            btnB.BackColor = Color.FromArgb(0, 45, 160);
+            btnB.FlatStyle = FlatStyle.Flat;
+            btnB.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnB.ForeColor = Color.White;
+            btnB.Location = new Point(460, 370);
+            btnB.Name = "btnB";
+            btnB.Size = new Size(386, 54);
+            btnB.TabIndex = 2;
+            btnB.Text = "button1";
+            btnB.TextAlign = ContentAlignment.MiddleLeft;
+            btnB.UseVisualStyleBackColor = false;
+            // 
+            // btnQuestion
+            // 
+            btnQuestion.BackColor = Color.Navy;
+            btnQuestion.FlatStyle = FlatStyle.Flat;
+            btnQuestion.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnQuestion.ForeColor = Color.White;
+            btnQuestion.Location = new Point(31, 287);
+            btnQuestion.Name = "btnQuestion";
+            btnQuestion.Size = new Size(815, 67);
+            btnQuestion.TabIndex = 5;
+            btnQuestion.Text = "button1";
+            btnQuestion.UseVisualStyleBackColor = false;
+            // 
+            // btnC
+            // 
+            btnC.BackColor = Color.FromArgb(0, 45, 160);
+            btnC.FlatStyle = FlatStyle.Flat;
+            btnC.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnC.ForeColor = Color.White;
+            btnC.Location = new Point(31, 433);
+            btnC.Name = "btnC";
+            btnC.Size = new Size(386, 54);
+            btnC.TabIndex = 6;
+            btnC.Text = "button1";
+            btnC.TextAlign = ContentAlignment.MiddleLeft;
+            btnC.UseVisualStyleBackColor = false;
+            // 
+            // btnD
+            // 
+            btnD.BackColor = Color.FromArgb(0, 45, 160);
+            btnD.FlatStyle = FlatStyle.Flat;
+            btnD.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnD.ForeColor = Color.White;
+            btnD.Location = new Point(460, 433);
+            btnD.Name = "btnD";
+            btnD.Size = new Size(386, 54);
+            btnD.TabIndex = 7;
+            btnD.Text = "button1";
+            btnD.TextAlign = ContentAlignment.MiddleLeft;
+            btnD.UseVisualStyleBackColor = false;
+            // 
+            // Game2Form
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(873, 499);
+            Controls.Add(btnD);
+            Controls.Add(btnC);
+            Controls.Add(btnQuestion);
+            Controls.Add(btnB);
+            Controls.Add(btnA);
+            Controls.Add(pictureBox1);
+            Name = "Game2Form";
+            Text = "Game2Form";
+            Load += Game2Form_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private PictureBox pictureBox1;
+        private Button btnA;
+        private Button btnB;
+        private Button button2;
+        private Button button3;
+        private Button btnQuestion;
+        private Button btnC;
+        private Button btnD;
     }
 }
