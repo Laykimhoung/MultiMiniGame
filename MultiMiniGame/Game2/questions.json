@@ -1,0 +1,48 @@
+[
+  {
+    "level": 1,
+    "questionText": "2 + 2 = ?",
+    "answers": [ "3", "4", "5", "6" ],
+    "correctIndex": 1
+  },
+  {
+    "level": 1,
+    "questionText": "5 + 5 = ?",
+    "answers": [ "8", "9", "10", "11" ],
+    "correctIndex": 2
+  },
+  {
+    "level": 1,
+    "questionText": "Capital of Cambodia?",
+    "answers": [ "Bangkok", "Phnom Penh", "Hanoi", "Vientiane" ],
+    "correctIndex": 1
+  },
+  {
+    "level": 2,
+    "questionText": "Which keyword creates an object in C#?",
+    "answers": [ "class", "new", "void", "using" ],
+    "correctIndex": 1
+  },
+  {
+    "level": 2,
+    "questionText": "What does OOP stand for?",
+    "answers": [
+      "Object Oriented Programming",
+      "Open Output Process",
+      "Order Of Priority",
+      "Optional Object Protocol"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "level": 3,
+    "questionText": "What does CLR stand for?",
+    "answers": [
+      "Common Language Runtime",
+      "Code Level Resolver",
+      "Compiled Logic Reader",
+      "Central Link Router"
+    ],
+    "correctIndex": 0
+  }
+]
