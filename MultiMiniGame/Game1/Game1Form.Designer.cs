@@ -42,6 +42,7 @@
             rtbChat.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rtbChat.Location = new Point(25, 60);
             rtbChat.Name = "rtbChat";
+            rtbChat.ReadOnly = true;
             rtbChat.Size = new Size(530, 530);
             rtbChat.TabIndex = 0;
             rtbChat.Text = "";
@@ -66,6 +67,7 @@
             // 
             // btnSend
             // 
+            btnSend.Enabled = false;
             btnSend.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSend.Location = new Point(477, 596);
             btnSend.Name = "btnSend";
