@@ -1,102 +1,82 @@
-﻿using System;
+﻿using MultiMiniGame.Game2;   // <-- namespace where Game2Method lives
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using MultiMiniGame.Game2;   // <-- namespace where Game2Method lives
+using static MultiMiniGame.Game2.Game2Method;
 
 namespace MultiMiniGame.Game2
 {
     public partial class Game2Form : Form
     {
-        // ===== GAME LOGIC OBJECT =====
-        private Game2Method game;
-
+        Game2Method game;
         public Game2Form()
         {
             InitializeComponent();
+            List<Question> allQuestions;
+            List<Question> currentQuestions;
 
-            // Wire buttons (clean & short)
-            btnA.Click += (s, e) => HandleAnswer(0);
-            btnB.Click += (s, e) => HandleAnswer(1);
-            btnC.Click += (s, e) => HandleAnswer(2);
-            btnD.Click += (s, e) => HandleAnswer(3);
+            int currentLevel = 1;
+            int questionIndex = 0;
+            int round = 1; // 1–15
+            Random rand = new Random();
 
-          
+            btnA.Visible = false;
+            btnB.Visible = false;
+            btnC.Visible = false;
+            btnD.Visible = false;
+            btnQuestion.Visible = false;
         }
 
-        // ===== FORM LOAD =====
-        private void Game2Form_Load(object sender, EventArgs e)
-        {
-            game = new Game2Method();
-            game.LoadQuestions();   // Form never knows where JSON is
-
-            DisableAnswerButtons();
-            btnQuestion.Text = "Press Start to play";
-        }
-
-        // ===== START GAME =====
         private void btnStart_Click(object sender, EventArgs e)
         {
-            game.StartGame();
-            EnableAnswerButtons();
+            btnStart.Visible = false;
+
+            btnQuestion.Visible = true;
+            btnA.Visible = true;
+            btnB.Visible = true;
+            btnC.Visible = true;
+            btnD.Visible = true;
+
+            btnQuestion.Enabled = false;
+
+            game = new Game2Method();
+            game.LoadQuestions();
+            game.LoadLevel(1);
+
             ShowQuestion();
         }
 
-        // ===== SHOW QUESTION =====
-        private void ShowQuestion()
+        void ShowQuestion()
         {
-            var q = game.CurrentQuestion;
+            var q = game.GetCurrentQuestion();
 
-            btnQuestion.Text = q.QuestionText;
-
-            btnA.Text = "A. " + q.Answers[0];
-            btnB.Text = "B. " + q.Answers[1];
-            btnC.Text = "C. " + q.Answers[2];
-            btnD.Text = "D. " + q.Answers[3];
+            btnQuestion.Text = q.questionText;
+            btnA.Text = "A. " + q.answers[0];
+            btnB.Text = "B. " + q.answers[1];
+            btnC.Text = "C. " + q.answers[2];
+            btnD.Text = "D. " + q.answers[3];
         }
 
-        // ===== HANDLE ANSWER =====
-        private void HandleAnswer(int index)
-        {
-            bool isCorrect = game.Answer(index);
+        private void btnA_Click(object sender, EventArgs e) => HandleAnswer(0);
+        private void btnB_Click(object sender, EventArgs e) => HandleAnswer(1);
+        private void btnC_Click(object sender, EventArgs e) => HandleAnswer(2);
+        private void btnD_Click(object sender, EventArgs e) => HandleAnswer(3);
 
-            if (!isCorrect)
+        void HandleAnswer(int index)
+        {
+            if (!game.CheckAnswer(index))
             {
-                DisableAnswerButtons();
-                MessageBox.Show("❌ Wrong answer!\nGame Over.");
+                MessageBox.Show("Wrong Answer! Game Over!");
+                Close();
                 return;
             }
 
-            // Game still running
-            if (game.CurrentQuestion != null)
-            {
-                ShowQuestion();
-            }
-            else
-            {
-                DisableAnswerButtons();
-                MessageBox.Show("🏆 CONGRATULATIONS!\nYOU ARE A MILLIONAIRE!");
-            }
+            ShowQuestion();
         }
 
-        // ===== UI HELPERS =====
-        private void EnableAnswerButtons()
-        {
-            btnA.Enabled = true;
-            btnB.Enabled = true;
-            btnC.Enabled = true;
-            btnD.Enabled = true;
-        }
-
-        private void DisableAnswerButtons()
-        {
-            btnA.Enabled = false;
-            btnB.Enabled = false;
-            btnC.Enabled = false;
-            btnD.Enabled = false;
-        }
     }
 }

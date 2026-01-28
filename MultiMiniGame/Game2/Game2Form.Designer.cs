@@ -123,7 +123,7 @@
             btnStart.FlatStyle = FlatStyle.Flat;
             btnStart.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnStart.ForeColor = Color.White;
-            btnStart.Location = new Point(314, 74);
+            btnStart.Location = new Point(314, 410);
             btnStart.Name = "btnStart";
             btnStart.Size = new Size(236, 54);
             btnStart.TabIndex = 8;
@@ -145,7 +145,6 @@
             Controls.Add(pictureBox1);
             Name = "Game2Form";
             Text = "Game2Form";
-            Load += Game2Form_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
