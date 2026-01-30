@@ -60,10 +60,10 @@ namespace MultiMiniGame.Game2
 
             lbQuestion.Text = q.QuestionText;
 
-            btnA.Text = "A. " + q.Answers[0];
-            btnB.Text = "B. " + q.Answers[1];
-            btnC.Text = "C. " + q.Answers[2];
-            btnD.Text = "D. " + q.Answers[3];
+            btnA.Text = " A. " + q.Answers[0];
+            btnB.Text = " B. " + q.Answers[1];
+            btnC.Text = " C. " + q.Answers[2];
+            btnD.Text = " D. " + q.Answers[3];
         }
 
         private void btnA_Click(object sender, EventArgs e) => HandleAnswer(0);
