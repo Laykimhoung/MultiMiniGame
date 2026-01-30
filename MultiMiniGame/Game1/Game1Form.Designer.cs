@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game1Form));
             rtbChat = new RichTextBox();
             lblTitle = new Label();
             txtInput = new TextBox();
@@ -35,10 +36,14 @@
             btnExit = new Button();
             btnInfo = new Button();
             btnStart = new Button();
+            G1_Background = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)G1_Background).BeginInit();
             SuspendLayout();
             // 
             // rtbChat
             // 
+            rtbChat.BackColor = Color.MintCream;
+            rtbChat.BorderStyle = BorderStyle.None;
             rtbChat.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rtbChat.Location = new Point(25, 60);
             rtbChat.Name = "rtbChat";
@@ -59,6 +64,7 @@
             // 
             // txtInput
             // 
+            txtInput.BackColor = Color.MintCream;
             txtInput.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtInput.Location = new Point(25, 596);
             txtInput.Name = "txtInput";
@@ -67,6 +73,7 @@
             // 
             // btnSend
             // 
+            btnSend.BackColor = SystemColors.Highlight;
             btnSend.Enabled = false;
             btnSend.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSend.Location = new Point(477, 596);
@@ -74,18 +81,19 @@
             btnSend.Size = new Size(80, 34);
             btnSend.TabIndex = 3;
             btnSend.Text = "Send";
-            btnSend.UseVisualStyleBackColor = true;
+            btnSend.UseVisualStyleBackColor = false;
             btnSend.Click += btnSend_Click;
             // 
             // btnExit
             // 
+            btnExit.BackColor = Color.Red;
             btnExit.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnExit.Location = new Point(25, 636);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(100, 34);
             btnExit.TabIndex = 4;
             btnExit.Text = "Exit";
-            btnExit.UseVisualStyleBackColor = true;
+            btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
             // 
             // btnInfo
@@ -109,6 +117,15 @@
             btnStart.UseVisualStyleBackColor = true;
             btnStart.Click += btnStart_Click;
             // 
+            // G1_Background
+            // 
+            G1_Background.Dock = DockStyle.Fill;
+            G1_Background.Location = new Point(0, 0);
+            G1_Background.Name = "G1_Background";
+            G1_Background.Size = new Size(582, 715);
+            G1_Background.TabIndex = 7;
+            G1_Background.TabStop = false;
+            // 
             // Game1Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -121,8 +138,11 @@
             Controls.Add(txtInput);
             Controls.Add(lblTitle);
             Controls.Add(rtbChat);
+            Controls.Add(G1_Background);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Game1Form";
             Text = "Guess The Word";
+            ((System.ComponentModel.ISupportInitialize)G1_Background).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -136,5 +156,6 @@
         private Button btnExit;
         private Button btnInfo;
         private Button btnStart;
+        private PictureBox G1_Background;
     }
 }
