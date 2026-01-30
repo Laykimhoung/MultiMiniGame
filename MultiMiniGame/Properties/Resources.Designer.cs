@@ -73,6 +73,26 @@ namespace MultiMiniGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap G1_Background {
+            get {
+                object obj = ResourceManager.GetObject("G1_Background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap G1_CatchedSaba {
+            get {
+                object obj = ResourceManager.GetObject("G1_CatchedSaba", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Game2_BackGround {
             get {
                 object obj = ResourceManager.GetObject("Game2_BackGround", resourceCulture);

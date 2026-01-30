@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Media;
 using System.Text;
 using System.Windows.Forms;
 
@@ -64,7 +65,8 @@ Hint:";
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Close();
+            Form1 f1 = new Form1();
+            f1.Show();
         }
         private void AddMessage(string sender, string msg)
         {
@@ -88,6 +90,18 @@ Hint:";
                 "5. The AI in this is small. If there is a problem click Restart" +
                 "Enjoy the game and have fun guessing!";
             MessageBox.Show(info, "Game Instructions", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void Game1Form_Load(object sender, EventArgs e)
+        {
+            lblTitle.Parent = G1_Background;
+            lblTitle.BackColor = Color.Transparent;
+
+            picSaba.Parent = rtbChat;
+            picSaba.BackColor = Color.Transparent;
+
+            SoundPlayer g1_sound = new SoundPlayer(@"Sounds\G1_Sound.wav");
+            g1_sound.PlayLooping();
         }
     }
 }

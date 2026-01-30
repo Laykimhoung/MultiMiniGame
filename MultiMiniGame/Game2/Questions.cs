@@ -20,15 +20,15 @@ namespace MultiMiniGame.Game2
             new Question
             {
                 Level = 1,
-                QuestionText = "2 + 2 = ?",
-                Answers = new[] { "3", "4", "5", "6" },
-                CorrectIndex = 1
+                QuestionText = "What is the capital of Cambodia?",
+                Answers = new[] { "Phnom Penh", "Siem Reap", "Battambang", "Kampot" },
+                CorrectIndex = 0
             },
             new Question
             {
                 Level = 1,
-                QuestionText = "5 - 3 = ?",
-                Answers = new[] { "1", "2", "3", "4" },
+                QuestionText = "Which language is used for .NET?",
+                Answers = new[] { "Python", "C#", "Java", "PHP" },
                 CorrectIndex = 1
             },
             // add until 10 for level 1...

@@ -37,7 +37,9 @@
             btnInfo = new Button();
             btnStart = new Button();
             G1_Background = new PictureBox();
+            picSaba = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)G1_Background).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picSaba).BeginInit();
             SuspendLayout();
             // 
             // rtbChat
@@ -123,17 +125,30 @@
             // G1_Background
             // 
             G1_Background.Dock = DockStyle.Fill;
+            G1_Background.Image = Properties.Resources.G1_Background;
             G1_Background.Location = new Point(0, 0);
             G1_Background.Name = "G1_Background";
             G1_Background.Size = new Size(582, 715);
+            G1_Background.SizeMode = PictureBoxSizeMode.CenterImage;
             G1_Background.TabIndex = 7;
             G1_Background.TabStop = false;
+            // 
+            // picSaba
+            // 
+            picSaba.Image = Properties.Resources.G1_CatchedSaba;
+            picSaba.Location = new Point(430, 60);
+            picSaba.Name = "picSaba";
+            picSaba.Size = new Size(125, 207);
+            picSaba.SizeMode = PictureBoxSizeMode.StretchImage;
+            picSaba.TabIndex = 8;
+            picSaba.TabStop = false;
             // 
             // Game1Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(582, 715);
+            Controls.Add(picSaba);
             Controls.Add(btnStart);
             Controls.Add(btnInfo);
             Controls.Add(btnExit);
@@ -145,7 +160,9 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Game1Form";
             Text = "Guess The Word";
+            Load += Game1Form_Load;
             ((System.ComponentModel.ISupportInitialize)G1_Background).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picSaba).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -160,5 +177,6 @@
         private Button btnInfo;
         private Button btnStart;
         private PictureBox G1_Background;
+        private PictureBox picSaba;
     }
 }
