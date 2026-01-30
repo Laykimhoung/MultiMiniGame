@@ -28,31 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
+            picBackGround = new PictureBox();
             btnA = new Button();
             btnB = new Button();
-            btnQuestion = new Button();
             btnC = new Button();
             btnD = new Button();
             btnStart = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            lbQuestion = new Label();
+            panelQuestion = new Panel();
+            btnExit = new Button();
+            ((System.ComponentModel.ISupportInitialize)picBackGround).BeginInit();
+            panelQuestion.SuspendLayout();
             SuspendLayout();
             // 
-            // pictureBox1
+            // picBackGround
             // 
-            pictureBox1.Image = Properties.Resources.Game2BackGround;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(866, 537);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            picBackGround.Image = Properties.Resources.Game2BackGround;
+            picBackGround.Location = new Point(0, 0);
+            picBackGround.Name = "picBackGround";
+            picBackGround.Size = new Size(866, 537);
+            picBackGround.SizeMode = PictureBoxSizeMode.StretchImage;
+            picBackGround.TabIndex = 0;
+            picBackGround.TabStop = false;
             // 
             // btnA
             // 
             btnA.BackColor = Color.FromArgb(0, 45, 160);
             btnA.FlatStyle = FlatStyle.Flat;
-            btnA.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnA.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnA.ForeColor = Color.White;
             btnA.Location = new Point(31, 410);
             btnA.Name = "btnA";
@@ -61,12 +64,13 @@
             btnA.Text = "button1";
             btnA.TextAlign = ContentAlignment.MiddleLeft;
             btnA.UseVisualStyleBackColor = false;
+            btnA.Click += btnA_Click;
             // 
             // btnB
             // 
             btnB.BackColor = Color.FromArgb(0, 45, 160);
             btnB.FlatStyle = FlatStyle.Flat;
-            btnB.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnB.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnB.ForeColor = Color.White;
             btnB.Location = new Point(460, 410);
             btnB.Name = "btnB";
@@ -75,25 +79,13 @@
             btnB.Text = "button1";
             btnB.TextAlign = ContentAlignment.MiddleLeft;
             btnB.UseVisualStyleBackColor = false;
-            // 
-            // btnQuestion
-            // 
-            btnQuestion.BackColor = Color.Navy;
-            btnQuestion.FlatStyle = FlatStyle.Flat;
-            btnQuestion.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnQuestion.ForeColor = Color.White;
-            btnQuestion.Location = new Point(31, 324);
-            btnQuestion.Name = "btnQuestion";
-            btnQuestion.Size = new Size(815, 80);
-            btnQuestion.TabIndex = 5;
-            btnQuestion.Text = "button1";
-            btnQuestion.UseVisualStyleBackColor = false;
+            btnB.Click += btnB_Click;
             // 
             // btnC
             // 
             btnC.BackColor = Color.FromArgb(0, 45, 160);
             btnC.FlatStyle = FlatStyle.Flat;
-            btnC.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnC.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnC.ForeColor = Color.White;
             btnC.Location = new Point(31, 470);
             btnC.Name = "btnC";
@@ -102,12 +94,13 @@
             btnC.Text = "button1";
             btnC.TextAlign = ContentAlignment.MiddleLeft;
             btnC.UseVisualStyleBackColor = false;
+            btnC.Click += btnC_Click;
             // 
             // btnD
             // 
             btnD.BackColor = Color.FromArgb(0, 45, 160);
             btnD.FlatStyle = FlatStyle.Flat;
-            btnD.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnD.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnD.ForeColor = Color.White;
             btnD.Location = new Point(460, 470);
             btnD.Name = "btnD";
@@ -116,49 +109,88 @@
             btnD.Text = "button1";
             btnD.TextAlign = ContentAlignment.MiddleLeft;
             btnD.UseVisualStyleBackColor = false;
+            btnD.Click += btnD_Click;
             // 
             // btnStart
             // 
-            btnStart.BackColor = Color.FromArgb(0, 45, 160);
+            btnStart.BackColor = Color.FromArgb(0, 192, 0);
             btnStart.FlatStyle = FlatStyle.Flat;
-            btnStart.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnStart.ForeColor = Color.White;
-            btnStart.Location = new Point(314, 410);
+            btnStart.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnStart.ForeColor = Color.Black;
+            btnStart.Location = new Point(324, 401);
             btnStart.Name = "btnStart";
-            btnStart.Size = new Size(236, 54);
+            btnStart.Size = new Size(146, 54);
             btnStart.TabIndex = 8;
-            btnStart.Text = "Start Game";
+            btnStart.Text = "ចាប់ផ្ដើមលេង";
             btnStart.UseVisualStyleBackColor = false;
             btnStart.Click += btnStart_Click;
+            // 
+            // lbQuestion
+            // 
+            lbQuestion.AutoSize = true;
+            lbQuestion.BackColor = Color.Transparent;
+            lbQuestion.Font = new Font("Khmer OS Siemreap", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbQuestion.ForeColor = Color.Black;
+            lbQuestion.Location = new Point(96, 38);
+            lbQuestion.Name = "lbQuestion";
+            lbQuestion.Size = new Size(54, 33);
+            lbQuestion.TabIndex = 10;
+            lbQuestion.Text = "សំនួរ";
+            // 
+            // panelQuestion
+            // 
+            panelQuestion.Controls.Add(lbQuestion);
+            panelQuestion.Location = new Point(1, 305);
+            panelQuestion.Name = "panelQuestion";
+            panelQuestion.Size = new Size(854, 113);
+            panelQuestion.TabIndex = 11;
+            // 
+            // btnExit
+            // 
+            btnExit.BackColor = Color.Red;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExit.ForeColor = Color.White;
+            btnExit.Location = new Point(12, 12);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(105, 41);
+            btnExit.TabIndex = 12;
+            btnExit.Text = "ចាកចេញ";
+            btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // Game2Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(867, 536);
+            Controls.Add(btnExit);
+            Controls.Add(panelQuestion);
             Controls.Add(btnStart);
             Controls.Add(btnD);
             Controls.Add(btnC);
-            Controls.Add(btnQuestion);
             Controls.Add(btnB);
             Controls.Add(btnA);
-            Controls.Add(pictureBox1);
+            Controls.Add(picBackGround);
             Name = "Game2Form";
             Text = "Game2Form";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Load += Game2Form_Load;
+            ((System.ComponentModel.ISupportInitialize)picBackGround).EndInit();
+            panelQuestion.ResumeLayout(false);
+            panelQuestion.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox picBackGround;
         private Button btnA;
         private Button btnB;
-        private Button button2;
-        private Button button3;
-        private Button btnQuestion;
         private Button btnC;
         private Button btnD;
         private Button btnStart;
+        private Label lbQuestion;
+        private Panel panelQuestion;
+        private Button btnExit;
     }
 }

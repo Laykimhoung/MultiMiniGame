@@ -17,6 +17,9 @@ namespace MultiMiniGame
         }    
         private void Form1_Load(object sender, EventArgs e)
         {
+            lbWelcome.Parent = picBackGround;
+            lbWelcome.BackColor = Color.Transparent;
+
             bg = new SoundPlayer(@"Sounds\soundtrack.wav");
             bg.PlayLooping();
         }

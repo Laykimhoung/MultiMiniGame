@@ -1,64 +1,69 @@
-﻿using MultiMiniGame.Game2;   // <-- namespace where Game2Method lives
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using static MultiMiniGame.Game2.Game2Method;
+using static MultiMiniGame.Game2.Game2Logic;
 
 namespace MultiMiniGame.Game2
 {
     public partial class Game2Form : Form
     {
-        Game2Method game;
+        Game2Logic game = new Game2Logic();
+        int currentLevel = 1;
+        int round = 1;
         public Game2Form()
         {
             InitializeComponent();
-            List<Question> allQuestions;
-            List<Question> currentQuestions;
-
-            int currentLevel = 1;
-            int questionIndex = 0;
-            int round = 1; // 1–15
-            Random rand = new Random();
-
-            btnA.Visible = false;
-            btnB.Visible = false;
-            btnC.Visible = false;
-            btnD.Visible = false;
-            btnQuestion.Visible = false;
         }
+        private void Game2Form_Load(object sender, EventArgs e)
+        {
+            panelQuestion.BackgroundImage = Properties.Resources.game2panelQuesion;
+            panelQuestion.BackgroundImageLayout = ImageLayout.Stretch;
+            panelQuestion.Parent = picBackGround;
+            panelQuestion.BackColor = Color.Transparent;
 
+            lbQuestion.Parent = panelQuestion;
+            lbQuestion.BackColor = Color.Transparent;
+            lbQuestion.ForeColor = Color.White;
+
+            panelQuestion.Visible = false;
+            lbQuestion.Visible = false;
+            btnA.Visible = btnB.Visible = btnC.Visible = btnD.Visible = false;
+        }
         private void btnStart_Click(object sender, EventArgs e)
         {
             btnStart.Visible = false;
+            btnA.Visible = btnB.Visible = btnC.Visible = btnD.Visible = true;
+            panelQuestion.Visible = true;
+            lbQuestion.Visible = true;
 
-            btnQuestion.Visible = true;
-            btnA.Visible = true;
-            btnB.Visible = true;
-            btnC.Visible = true;
-            btnD.Visible = true;
-
-            btnQuestion.Enabled = false;
-
-            game = new Game2Method();
-            game.LoadQuestions();
-            game.LoadLevel(1);
-
+            LoadLevel();
+        }
+        private void LoadLevel()
+        {
+            game.LoadLevel(currentLevel);
             ShowQuestion();
         }
 
-        void ShowQuestion()
+        private void ShowQuestion()
         {
-            var q = game.GetCurrentQuestion();
+            Question q = game.GetCurrentQuestion();
 
-            btnQuestion.Text = q.questionText;
-            btnA.Text = "A. " + q.answers[0];
-            btnB.Text = "B. " + q.answers[1];
-            btnC.Text = "C. " + q.answers[2];
-            btnD.Text = "D. " + q.answers[3];
+            if (q == null)
+            {
+                NextLevel();
+                return;
+            }
+
+            lbQuestion.Text = q.QuestionText;
+
+            btnA.Text = "A. " + q.Answers[0];
+            btnB.Text = "B. " + q.Answers[1];
+            btnC.Text = "C. " + q.Answers[2];
+            btnD.Text = "D. " + q.Answers[3];
         }
 
         private void btnA_Click(object sender, EventArgs e) => HandleAnswer(0);
@@ -66,17 +71,42 @@ namespace MultiMiniGame.Game2
         private void btnC_Click(object sender, EventArgs e) => HandleAnswer(2);
         private void btnD_Click(object sender, EventArgs e) => HandleAnswer(3);
 
-        void HandleAnswer(int index)
+        private void HandleAnswer(int index)
         {
-            if (!game.CheckAnswer(index))
+            bool correct = game.CheckAnswer(index);
+
+            if (!correct)
             {
-                MessageBox.Show("Wrong Answer! Game Over!");
+                MessageBox.Show("Wrong answer! Game Over.");
                 Close();
                 return;
             }
 
+            round++;
             ShowQuestion();
         }
 
+        private void NextLevel()
+        {
+            currentLevel++;
+
+            if (currentLevel > 3)
+            {
+                MessageBox.Show(" Congratulations! You are a MILLIONAIRE!");
+                Close();
+                return;
+            }
+
+            MessageBox.Show($"Level {currentLevel} starts!");
+            LoadLevel();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Form1 mainform = new Form1();
+            mainform.Show();
+
+        }
     }
 }
+
