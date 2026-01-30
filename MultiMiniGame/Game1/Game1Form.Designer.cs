@@ -98,23 +98,26 @@
             // 
             // btnInfo
             // 
+            btnInfo.BackColor = Color.Yellow;
             btnInfo.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnInfo.Location = new Point(430, 636);
             btnInfo.Name = "btnInfo";
             btnInfo.Size = new Size(125, 34);
             btnInfo.TabIndex = 5;
             btnInfo.Text = "Game Info";
-            btnInfo.UseVisualStyleBackColor = true;
+            btnInfo.UseVisualStyleBackColor = false;
+            btnInfo.Click += btnInfo_Click;
             // 
             // btnStart
             // 
+            btnStart.BackColor = Color.LawnGreen;
             btnStart.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnStart.Location = new Point(131, 636);
             btnStart.Name = "btnStart";
             btnStart.Size = new Size(293, 34);
             btnStart.TabIndex = 6;
             btnStart.Text = "Start / Restart";
-            btnStart.UseVisualStyleBackColor = true;
+            btnStart.UseVisualStyleBackColor = false;
             btnStart.Click += btnStart_Click;
             // 
             // G1_Background
