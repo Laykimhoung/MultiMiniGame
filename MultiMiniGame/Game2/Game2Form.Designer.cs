@@ -38,6 +38,27 @@
             btnC = new btnGame2();
             btnD = new btnGame2();
             lbShow = new Label();
+            btnNext = new Button();
+            btnStop = new Button();
+            btn5050 = new Button();
+            btnCall = new Button();
+            lbTimer = new Label();
+            lbTotalMoney = new Label();
+            lbR1 = new Label();
+            lbR2 = new Label();
+            lnR3 = new Label();
+            lbR4 = new Label();
+            lbR5 = new Label();
+            lbR6 = new Label();
+            lbR7 = new Label();
+            lbR8 = new Label();
+            lbR9 = new Label();
+            lbR10 = new Label();
+            lbR11 = new Label();
+            lbR12 = new Label();
+            lbR13 = new Label();
+            lbR14 = new Label();
+            lbR15 = new Label();
             ((System.ComponentModel.ISupportInitialize)picBackGround).BeginInit();
             panelQuestion.SuspendLayout();
             SuspendLayout();
@@ -175,17 +196,293 @@
             lbShow.BackColor = SystemColors.ActiveCaptionText;
             lbShow.Font = new Font("Khmer OS Bokor", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbShow.ForeColor = Color.White;
-            lbShow.Location = new Point(298, 55);
+            lbShow.Location = new Point(248, 84);
             lbShow.Name = "lbShow";
             lbShow.Size = new Size(91, 67);
             lbShow.TabIndex = 17;
             lbShow.Text = "Text";
+            lbShow.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // btnNext
+            // 
+            btnNext.BackColor = Color.FromArgb(0, 192, 0);
+            btnNext.FlatStyle = FlatStyle.Flat;
+            btnNext.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnNext.ForeColor = Color.White;
+            btnNext.Location = new Point(513, 268);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new Size(155, 58);
+            btnNext.TabIndex = 18;
+            btnNext.Text = "បន្តទៅជុំបន្ទាប់";
+            btnNext.UseVisualStyleBackColor = false;
+            // 
+            // btnStop
+            // 
+            btnStop.BackColor = Color.Red;
+            btnStop.FlatStyle = FlatStyle.Flat;
+            btnStop.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnStop.ForeColor = Color.White;
+            btnStop.Location = new Point(234, 268);
+            btnStop.Name = "btnStop";
+            btnStop.Size = new Size(164, 58);
+            btnStop.TabIndex = 19;
+            btnStop.Text = "បញ្ឃប់ការប្រកួត";
+            btnStop.UseVisualStyleBackColor = false;
+            // 
+            // btn5050
+            // 
+            btn5050.BackColor = Color.Gold;
+            btn5050.FlatStyle = FlatStyle.Flat;
+            btn5050.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn5050.ForeColor = Color.Black;
+            btn5050.Location = new Point(28, 142);
+            btn5050.Name = "btn5050";
+            btn5050.Size = new Size(138, 58);
+            btn5050.TabIndex = 20;
+            btn5050.Text = "៥០​/៥០";
+            btn5050.UseVisualStyleBackColor = false;
+            // 
+            // btnCall
+            // 
+            btnCall.BackColor = Color.Gold;
+            btnCall.FlatStyle = FlatStyle.Flat;
+            btnCall.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCall.ForeColor = Color.Black;
+            btnCall.Location = new Point(28, 215);
+            btnCall.Name = "btnCall";
+            btnCall.Size = new Size(138, 58);
+            btnCall.TabIndex = 21;
+            btnCall.Text = "ទេរកជំនួយ";
+            btnCall.UseVisualStyleBackColor = false;
+            // 
+            // lbTimer
+            // 
+            lbTimer.AutoSize = true;
+            lbTimer.Font = new Font("Times New Roman", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbTimer.Location = new Point(419, 34);
+            lbTimer.Name = "lbTimer";
+            lbTimer.Size = new Size(113, 42);
+            lbTimer.TabIndex = 22;
+            lbTimer.Text = "label1";
+            // 
+            // lbTotalMoney
+            // 
+            lbTotalMoney.AutoSize = true;
+            lbTotalMoney.BackColor = Color.Black;
+            lbTotalMoney.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbTotalMoney.ForeColor = Color.White;
+            lbTotalMoney.Location = new Point(846, 12);
+            lbTotalMoney.Name = "lbTotalMoney";
+            lbTotalMoney.Size = new Size(63, 31);
+            lbTotalMoney.TabIndex = 23;
+            lbTotalMoney.Text = "Money";
+            // 
+            // lbR1
+            // 
+            lbR1.AutoSize = true;
+            lbR1.BackColor = Color.Black;
+            lbR1.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbR1.ForeColor = Color.White;
+            lbR1.Location = new Point(745, 280);
+            lbR1.Name = "lbR1";
+            lbR1.Size = new Size(70, 31);
+            lbR1.TabIndex = 24;
+            lbR1.Text = "Round1";
+            // 
+            // lbR2
+            // 
+            lbR2.AutoSize = true;
+            lbR2.BackColor = Color.Black;
+            lbR2.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbR2.ForeColor = Color.White;
+            lbR2.Location = new Point(860, 280);
+            lbR2.Name = "lbR2";
+            lbR2.Size = new Size(71, 31);
+            lbR2.TabIndex = 25;
+            lbR2.Text = "Round2";
+            // 
+            // lnR3
+            // 
+            lnR3.AutoSize = true;
+            lnR3.BackColor = Color.Black;
+            lnR3.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lnR3.ForeColor = Color.White;
+            lnR3.Location = new Point(746, 249);
+            lnR3.Name = "lnR3";
+            lnR3.Size = new Size(71, 31);
+            lnR3.TabIndex = 26;
+            lnR3.Text = "Round3";
+            // 
+            // lbR4
+            // 
+            lbR4.AutoSize = true;
+            lbR4.BackColor = Color.Black;
+            lbR4.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbR4.ForeColor = Color.White;
+            lbR4.Location = new Point(860, 249);
+            lbR4.Name = "lbR4";
+            lbR4.Size = new Size(71, 31);
+            lbR4.TabIndex = 27;
+            lbR4.Text = "Round4";
+            // 
+            // lbR5
+            // 
+            lbR5.AutoSize = true;
+            lbR5.BackColor = Color.Black;
+            lbR5.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbR5.ForeColor = Color.White;
+            lbR5.Location = new Point(744, 218);
+            lbR5.Name = "lbR5";
+            lbR5.Size = new Size(72, 31);
+            lbR5.TabIndex = 28;
+            lbR5.Text = "Round5";
+            // 
+            // lbR6
+            // 
+            lbR6.AutoSize = true;
+            lbR6.BackColor = Color.Black;
+            lbR6.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbR6.ForeColor = Color.White;
+            lbR6.Location = new Point(860, 218);
+            lbR6.Name = "lbR6";
+            lbR6.Size = new Size(71, 31);
+            lbR6.TabIndex = 29;
+            lbR6.Text = "Round6";
+            // 
+            // lbR7
+            // 
+            lbR7.AutoSize = true;
+            lbR7.BackColor = Color.Black;
+            lbR7.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbR7.ForeColor = Color.White;
+            lbR7.Location = new Point(744, 187);
+            lbR7.Name = "lbR7";
+            lbR7.Size = new Size(71, 31);
+            lbR7.TabIndex = 30;
+            lbR7.Text = "Round7";
+            // 
+            // lbR8
+            // 
+            lbR8.AutoSize = true;
+            lbR8.BackColor = Color.Black;
+            lbR8.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbR8.ForeColor = Color.White;
+            lbR8.Location = new Point(860, 187);
+            lbR8.Name = "lbR8";
+            lbR8.Size = new Size(71, 31);
+            lbR8.TabIndex = 31;
+            lbR8.Text = "Round8";
+            // 
+            // lbR9
+            // 
+            lbR9.AutoSize = true;
+            lbR9.BackColor = Color.Black;
+            lbR9.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbR9.ForeColor = Color.White;
+            lbR9.Location = new Point(746, 156);
+            lbR9.Name = "lbR9";
+            lbR9.Size = new Size(71, 31);
+            lbR9.TabIndex = 32;
+            lbR9.Text = "Round9";
+            // 
+            // lbR10
+            // 
+            lbR10.AutoSize = true;
+            lbR10.BackColor = Color.Black;
+            lbR10.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbR10.ForeColor = Color.White;
+            lbR10.Location = new Point(859, 156);
+            lbR10.Name = "lbR10";
+            lbR10.Size = new Size(80, 31);
+            lbR10.TabIndex = 33;
+            lbR10.Text = "Round10";
+            // 
+            // lbR11
+            // 
+            lbR11.AutoSize = true;
+            lbR11.BackColor = Color.Black;
+            lbR11.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbR11.ForeColor = Color.White;
+            lbR11.Location = new Point(746, 120);
+            lbR11.Name = "lbR11";
+            lbR11.Size = new Size(78, 31);
+            lbR11.TabIndex = 34;
+            lbR11.Text = "Round11";
+            // 
+            // lbR12
+            // 
+            lbR12.AutoSize = true;
+            lbR12.BackColor = Color.Black;
+            lbR12.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbR12.ForeColor = Color.White;
+            lbR12.Location = new Point(860, 120);
+            lbR12.Name = "lbR12";
+            lbR12.Size = new Size(79, 31);
+            lbR12.TabIndex = 35;
+            lbR12.Text = "Round12";
+            // 
+            // lbR13
+            // 
+            lbR13.AutoSize = true;
+            lbR13.BackColor = Color.Black;
+            lbR13.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbR13.ForeColor = Color.White;
+            lbR13.Location = new Point(743, 89);
+            lbR13.Name = "lbR13";
+            lbR13.Size = new Size(79, 31);
+            lbR13.TabIndex = 36;
+            lbR13.Text = "Round13";
+            // 
+            // lbR14
+            // 
+            lbR14.AutoSize = true;
+            lbR14.BackColor = Color.Black;
+            lbR14.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbR14.ForeColor = Color.White;
+            lbR14.Location = new Point(860, 89);
+            lbR14.Name = "lbR14";
+            lbR14.Size = new Size(79, 31);
+            lbR14.TabIndex = 37;
+            lbR14.Text = "Round14";
+            // 
+            // lbR15
+            // 
+            lbR15.AutoSize = true;
+            lbR15.BackColor = Color.Black;
+            lbR15.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbR15.ForeColor = Color.White;
+            lbR15.Location = new Point(806, 47);
+            lbR15.Name = "lbR15";
+            lbR15.Size = new Size(80, 31);
+            lbR15.TabIndex = 38;
+            lbR15.Text = "Round15";
             // 
             // Game2Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(958, 588);
+            Controls.Add(lbR15);
+            Controls.Add(lbR14);
+            Controls.Add(lbR13);
+            Controls.Add(lbR12);
+            Controls.Add(lbR11);
+            Controls.Add(lbR10);
+            Controls.Add(lbR9);
+            Controls.Add(lbR8);
+            Controls.Add(lbR7);
+            Controls.Add(lbR6);
+            Controls.Add(lbR5);
+            Controls.Add(lbR4);
+            Controls.Add(lnR3);
+            Controls.Add(lbR2);
+            Controls.Add(lbR1);
+            Controls.Add(lbTotalMoney);
+            Controls.Add(lbTimer);
+            Controls.Add(btnCall);
+            Controls.Add(btn5050);
+            Controls.Add(btnStop);
+            Controls.Add(btnNext);
             Controls.Add(lbShow);
             Controls.Add(btnD);
             Controls.Add(btnC);
@@ -217,5 +514,26 @@
         private btnGame2 btnC;
         private btnGame2 btnD;
         private Label lbShow;
+        private Button btnNext;
+        private Button btnStop;
+        private Button btn5050;
+        private Button btnCall;
+        private Label lbTimer;
+        private Label lbTotalMoney;
+        private Label lbR1;
+        private Label lbR2;
+        private Label lnR3;
+        private Label lbR4;
+        private Label lbR5;
+        private Label lbR6;
+        private Label lbR7;
+        private Label lbR8;
+        private Label lbR9;
+        private Label lbR10;
+        private Label lbR11;
+        private Label lbR12;
+        private Label lbR13;
+        private Label lbR14;
+        private Label lbR15;
     }
 }

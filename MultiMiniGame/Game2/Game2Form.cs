@@ -138,7 +138,7 @@ namespace MultiMiniGame.Game2
         {
             Form1 mainform = new Form1();
             mainform.Show();
-        }      
+        }
     }
 }
 
