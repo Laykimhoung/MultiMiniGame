@@ -45,22 +45,10 @@ namespace MultiMiniGame.Game2
             game.StartGame();
             ShowQuestion();
         }
-        private void btnA_Click(object sender, EventArgs e)
-        {
-            HandleAnswer(0);
-        }
-        private void btnB_Click(object sender, EventArgs e)
-        {
-            HandleAnswer(1);
-        }
-        private void btnC_Click(object sender, EventArgs e)
-        {
-            HandleAnswer(2);
-        }
-        private void btnD_Click(object sender, EventArgs e)
-        {
-            HandleAnswer(3);
-        }
+        private void btnA_Click(object sender, EventArgs e) => HandleAnswer(0);
+        private void btnB_Click(object sender, EventArgs e) => HandleAnswer(1);
+        private void btnC_Click(object sender, EventArgs e) => HandleAnswer(2);
+        private void btnD_Click(object sender, EventArgs e) => HandleAnswer(3);
         private void btnA_MouseHover(object sender, EventArgs e)
         {
             var btn = (btnGame2)sender;
