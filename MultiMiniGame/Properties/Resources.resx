@@ -130,13 +130,19 @@
   <data name="Game2-bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Game2-bg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Saba" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Saba.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Angkor_Wat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Angkor_Wat.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="G1_CatchedSaba" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\G1_CatchedSaba.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="G1_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\G1_Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="G1_CatchedSaba" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\G1_CatchedSaba.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="G3_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\G3_Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

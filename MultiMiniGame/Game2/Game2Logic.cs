@@ -19,13 +19,11 @@ namespace MultiMiniGame.Game2
         private List<Question> currentQuestions;
         private int currentIndex;
         private int currentLevel = 1;
-        public int CurrentLevel => currentLevel;
         public void StartGame()
         {
             currentLevel = 1;
             LoadLevel();
         }
-
         private void LoadLevel()
         {
             Random rnd = new Random();

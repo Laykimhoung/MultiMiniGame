@@ -38,8 +38,10 @@
             btnStart = new Button();
             G1_Background = new PictureBox();
             picSaba = new PictureBox();
+            Saba = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)G1_Background).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picSaba).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Saba).BeginInit();
             SuspendLayout();
             // 
             // rtbChat
@@ -132,7 +134,7 @@
             G1_Background.Image = Properties.Resources.G1_Background;
             G1_Background.Location = new Point(0, 0);
             G1_Background.Name = "G1_Background";
-            G1_Background.Size = new Size(582, 715);
+            G1_Background.Size = new Size(733, 715);
             G1_Background.SizeMode = PictureBoxSizeMode.CenterImage;
             G1_Background.TabIndex = 7;
             G1_Background.TabStop = false;
@@ -140,18 +142,29 @@
             // picSaba
             // 
             picSaba.Image = Properties.Resources.G1_CatchedSaba;
-            picSaba.Location = new Point(430, 60);
+            picSaba.Location = new Point(538, 0);
             picSaba.Name = "picSaba";
-            picSaba.Size = new Size(125, 207);
+            picSaba.Size = new Size(192, 347);
             picSaba.SizeMode = PictureBoxSizeMode.StretchImage;
             picSaba.TabIndex = 8;
             picSaba.TabStop = false;
+            // 
+            // Saba
+            // 
+            Saba.Image = Properties.Resources.Saba;
+            Saba.Location = new Point(516, 405);
+            Saba.Name = "Saba";
+            Saba.Size = new Size(256, 238);
+            Saba.SizeMode = PictureBoxSizeMode.StretchImage;
+            Saba.TabIndex = 9;
+            Saba.TabStop = false;
             // 
             // Game1Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(582, 715);
+            ClientSize = new Size(733, 715);
+            Controls.Add(Saba);
             Controls.Add(picSaba);
             Controls.Add(btnStart);
             Controls.Add(btnInfo);
@@ -167,6 +180,7 @@
             Load += Game1Form_Load;
             ((System.ComponentModel.ISupportInitialize)G1_Background).EndInit();
             ((System.ComponentModel.ISupportInitialize)picSaba).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Saba).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -182,5 +196,6 @@
         private Button btnStart;
         private PictureBox G1_Background;
         private PictureBox picSaba;
+        private PictureBox Saba;
     }
 }

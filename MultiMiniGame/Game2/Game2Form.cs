@@ -61,51 +61,6 @@ namespace MultiMiniGame.Game2
         {
             HandleAnswer(3);
         }
-
-        private void ShowQuestion()
-        {
-            Question q = game.GetCurrentQuestion();
-            if (q == null) return;
-
-            lbQuestion.Text = q.QuestionText;
-            btnA.Text = "  A. " + q.Answers[0];
-            btnB.Text = "  B. " + q.Answers[1];
-            btnC.Text = "  C. " + q.Answers[2];
-            btnD.Text = "  D. " + q.Answers[3];
-        }
-
-        private void HandleAnswer(int index)
-        {
-            GameState result = game.SubmitAnswer(index);
-
-            switch (result)
-            {
-                case GameState.Playing:
-                    ShowQuestion();
-                    break;
-
-                case GameState.LevelCompleted:
-                    lbShow.Text = "Correct! Moving to next level.";
-                    ShowQuestion();
-                    break;
-
-                case GameState.GameOver:
-                    lbShow.Visible = true;
-                    lbShow.Text = "Game Over! Better luck next time.";
-                    break;
-
-                case GameState.GameWon:
-                    lbShow.Visible = true;
-                    lbShow.Text = "Congratulations! You've won the game!";
-                    break;
-            }
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Form1 mainform = new Form1();
-            mainform.Show();
-        }
         private void btnA_MouseHover(object sender, EventArgs e)
         {
             var btn = (btnGame2)sender;
@@ -154,6 +109,48 @@ namespace MultiMiniGame.Game2
             btn.VisualState = ButtonVisualState.Normal;
             btn.Refresh();
         }
+        private void ShowQuestion()
+        {
+            Question q = game.GetCurrentQuestion();
+            if (q == null) return;
+
+            lbQuestion.Text = q.QuestionText;
+            btnA.Text = "  A. " + q.Answers[0];
+            btnB.Text = "  B. " + q.Answers[1];
+            btnC.Text = "  C. " + q.Answers[2];
+            btnD.Text = "  D. " + q.Answers[3];
+        }
+        private void HandleAnswer(int index)
+        {
+            GameState result = game.SubmitAnswer(index);
+
+            switch (result)
+            {
+                case GameState.Playing:
+                    ShowQuestion();
+                    break;
+
+                case GameState.LevelCompleted:
+                    lbShow.Text = "Correct! Moving to next level.";
+                    ShowQuestion();
+                    break;
+
+                case GameState.GameOver:
+                    lbShow.Visible = true;
+                    lbShow.Text = "Game Over! Better luck next time.";
+                    break;
+
+                case GameState.GameWon:
+                    lbShow.Visible = true;
+                    lbShow.Text = "Congratulations! You've won the game!";
+                    break;
+            }
+        }
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Form1 mainform = new Form1();
+            mainform.Show();
+        }      
     }
 }
 

@@ -49,7 +49,7 @@ namespace MultiMiniGame.Game2
             Rectangle r = new Rectangle(2, 2, Width - 5, Height - 5);
             using GraphicsPath path = CreateHexPath(r);
 
-            // 🎮 COLORS BASED ON STATE
+            // COLORS BASED ON STATE
             Color top, mid, border;
 
             switch (VisualState)

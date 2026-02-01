@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
             btnAtk = new Button();
             ptbBg = new PictureBox();
             btnExit = new Button();
@@ -39,21 +38,13 @@
             lblPlayer = new Label();
             lblBot = new Label();
             ptbPAtk = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)ptbBg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbPlayer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbBot).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbPAtk).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Dock = DockStyle.Bottom;
-            pictureBox1.Location = new Point(0, 413);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(922, 80);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // btnAtk
             // 
@@ -61,7 +52,7 @@
             btnAtk.FlatStyle = FlatStyle.Flat;
             btnAtk.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAtk.ForeColor = Color.Linen;
-            btnAtk.Location = new Point(240, 426);
+            btnAtk.Location = new Point(235, 508);
             btnAtk.Name = "btnAtk";
             btnAtk.Size = new Size(150, 55);
             btnAtk.TabIndex = 0;
@@ -70,9 +61,12 @@
             // 
             // ptbBg
             // 
-            ptbBg.Location = new Point(331, 251);
+            ptbBg.Dock = DockStyle.Fill;
+            ptbBg.Image = Properties.Resources.G3_Background;
+            ptbBg.Location = new Point(0, 0);
             ptbBg.Name = "ptbBg";
-            ptbBg.Size = new Size(282, 134);
+            ptbBg.Size = new Size(925, 579);
+            ptbBg.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbBg.TabIndex = 1;
             ptbBg.TabStop = false;
             // 
@@ -82,7 +76,7 @@
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnExit.ForeColor = SystemColors.ControlText;
-            btnExit.Location = new Point(39, 426);
+            btnExit.Location = new Point(37, 508);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(110, 55);
             btnExit.TabIndex = 2;
@@ -95,7 +89,7 @@
             btnShield.FlatStyle = FlatStyle.Flat;
             btnShield.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnShield.ForeColor = SystemColors.Highlight;
-            btnShield.Location = new Point(487, 426);
+            btnShield.Location = new Point(506, 508);
             btnShield.Name = "btnShield";
             btnShield.Size = new Size(150, 55);
             btnShield.TabIndex = 3;
@@ -108,7 +102,7 @@
             btnHeal.FlatStyle = FlatStyle.Flat;
             btnHeal.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnHeal.ForeColor = Color.Navy;
-            btnHeal.Location = new Point(720, 426);
+            btnHeal.Location = new Point(720, 520);
             btnHeal.Name = "btnHeal";
             btnHeal.Size = new Size(150, 55);
             btnHeal.TabIndex = 4;
@@ -159,11 +153,20 @@
             ptbPAtk.TabIndex = 9;
             ptbPAtk.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Bottom;
+            pictureBox1.Location = new Point(0, 499);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(925, 80);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
             // Game3Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(922, 493);
+            ClientSize = new Size(925, 579);
             Controls.Add(ptbPAtk);
             Controls.Add(lblBot);
             Controls.Add(lblPlayer);
@@ -172,23 +175,21 @@
             Controls.Add(btnHeal);
             Controls.Add(btnShield);
             Controls.Add(btnExit);
-            Controls.Add(ptbBg);
             Controls.Add(btnAtk);
             Controls.Add(pictureBox1);
+            Controls.Add(ptbBg);
             Name = "Game3Form";
             Text = "Game3Form";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbBg).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbPlayer).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbBot).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbPAtk).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private Button btnAtk;
         private PictureBox ptbBg;
         private Button btnExit;
@@ -199,5 +200,6 @@
         private Label lblPlayer;
         private Label lblBot;
         private PictureBox ptbPAtk;
+        private PictureBox pictureBox1;
     }
 }

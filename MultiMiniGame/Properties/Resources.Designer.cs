@@ -93,6 +93,16 @@ namespace MultiMiniGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap G3_Background {
+            get {
+                object obj = ResourceManager.GetObject("G3_Background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Game2_BackGround {
             get {
                 object obj = ResourceManager.GetObject("Game2_BackGround", resourceCulture);
@@ -126,6 +136,16 @@ namespace MultiMiniGame.Properties {
         internal static System.Drawing.Bitmap game2panelQuesion {
             get {
                 object obj = ResourceManager.GetObject("game2panelQuesion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Saba {
+            get {
+                object obj = ResourceManager.GetObject("Saba", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
