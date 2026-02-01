@@ -77,6 +77,7 @@
             // 
             btnSend.BackColor = SystemColors.Highlight;
             btnSend.Enabled = false;
+            btnSend.FlatStyle = FlatStyle.Flat;
             btnSend.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSend.Location = new Point(477, 596);
             btnSend.Name = "btnSend";
@@ -89,6 +90,7 @@
             // btnExit
             // 
             btnExit.BackColor = Color.Red;
+            btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnExit.Location = new Point(25, 636);
             btnExit.Name = "btnExit";
@@ -101,6 +103,7 @@
             // btnInfo
             // 
             btnInfo.BackColor = Color.Yellow;
+            btnInfo.FlatStyle = FlatStyle.Flat;
             btnInfo.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnInfo.Location = new Point(430, 636);
             btnInfo.Name = "btnInfo";
@@ -113,6 +116,7 @@
             // btnStart
             // 
             btnStart.BackColor = Color.LawnGreen;
+            btnStart.FlatStyle = FlatStyle.Flat;
             btnStart.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnStart.Location = new Point(131, 636);
             btnStart.Name = "btnStart";

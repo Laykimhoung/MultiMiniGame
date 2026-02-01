@@ -12,8 +12,6 @@ namespace MultiMiniGame.Game2
     public partial class Game2Form : Form
     {
         Game2Logic game = new Game2Logic();
-        int currentLevel = 1;
-        int round = 1;
         public Game2Form()
         {
             InitializeComponent();
@@ -40,65 +38,65 @@ namespace MultiMiniGame.Game2
             panelQuestion.Visible = true;
             lbQuestion.Visible = true;
 
-            LoadLevel();
-        }
-        private void LoadLevel()
-        {
-            game.LoadLevel(currentLevel);
+            game.StartGame();
             ShowQuestion();
+        }
+         private void btnA_Click(object sender, EventArgs e)
+        {
+            HandleAnswer(0);
+        }
+        private void btnB_Click(object sender, EventArgs e)
+        {
+            HandleAnswer(1);
+        }
+        private void btnC_Click(object sender, EventArgs e)
+        {
+            HandleAnswer(2);
+        }
+        private void btnD_Click(object sender, EventArgs e)
+        {
+            HandleAnswer(3);
         }
 
         private void ShowQuestion()
         {
             Question q = game.GetCurrentQuestion();
 
-            if (q == null)
-            {
-                NextLevel();
-                return;
-            }
+            if (q == null) return;
 
             lbQuestion.Text = q.QuestionText;
 
-            btnA.Text = " A. " + q.Answers[0];
-            btnB.Text = " B. " + q.Answers[1];
-            btnC.Text = " C. " + q.Answers[2];
-            btnD.Text = " D. " + q.Answers[3];
+            btnA.Text = "  A. " + q.Answers[0];
+            btnB.Text = "  B. " + q.Answers[1];
+            btnC.Text = "  C. " + q.Answers[2];
+            btnD.Text = "  D. " + q.Answers[3];
         }
-
-        private void btnA_Click(object sender, EventArgs e) => HandleAnswer(0);
-        private void btnB_Click(object sender, EventArgs e) => HandleAnswer(1);
-        private void btnC_Click(object sender, EventArgs e) => HandleAnswer(2);
-        private void btnD_Click(object sender, EventArgs e) => HandleAnswer(3);
-
+       
         private void HandleAnswer(int index)
         {
-            bool correct = game.CheckAnswer(index);
+            GameState result = game.SubmitAnswer(index);
 
-            if (!correct)
+            switch (result)
             {
-                MessageBox.Show("Wrong answer! Game Over.");
-                Close();
-                return;
+                case GameState.Playing:
+                    ShowQuestion();
+                    break;
+
+                case GameState.LevelCompleted:
+                    MessageBox.Show($"Level {game.CurrentLevel} starts!");
+                    ShowQuestion();
+                    break;
+
+                case GameState.GameOver:
+                    MessageBox.Show("Wrong answer! Game Over.");
+                    Close();
+                    break;
+
+                case GameState.GameWon:
+                    MessageBox.Show("Congratulations! You are a MILLIONAIRE!");
+                    Close();
+                    break;
             }
-
-            round++;
-            ShowQuestion();
-        }
-
-        private void NextLevel()
-        {
-            currentLevel++;
-
-            if (currentLevel > 3)
-            {
-                MessageBox.Show(" Congratulations! You are a MILLIONAIRE!");
-                Close();
-                return;
-            }
-
-            MessageBox.Show($"Level {currentLevel} starts!");
-            LoadLevel();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

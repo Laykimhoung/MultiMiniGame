@@ -42,32 +42,33 @@
             picBackGround.Image = Properties.Resources.Angkor_Wat;
             picBackGround.Location = new Point(0, 0);
             picBackGround.Name = "picBackGround";
-            picBackGround.Size = new Size(800, 450);
+            picBackGround.Size = new Size(1032, 590);
             picBackGround.SizeMode = PictureBoxSizeMode.StretchImage;
             picBackGround.TabIndex = 0;
             picBackGround.TabStop = false;
             // 
             // btnGame1
             // 
+            btnGame1.BackColor = Color.Gold;
             btnGame1.FlatStyle = FlatStyle.Flat;
-            btnGame1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGame1.Location = new Point(314, 186);
+            btnGame1.Font = new Font("Khmer OS Siemreap", 13.8F);
+            btnGame1.Location = new Point(395, 256);
             btnGame1.Name = "btnGame1";
-            btnGame1.Size = new Size(157, 51);
+            btnGame1.Size = new Size(232, 74);
             btnGame1.TabIndex = 1;
-            btnGame1.Text = "Game 1";
-            btnGame1.UseVisualStyleBackColor = true;
+            btnGame1.Text = "ហ្គេមទាយពាក្យ";
+            btnGame1.UseVisualStyleBackColor = false;
             btnGame1.Click += btnGame1_Click;
             // 
             // btnGame2
             // 
             btnGame2.BackColor = Color.MediumBlue;
             btnGame2.FlatStyle = FlatStyle.Flat;
-            btnGame2.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGame2.Font = new Font("Khmer OS Siemreap", 13.8F);
             btnGame2.ForeColor = Color.White;
-            btnGame2.Location = new Point(314, 272);
+            btnGame2.Location = new Point(395, 359);
             btnGame2.Name = "btnGame2";
-            btnGame2.Size = new Size(157, 51);
+            btnGame2.Size = new Size(232, 74);
             btnGame2.TabIndex = 2;
             btnGame2.Text = "ហ្គេមមហាសេដ្ឋី";
             btnGame2.UseVisualStyleBackColor = false;
@@ -76,10 +77,10 @@
             // btnGame3
             // 
             btnGame3.FlatStyle = FlatStyle.Flat;
-            btnGame3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGame3.Location = new Point(314, 354);
+            btnGame3.Font = new Font("Khmer OS Siemreap", 13.8F);
+            btnGame3.Location = new Point(395, 459);
             btnGame3.Name = "btnGame3";
-            btnGame3.Size = new Size(157, 51);
+            btnGame3.Size = new Size(232, 74);
             btnGame3.TabIndex = 3;
             btnGame3.Text = "Game 3";
             btnGame3.UseVisualStyleBackColor = true;
@@ -88,12 +89,12 @@
             // lbWelcome
             // 
             lbWelcome.AutoSize = true;
-            lbWelcome.BackColor = SystemColors.ActiveCaptionText;
-            lbWelcome.Font = new Font("Khmer OS Muol", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbWelcome.ForeColor = Color.FromArgb(192, 0, 0);
-            lbWelcome.Location = new Point(134, 113);
+            lbWelcome.BackColor = SystemColors.ButtonHighlight;
+            lbWelcome.Font = new Font("Khmer OS Bokor", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbWelcome.ForeColor = Color.Black;
+            lbWelcome.Location = new Point(254, 97);
             lbWelcome.Name = "lbWelcome";
-            lbWelcome.Size = new Size(527, 47);
+            lbWelcome.Size = new Size(596, 83);
             lbWelcome.TabIndex = 4;
             lbWelcome.Text = "សូមស្វាគមន៍មកកាន់ទំព័រហ្គេមរបស់យើងខ្ញុំ";
             // 
@@ -101,7 +102,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1032, 590);
             Controls.Add(lbWelcome);
             Controls.Add(btnGame3);
             Controls.Add(btnGame2);
