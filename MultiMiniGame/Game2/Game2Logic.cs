@@ -35,7 +35,6 @@ namespace MultiMiniGame.Game2
 
             currentIndex = 0;
         }
-
         public Question GetCurrentQuestion()
         {
             if (currentIndex >= currentQuestions.Count)
