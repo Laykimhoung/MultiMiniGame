@@ -55,9 +55,9 @@ namespace MultiMiniGame.Game2
             switch (VisualState)
             {
                 case ButtonVisualState.Hover:
-                    top = Color.FromArgb(0, 60, 180);
-                    mid = Color.FromArgb(0, 120, 230);
-                    border = Color.Gold;
+                    top = Color.Gold;
+                    mid = Color.FromArgb(240, 230, 140);
+                    border = Color.Silver;
                     break;
 
                 case ButtonVisualState.Selected:

@@ -19,9 +19,7 @@ namespace MultiMiniGame.Game2
         private List<Question> currentQuestions;
         private int currentIndex;
         private int currentLevel = 1;
-
         public int CurrentLevel => currentLevel;
-
         public void StartGame()
         {
             currentLevel = 1;
@@ -31,7 +29,6 @@ namespace MultiMiniGame.Game2
         private void LoadLevel()
         {
             Random rnd = new Random();
-
             currentQuestions = QuestionBank.AllQuestions
                 .Where(q => q.Level == currentLevel)
                 .OrderBy(q => rnd.Next())

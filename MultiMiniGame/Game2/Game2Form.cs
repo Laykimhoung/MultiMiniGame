@@ -27,8 +27,12 @@ namespace MultiMiniGame.Game2
             lbQuestion.BackColor = Color.Transparent;
             lbQuestion.ForeColor = Color.White;
 
+            lbShow.Parent = picBackGround;
+            lbShow.BackColor = Color.Transparent;
+
             panelQuestion.Visible = false;
             lbQuestion.Visible = false;
+            lbShow.Visible = false;
             btnA.Visible = btnB.Visible = btnC.Visible = btnD.Visible = false;
         }
         private void btnStart_Click(object sender, EventArgs e)
@@ -41,7 +45,7 @@ namespace MultiMiniGame.Game2
             game.StartGame();
             ShowQuestion();
         }
-         private void btnA_Click(object sender, EventArgs e)
+        private void btnA_Click(object sender, EventArgs e)
         {
             HandleAnswer(0);
         }
@@ -61,17 +65,15 @@ namespace MultiMiniGame.Game2
         private void ShowQuestion()
         {
             Question q = game.GetCurrentQuestion();
-
             if (q == null) return;
 
             lbQuestion.Text = q.QuestionText;
-
             btnA.Text = "  A. " + q.Answers[0];
             btnB.Text = "  B. " + q.Answers[1];
             btnC.Text = "  C. " + q.Answers[2];
             btnD.Text = "  D. " + q.Answers[3];
         }
-       
+
         private void HandleAnswer(int index)
         {
             GameState result = game.SubmitAnswer(index);
@@ -83,18 +85,18 @@ namespace MultiMiniGame.Game2
                     break;
 
                 case GameState.LevelCompleted:
-                    MessageBox.Show($"Level {game.CurrentLevel} starts!");
+                    lbShow.Text = "Correct! Moving to next level.";
                     ShowQuestion();
                     break;
 
                 case GameState.GameOver:
-                    MessageBox.Show("Wrong answer! Game Over.");
-                    Close();
+                    lbShow.Visible = true;
+                    lbShow.Text = "Game Over! Better luck next time.";
                     break;
 
                 case GameState.GameWon:
-                    MessageBox.Show("Congratulations! You are a MILLIONAIRE!");
-                    Close();
+                    lbShow.Visible = true;
+                    lbShow.Text = "Congratulations! You've won the game!";
                     break;
             }
         }
@@ -103,7 +105,54 @@ namespace MultiMiniGame.Game2
         {
             Form1 mainform = new Form1();
             mainform.Show();
-
+        }
+        private void btnA_MouseHover(object sender, EventArgs e)
+        {
+            var btn = (btnGame2)sender;
+            btn.VisualState = ButtonVisualState.Hover;
+            btn.Refresh();
+        }
+        private void btnA_MouseLeave(object sender, EventArgs e)
+        {
+            var btn = (btnGame2)sender;
+            btn.VisualState = ButtonVisualState.Normal;
+            btn.Refresh();
+        }
+        private void btnB_MouseHover(object sender, EventArgs e)
+        {
+            var btn = (btnGame2)sender;
+            btn.VisualState = ButtonVisualState.Hover;
+            btn.Refresh();
+        }
+        private void btnB_MouseLeave(object sender, EventArgs e)
+        {
+            var btn = (btnGame2)sender;
+            btn.VisualState = ButtonVisualState.Normal;
+            btn.Refresh();
+        }
+        private void btnC_MouseHover(object sender, EventArgs e)
+        {
+            var btn = (btnGame2)sender;
+            btn.VisualState = ButtonVisualState.Hover;
+            btn.Refresh();
+        }
+        private void btnC_MouseLeave(object sender, EventArgs e)
+        {
+            var btn = (btnGame2)sender;
+            btn.VisualState = ButtonVisualState.Normal;
+            btn.Refresh();
+        }
+        private void btnD_MouseHover(object sender, EventArgs e)
+        {
+            var btn = (btnGame2)sender;
+            btn.VisualState = ButtonVisualState.Hover;
+            btn.Refresh();
+        }
+        private void btnD_MouseLeave(object sender, EventArgs e)
+        {
+            var btn = (btnGame2)sender;
+            btn.VisualState = ButtonVisualState.Normal;
+            btn.Refresh();
         }
     }
 }

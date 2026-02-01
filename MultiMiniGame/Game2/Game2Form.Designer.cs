@@ -37,6 +37,7 @@
             btnB = new btnGame2();
             btnC = new btnGame2();
             btnD = new btnGame2();
+            lbShow = new Label();
             ((System.ComponentModel.ISupportInitialize)picBackGround).BeginInit();
             panelQuestion.SuspendLayout();
             SuspendLayout();
@@ -70,11 +71,11 @@
             // 
             lbQuestion.AutoSize = true;
             lbQuestion.BackColor = Color.Transparent;
-            lbQuestion.Font = new Font("Khmer OS Siemreap", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbQuestion.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbQuestion.ForeColor = Color.Black;
             lbQuestion.Location = new Point(96, 38);
             lbQuestion.Name = "lbQuestion";
-            lbQuestion.Size = new Size(54, 33);
+            lbQuestion.Size = new Size(58, 36);
             lbQuestion.TabIndex = 10;
             lbQuestion.Text = "សំនួរ";
             // 
@@ -114,6 +115,8 @@
             btnA.Text = "   Text";
             btnA.UseVisualStyleBackColor = false;
             btnA.Click += btnA_Click;
+            btnA.MouseLeave += btnA_MouseLeave;
+            btnA.MouseHover += btnA_MouseHover;
             // 
             // btnB
             // 
@@ -129,6 +132,8 @@
             btnB.Text = "   Text";
             btnB.UseVisualStyleBackColor = false;
             btnB.Click += btnB_Click;
+            btnB.MouseLeave += btnB_MouseLeave;
+            btnB.MouseHover += btnB_MouseHover;
             // 
             // btnC
             // 
@@ -144,6 +149,8 @@
             btnC.Text = "   Text";
             btnC.UseVisualStyleBackColor = false;
             btnC.Click += btnC_Click;
+            btnC.MouseLeave += btnC_MouseLeave;
+            btnC.MouseHover += btnC_MouseHover;
             // 
             // btnD
             // 
@@ -159,12 +166,27 @@
             btnD.Text = "   Text";
             btnD.UseVisualStyleBackColor = false;
             btnD.Click += btnD_Click;
+            btnD.MouseLeave += btnD_MouseLeave;
+            btnD.MouseHover += btnD_MouseHover;
+            // 
+            // lbShow
+            // 
+            lbShow.AutoSize = true;
+            lbShow.BackColor = SystemColors.ActiveCaptionText;
+            lbShow.Font = new Font("Khmer OS Bokor", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbShow.ForeColor = Color.White;
+            lbShow.Location = new Point(298, 55);
+            lbShow.Name = "lbShow";
+            lbShow.Size = new Size(91, 67);
+            lbShow.TabIndex = 17;
+            lbShow.Text = "Text";
             // 
             // Game2Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(958, 588);
+            Controls.Add(lbShow);
             Controls.Add(btnD);
             Controls.Add(btnC);
             Controls.Add(btnB);
@@ -180,6 +202,7 @@
             panelQuestion.ResumeLayout(false);
             panelQuestion.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -193,5 +216,6 @@
         private btnGame2 btnB;
         private btnGame2 btnC;
         private btnGame2 btnD;
+        private Label lbShow;
     }
 }
