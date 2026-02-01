@@ -9,12 +9,12 @@ namespace MultiMiniGame
 
     public partial class Form1 : Form
     {
-        
+
         SoundPlayer bg;
         public Form1()
         {
             InitializeComponent();
-        }    
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             lbWelcome.Parent = picBackGround;
