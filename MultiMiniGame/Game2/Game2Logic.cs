@@ -17,49 +17,89 @@ namespace MultiMiniGame.Game2
     public class Game2Logic
     {
         private List<Question> currentQuestions;
-        private int currentIndex;
-        private int currentLevel = 1;
+        private HashSet<int> usedQuestionIds = new HashSet<int>();
+        private int currentQuestionIndex;
+        private int currentLevel;
+        public int CurrentLevel => currentLevel;
+
         public void StartGame()
         {
             currentLevel = 1;
+            usedQuestionIds.Clear();
             LoadLevel();
         }
         private void LoadLevel()
         {
             Random rnd = new Random();
+            // Take 5 UNIQUE questions from 10 per level
             currentQuestions = QuestionBank.AllQuestions
-                .Where(q => q.Level == currentLevel)
+                .Where(q => q.Level == currentLevel && !usedQuestionIds.Contains(q.Id))
                 .OrderBy(q => rnd.Next())
                 .Take(5)
                 .ToList();
 
-            currentIndex = 0;
+            foreach (var q in currentQuestions)
+                usedQuestionIds.Add(q.Id);
+
+            currentQuestionIndex = 0;
         }
         public Question GetCurrentQuestion()
         {
-            if (currentIndex >= currentQuestions.Count)
+            if (currentQuestionIndex >= currentQuestions.Count)
                 return null;
 
-            return currentQuestions[currentIndex];
+            return currentQuestions[currentQuestionIndex];
         }
-
         public GameState SubmitAnswer(int selectedIndex)
         {
-            if (currentQuestions[currentIndex].CorrectIndex != selectedIndex)
+            // wrong answer
+            if (!IsCorrect(selectedIndex))
                 return GameState.GameOver;
 
-            currentIndex++;
-
-            if (currentIndex < currentQuestions.Count)
+            // correct answer, more questions in this level
+            if (HasNextQuestion())
                 return GameState.Playing;
 
+            // finished this level
+            if (HasNextLevel())
+                return GameState.LevelCompleted;
+
+            // finished last level (15)
+            return GameState.GameWon;
+        }
+
+        public bool IsCorrect(int selectedIndex)
+        {
+            return GetCurrentQuestion().CorrectIndex == selectedIndex;
+        }
+        public bool HasNextQuestion()
+        {
+            return currentQuestionIndex + 1 < currentQuestions.Count;
+        }
+        public bool HasNextLevel()
+        {
+            return currentLevel < 15;
+        }
+        public void NextQuestion()
+        {
+            currentQuestionIndex++;
+        }
+        public void NextLevel()
+        {
             currentLevel++;
-
-            if (currentLevel > 3)
-                return GameState.GameWon;
-
             LoadLevel();
-            return GameState.LevelCompleted;
+        }
+        //50/50
+        public int[] GetFiftyFifty()
+        {
+            Random rnd = new Random();
+            var q = GetCurrentQuestion();
+
+            return Enumerable.Range(0, 4)
+                .Where(i => i != q.CorrectIndex)
+                .OrderBy(i => rnd.Next())
+                .Take(2)
+                .ToArray();
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             picBackGround = new PictureBox();
             btnStart = new Button();
             lbQuestion = new Label();
@@ -38,7 +39,7 @@
             btnC = new btnGame2();
             btnD = new btnGame2();
             lbShow = new Label();
-            btnNext = new Button();
+            btnNextRound = new Button();
             btnStop = new Button();
             btn5050 = new Button();
             btnCall = new Button();
@@ -46,7 +47,7 @@
             lbTotalMoney = new Label();
             lbR1 = new Label();
             lbR2 = new Label();
-            lnR3 = new Label();
+            lbR3 = new Label();
             lbR4 = new Label();
             lbR5 = new Label();
             lbR6 = new Label();
@@ -59,6 +60,7 @@
             lbR13 = new Label();
             lbR14 = new Label();
             lbR15 = new Label();
+            roundTimer = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)picBackGround).BeginInit();
             panelQuestion.SuspendLayout();
             SuspendLayout();
@@ -203,18 +205,19 @@
             lbShow.Text = "Text";
             lbShow.TextAlign = ContentAlignment.TopCenter;
             // 
-            // btnNext
+            // btnNextRound
             // 
-            btnNext.BackColor = Color.FromArgb(0, 192, 0);
-            btnNext.FlatStyle = FlatStyle.Flat;
-            btnNext.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnNext.ForeColor = Color.White;
-            btnNext.Location = new Point(513, 268);
-            btnNext.Name = "btnNext";
-            btnNext.Size = new Size(155, 58);
-            btnNext.TabIndex = 18;
-            btnNext.Text = "បន្តទៅជុំបន្ទាប់";
-            btnNext.UseVisualStyleBackColor = false;
+            btnNextRound.BackColor = Color.FromArgb(0, 192, 0);
+            btnNextRound.FlatStyle = FlatStyle.Flat;
+            btnNextRound.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnNextRound.ForeColor = Color.White;
+            btnNextRound.Location = new Point(513, 268);
+            btnNextRound.Name = "btnNextRound";
+            btnNextRound.Size = new Size(155, 58);
+            btnNextRound.TabIndex = 18;
+            btnNextRound.Text = "បន្តទៅជុំបន្ទាប់";
+            btnNextRound.UseVisualStyleBackColor = false;
+            btnNextRound.Click += btnNextRound_Click;
             // 
             // btnStop
             // 
@@ -241,6 +244,7 @@
             btn5050.TabIndex = 20;
             btn5050.Text = "៥០​/៥០";
             btn5050.UseVisualStyleBackColor = false;
+            btn5050.Click += btn5050_Click;
             // 
             // btnCall
             // 
@@ -301,17 +305,17 @@
             lbR2.TabIndex = 25;
             lbR2.Text = "Round2";
             // 
-            // lnR3
+            // lbR3
             // 
-            lnR3.AutoSize = true;
-            lnR3.BackColor = Color.Black;
-            lnR3.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lnR3.ForeColor = Color.White;
-            lnR3.Location = new Point(746, 249);
-            lnR3.Name = "lnR3";
-            lnR3.Size = new Size(71, 31);
-            lnR3.TabIndex = 26;
-            lnR3.Text = "Round3";
+            lbR3.AutoSize = true;
+            lbR3.BackColor = Color.Black;
+            lbR3.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbR3.ForeColor = Color.White;
+            lbR3.Location = new Point(746, 249);
+            lbR3.Name = "lbR3";
+            lbR3.Size = new Size(71, 31);
+            lbR3.TabIndex = 26;
+            lbR3.Text = "Round3";
             // 
             // lbR4
             // 
@@ -457,6 +461,11 @@
             lbR15.TabIndex = 38;
             lbR15.Text = "Round15";
             // 
+            // roundTimer
+            // 
+            roundTimer.Interval = 30000;
+            roundTimer.Tick += roundTimer_Tick;
+            // 
             // Game2Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -474,7 +483,7 @@
             Controls.Add(lbR6);
             Controls.Add(lbR5);
             Controls.Add(lbR4);
-            Controls.Add(lnR3);
+            Controls.Add(lbR3);
             Controls.Add(lbR2);
             Controls.Add(lbR1);
             Controls.Add(lbTotalMoney);
@@ -482,7 +491,7 @@
             Controls.Add(btnCall);
             Controls.Add(btn5050);
             Controls.Add(btnStop);
-            Controls.Add(btnNext);
+            Controls.Add(btnNextRound);
             Controls.Add(lbShow);
             Controls.Add(btnD);
             Controls.Add(btnC);
@@ -514,7 +523,7 @@
         private btnGame2 btnC;
         private btnGame2 btnD;
         private Label lbShow;
-        private Button btnNext;
+        private Button btnNextRound;
         private Button btnStop;
         private Button btn5050;
         private Button btnCall;
@@ -522,7 +531,7 @@
         private Label lbTotalMoney;
         private Label lbR1;
         private Label lbR2;
-        private Label lnR3;
+        private Label lbR3;
         private Label lbR4;
         private Label lbR5;
         private Label lbR6;
@@ -535,5 +544,6 @@
         private Label lbR13;
         private Label lbR14;
         private Label lbR15;
+        private System.Windows.Forms.Timer roundTimer;
     }
 }
