@@ -364,6 +364,7 @@
             btnExit2.TabIndex = 26;
             btnExit2.Text = "ចាកចេញ";
             btnExit2.UseVisualStyleBackColor = false;
+            btnExit2.Visible = false;
             btnExit2.Click += btnExit2_Click;
             // 
             // lblMessage
@@ -371,7 +372,7 @@
             lblMessage.AutoSize = true;
             lblMessage.BackColor = Color.Transparent;
             lblMessage.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMessage.Location = new Point(32, 33);
+            lblMessage.Location = new Point(3, 33);
             lblMessage.Name = "lblMessage";
             lblMessage.Size = new Size(43, 36);
             lblMessage.TabIndex = 25;
