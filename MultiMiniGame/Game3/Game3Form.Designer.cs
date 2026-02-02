@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game3Form));
             btnAtk = new Button();
             ptbBg = new PictureBox();
             btnExit = new Button();
@@ -39,11 +41,36 @@
             lblBot = new Label();
             ptbPAtk = new PictureBox();
             pictureBox1 = new PictureBox();
+            ptbBotShield = new PictureBox();
+            fireballTimer = new System.Windows.Forms.Timer(components);
+            BossATKTimer = new System.Windows.Forms.Timer(components);
+            btnPlayAgain = new Button();
+            ptbpHeart1 = new PictureBox();
+            ptbpHeart2 = new PictureBox();
+            ptbpHeart3 = new PictureBox();
+            ptbpHeart4 = new PictureBox();
+            ptbpHeart5 = new PictureBox();
+            pictureBox7 = new PictureBox();
+            pictureBox8 = new PictureBox();
+            pictureBox9 = new PictureBox();
+            pictureBox10 = new PictureBox();
+            pictureBox11 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)ptbBg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbPlayer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbBot).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbPAtk).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbBotShield).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbpHeart1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbpHeart2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbpHeart3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbpHeart4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbpHeart5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             SuspendLayout();
             // 
             // btnAtk
@@ -58,6 +85,7 @@
             btnAtk.TabIndex = 0;
             btnAtk.Text = "វៃ";
             btnAtk.UseVisualStyleBackColor = false;
+            btnAtk.Click += btnAtk_Click;
             // 
             // ptbBg
             // 
@@ -80,8 +108,9 @@
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(110, 55);
             btnExit.TabIndex = 2;
-            btnExit.Text = "ចាកចេញ";
+            btnExit.Text = "រត់គេច";
             btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // btnShield
             // 
@@ -89,12 +118,13 @@
             btnShield.FlatStyle = FlatStyle.Flat;
             btnShield.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnShield.ForeColor = SystemColors.Highlight;
-            btnShield.Location = new Point(506, 508);
+            btnShield.Location = new Point(488, 508);
             btnShield.Name = "btnShield";
             btnShield.Size = new Size(150, 55);
             btnShield.TabIndex = 3;
             btnShield.Text = "រនាំង";
             btnShield.UseVisualStyleBackColor = false;
+            btnShield.Click += btnShield_Click;
             // 
             // btnHeal
             // 
@@ -102,16 +132,17 @@
             btnHeal.FlatStyle = FlatStyle.Flat;
             btnHeal.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnHeal.ForeColor = Color.Navy;
-            btnHeal.Location = new Point(720, 520);
+            btnHeal.Location = new Point(721, 508);
             btnHeal.Name = "btnHeal";
             btnHeal.Size = new Size(150, 55);
             btnHeal.TabIndex = 4;
             btnHeal.Text = "ផឹកថ្នាំ";
             btnHeal.UseVisualStyleBackColor = false;
+            btnHeal.Click += btnHeal_Click;
             // 
             // ptbPlayer
             // 
-            ptbPlayer.Location = new Point(64, 180);
+            ptbPlayer.Location = new Point(64, 251);
             ptbPlayer.Name = "ptbPlayer";
             ptbPlayer.Size = new Size(150, 220);
             ptbPlayer.TabIndex = 5;
@@ -119,7 +150,7 @@
             // 
             // ptbBot
             // 
-            ptbBot.Location = new Point(690, 208);
+            ptbBot.Location = new Point(680, 251);
             ptbBot.Name = "ptbBot";
             ptbBot.Size = new Size(162, 110);
             ptbBot.TabIndex = 6;
@@ -128,8 +159,9 @@
             // lblPlayer
             // 
             lblPlayer.AutoSize = true;
+            lblPlayer.BackColor = Color.Transparent;
             lblPlayer.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPlayer.Location = new Point(119, 141);
+            lblPlayer.Location = new Point(116, 208);
             lblPlayer.Name = "lblPlayer";
             lblPlayer.Size = new Size(43, 36);
             lblPlayer.TabIndex = 7;
@@ -138,35 +170,161 @@
             // lblBot
             // 
             lblBot.AutoSize = true;
+            lblBot.BackColor = Color.Transparent;
             lblBot.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblBot.Location = new Point(738, 141);
+            lblBot.Location = new Point(731, 208);
             lblBot.Name = "lblBot";
-            lblBot.Size = new Size(43, 36);
+            lblBot.Size = new Size(69, 36);
             lblBot.TabIndex = 8;
-            lblBot.Text = "អ្នក";
+            lblBot.Text = "បិសាច";
             // 
             // ptbPAtk
             // 
-            ptbPAtk.Location = new Point(220, 251);
+            ptbPAtk.Location = new Point(220, 284);
             ptbPAtk.Name = "ptbPAtk";
-            ptbPAtk.Size = new Size(40, 40);
+            ptbPAtk.Size = new Size(50, 50);
             ptbPAtk.TabIndex = 9;
             ptbPAtk.TabStop = false;
             // 
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Bottom;
+            pictureBox1.Image = Properties.Resources.G3_Background;
             pictureBox1.Location = new Point(0, 499);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(925, 80);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            // 
+            // ptbBotShield
+            // 
+            ptbBotShield.Location = new Point(648, 196);
+            ptbBotShield.Name = "ptbBotShield";
+            ptbBotShield.Size = new Size(26, 275);
+            ptbBotShield.TabIndex = 10;
+            ptbBotShield.TabStop = false;
+            // 
+            // fireballTimer
+            // 
+            fireballTimer.Interval = 30;
+            fireballTimer.Tick += fireballTimer_Tick;
+            // 
+            // BossATKTimer
+            // 
+            BossATKTimer.Interval = 30;
+            BossATKTimer.Tick += BossATKTimer_Tick;
+            // 
+            // btnPlayAgain
+            // 
+            btnPlayAgain.BackColor = Color.Red;
+            btnPlayAgain.FlatStyle = FlatStyle.Flat;
+            btnPlayAgain.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPlayAgain.ForeColor = SystemColors.ActiveCaptionText;
+            btnPlayAgain.Location = new Point(393, 251);
+            btnPlayAgain.Name = "btnPlayAgain";
+            btnPlayAgain.Size = new Size(144, 55);
+            btnPlayAgain.TabIndex = 11;
+            btnPlayAgain.Text = "លេងម្តងទឿត";
+            btnPlayAgain.UseVisualStyleBackColor = false;
+            // 
+            // ptbpHeart1
+            // 
+            ptbpHeart1.Location = new Point(24, 123);
+            ptbpHeart1.Name = "ptbpHeart1";
+            ptbpHeart1.Size = new Size(40, 40);
+            ptbpHeart1.TabIndex = 12;
+            ptbpHeart1.TabStop = false;
+            // 
+            // ptbpHeart2
+            // 
+            ptbpHeart2.Location = new Point(70, 123);
+            ptbpHeart2.Name = "ptbpHeart2";
+            ptbpHeart2.Size = new Size(40, 40);
+            ptbpHeart2.TabIndex = 13;
+            ptbpHeart2.TabStop = false;
+            // 
+            // ptbpHeart3
+            // 
+            ptbpHeart3.Location = new Point(116, 123);
+            ptbpHeart3.Name = "ptbpHeart3";
+            ptbpHeart3.Size = new Size(40, 40);
+            ptbpHeart3.TabIndex = 14;
+            ptbpHeart3.TabStop = false;
+            // 
+            // ptbpHeart4
+            // 
+            ptbpHeart4.Location = new Point(162, 123);
+            ptbpHeart4.Name = "ptbpHeart4";
+            ptbpHeart4.Size = new Size(40, 40);
+            ptbpHeart4.TabIndex = 15;
+            ptbpHeart4.TabStop = false;
+            // 
+            // ptbpHeart5
+            // 
+            ptbpHeart5.Location = new Point(208, 123);
+            ptbpHeart5.Name = "ptbpHeart5";
+            ptbpHeart5.Size = new Size(40, 40);
+            ptbpHeart5.TabIndex = 16;
+            ptbpHeart5.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.Location = new Point(648, 123);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(40, 40);
+            pictureBox7.TabIndex = 17;
+            pictureBox7.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.Location = new Point(694, 123);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(40, 40);
+            pictureBox8.TabIndex = 18;
+            pictureBox8.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.Location = new Point(740, 123);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(40, 40);
+            pictureBox9.TabIndex = 19;
+            pictureBox9.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            pictureBox10.Location = new Point(786, 123);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(40, 40);
+            pictureBox10.TabIndex = 20;
+            pictureBox10.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            pictureBox11.Location = new Point(832, 123);
+            pictureBox11.Name = "pictureBox11";
+            pictureBox11.Size = new Size(40, 40);
+            pictureBox11.TabIndex = 21;
+            pictureBox11.TabStop = false;
             // 
             // Game3Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(925, 579);
+            Controls.Add(pictureBox11);
+            Controls.Add(pictureBox10);
+            Controls.Add(pictureBox9);
+            Controls.Add(pictureBox8);
+            Controls.Add(pictureBox7);
+            Controls.Add(ptbpHeart5);
+            Controls.Add(ptbpHeart4);
+            Controls.Add(ptbpHeart3);
+            Controls.Add(ptbpHeart2);
+            Controls.Add(ptbpHeart1);
+            Controls.Add(btnPlayAgain);
+            Controls.Add(ptbBotShield);
             Controls.Add(ptbPAtk);
             Controls.Add(lblBot);
             Controls.Add(lblPlayer);
@@ -176,15 +334,28 @@
             Controls.Add(btnShield);
             Controls.Add(btnExit);
             Controls.Add(btnAtk);
-            Controls.Add(pictureBox1);
             Controls.Add(ptbBg);
+            Controls.Add(pictureBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Game3Form";
             Text = "Game3Form";
+            Load += Game3Form_Load;
             ((System.ComponentModel.ISupportInitialize)ptbBg).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbPlayer).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbBot).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbPAtk).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbBotShield).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbpHeart1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbpHeart2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbpHeart3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbpHeart4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbpHeart5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -201,5 +372,19 @@
         private Label lblBot;
         private PictureBox ptbPAtk;
         private PictureBox pictureBox1;
+        private PictureBox ptbBotShield;
+        private System.Windows.Forms.Timer fireballTimer;
+        private System.Windows.Forms.Timer BossATKTimer;
+        private Button btnPlayAgain;
+        private PictureBox ptbpHeart1;
+        private PictureBox ptbpHeart2;
+        private PictureBox ptbpHeart3;
+        private PictureBox ptbpHeart4;
+        private PictureBox ptbpHeart5;
+        private PictureBox pictureBox7;
+        private PictureBox pictureBox8;
+        private PictureBox pictureBox9;
+        private PictureBox pictureBox10;
+        private PictureBox pictureBox11;
     }
 }
