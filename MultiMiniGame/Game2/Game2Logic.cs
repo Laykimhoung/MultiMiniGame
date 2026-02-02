@@ -1,9 +1,10 @@
-﻿using System;
+﻿using MultiMiniGame.Game2;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
-using MultiMiniGame.Game2;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 
 namespace MultiMiniGame.Game2
 {
@@ -67,7 +68,6 @@ namespace MultiMiniGame.Game2
             // finished last level (15)
             return GameState.GameWon;
         }
-
         public bool IsCorrect(int selectedIndex)
         {
             return GetCurrentQuestion().CorrectIndex == selectedIndex;

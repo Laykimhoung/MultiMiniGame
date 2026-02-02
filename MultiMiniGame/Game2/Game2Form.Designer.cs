@@ -463,7 +463,7 @@
             // 
             // roundTimer
             // 
-            roundTimer.Interval = 30000;
+            roundTimer.Interval = 1000;
             roundTimer.Tick += roundTimer_Tick;
             // 
             // Game2Form

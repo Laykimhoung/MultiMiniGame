@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Reflection.Emit;
 using System.Text;
 using System.Windows.Forms;
 using static MultiMiniGame.Game2.Game2Logic;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 
 namespace MultiMiniGame.Game2
 {
     public partial class Game2Form : Form
     {
         Game2Logic game = new Game2Logic();
-        private List<Label> questionLadder;
+        private List<System.Windows.Forms.Label> questionLadder;
         private int[] moneyTable =
         {
-            0, 100, 200, 300, 500,
+            100, 200, 300, 500,
             1000, 2000, 4000, 8000, 16000,
             32000, 64000, 125000, 250000, 500000, 1000000
         };
@@ -48,7 +50,7 @@ namespace MultiMiniGame.Game2
         {
             game = new Game2Logic();
 
-            questionLadder = new List<Label>
+            questionLadder = new List<System.Windows.Forms.Label>
             {
                 lbR1, lbR2, lbR3, lbR4, lbR5,
                 lbR6, lbR7, lbR8, lbR9, lbR10,
@@ -150,17 +152,27 @@ namespace MultiMiniGame.Game2
             StartTimer();
         }
         // ================= TIMER =================
+        int timeLeft;
         private void StartTimer()
         {
+            timeLeft = 60;
+            lbTimer.Text = timeLeft.ToString();
             roundTimer.Start();
         }
 
         private void roundTimer_Tick(object sender, EventArgs e)
         {
-            roundTimer.Stop();
-            lbShow.Text = "⏰ Time's up!";
-            lbShow.Visible = true;
-            DisableAnswerButtons();
+            timeLeft--;
+
+            lbTimer.Text = timeLeft.ToString();
+
+            if (timeLeft <= 0)
+            {
+                roundTimer.Stop();
+                lbShow.Text = "⏰ Time's up!";
+                lbShow.Visible = true;
+                DisableAnswerButtons();
+            }
         }
         // ================= UI HELPERS =================
         private void UpdateMoney()
@@ -181,22 +193,20 @@ namespace MultiMiniGame.Game2
         {
             EnableAnswerButtons();
 
-            btnA.VisualState =
-            btnB.VisualState =
-            btnC.VisualState =
+            btnA.VisualState = ButtonVisualState.Normal;
+            btnB.VisualState = ButtonVisualState.Normal;
+            btnC.VisualState = ButtonVisualState.Normal;
             btnD.VisualState = ButtonVisualState.Normal;
         }
 
         private void DisableAnswerButtons()
         {
-            btnA.Enabled = btnB.Enabled =
-            btnC.Enabled = btnD.Enabled = false;
+            btnA.Enabled = btnB.Enabled = btnC.Enabled = btnD.Enabled = false;
         }
 
         private void EnableAnswerButtons()
         {
-            btnA.Enabled = btnB.Enabled =
-            btnC.Enabled = btnD.Enabled = true;
+            btnA.Enabled = btnB.Enabled = btnC.Enabled = btnD.Enabled = true;
         }
 
         private btnGame2 GetButton(int index)
