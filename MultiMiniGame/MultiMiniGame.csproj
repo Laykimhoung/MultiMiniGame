@@ -10,10 +10,14 @@
 
   <ItemGroup>
     <None Remove="Sounds\G1_Sound.wav" />
+    <None Remove="Sounds\G3_VaiBoss.wav" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Sounds\G1_Sound.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\G3_VaiBoss.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

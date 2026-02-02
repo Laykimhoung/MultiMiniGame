@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Media;
 using System.Text;
 using System.Windows.Forms;
 
@@ -395,6 +396,12 @@ namespace MultiMiniGame.Game3
         private void btnExit2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void Game3Form_Load(object sender, EventArgs e)
+        {
+            SoundPlayer sG3 = new SoundPlayer(@"Sounds\G3_VaiBoss.wav");
+            sG3.PlayLooping();
         }
     }
 }

@@ -121,6 +121,9 @@
   <data name="Game2BackGround" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Game2BackGround.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="G3_EyeofCthulhuPhase1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\G3_EyeofCthulhuPhase1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Game2_BackGround" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Game2_BackGround.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,10 +142,13 @@
   <data name="G1_CatchedSaba" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\G1_CatchedSaba.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="G3_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\G3_Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="G1_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\G1_Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="G3_Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\G3_Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="G3_EyeofCthulhuPhase2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\G3_EyeofCthulhuPhase2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
