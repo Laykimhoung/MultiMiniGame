@@ -10,7 +10,7 @@ namespace MultiMiniGame.Game3
 {
     public partial class Game3Form : Form
     {
-        int playerHP = 5, botHP = 5, botPowerUp = 1, movePhase = 1;
+        int playerHP = 5, botHP = 20, botPowerUp = 1, movePhase = 1;
         Random rnd = new Random();
 
         public Game3Form()
@@ -23,18 +23,21 @@ namespace MultiMiniGame.Game3
 
         }
 
-        private void btnAtk_Click(object sender, EventArgs e)
+        private async void btnAtk_Click(object sender, EventArgs e)
         {
             int botPick = rnd.Next(1, 5);
 
             if (botPick == 1 || botPick == 2)
             {
                 playerATK();
+                while (fireballTimer.Enabled)
+                {
+                    await Task.Delay(100);
+                }
                 botHP--;
-                //Minus HP animation
                 bHealth();
 
-                if (botHP <= 2)
+                if (botHP <= 10)
                 {
                     if (botPowerUp == 1)
                     {
@@ -43,15 +46,20 @@ namespace MultiMiniGame.Game3
                         botPowerUp--;
                     }
                     botATK();
+                    while (BossATKTimer.Enabled)
+                    {
+                        await Task.Delay(100);
+                    }
                     playerHP = playerHP - 2;
-
-                    //Check HP and minus HP animation
                     pHealth();
                     return;
                 }
                 botATK();
+                while (BossATKTimer.Enabled)
+                {
+                    await Task.Delay(100);
+                }
                 playerHP--;
-                //Minus HP animation
                 pHealth();
             }
             else if (botPick == 3)
@@ -60,17 +68,25 @@ namespace MultiMiniGame.Game3
 
 
                 playerATK();
+                while (BossATKTimer.Enabled)
+                {
+                    await Task.Delay(100);
+                }
+
             }
             else
             {
                 playerATK();
+                while (fireballTimer.Enabled)
+                {
+                    await Task.Delay(100);
+                }
                 botHP--;
-                //Minus HP animation
                 bHealth();
             }
         }
 
-        private void btnShield_Click(object sender, EventArgs e)
+        private async void btnShield_Click(object sender, EventArgs e)
         {
             int botPick = rnd.Next(1, 5);
 
@@ -80,6 +96,11 @@ namespace MultiMiniGame.Game3
 
 
                 botATK();
+                while (BossATKTimer.Enabled)
+                {
+                    await Task.Delay(100);
+                }
+
             }
             else if (botPick == 3)
             {
@@ -88,37 +109,40 @@ namespace MultiMiniGame.Game3
             else
             {
                 botHP++;
-                //Bot heal animation
                 bHealth();
             }
         }
 
-        private void btnHeal_Click(object sender, EventArgs e)
+        private async void btnHeal_Click(object sender, EventArgs e)
         {
             int botPick = rnd.Next(2, 5);
 
             if (botPick == 2)
             {
-                if (botHP <= 2)
+                if (botHP <= 10)
                 {
                     botATK();
+                    while (BossATKTimer.Enabled)
+                    {
+                        await Task.Delay(100);
+                    }
                     playerHP = playerHP - 2;
-
-                    //Check HP and minus HP animation
                     pHealth();
                     return;
                 }
                 botATK();
+                while (BossATKTimer.Enabled)
+                {
+                    await Task.Delay(100);
+                }
                 playerHP--;
-
-                //Check player HP
                 pHealth();
             }
             else if (botPick == 3)
             {
-                //Heal player
                 playerHP++;
                 pHealth();
+
                 //Defend bot
 
             }
@@ -156,7 +180,7 @@ namespace MultiMiniGame.Game3
         private void fireballTimer_Tick(object sender, EventArgs e)
         {
             int speed = 10; // Pixels move per tick
-            int targetX = 634;
+            int targetX = 620;
 
             if (ptbPAtk.Left < targetX)
             {
@@ -211,6 +235,7 @@ namespace MultiMiniGame.Game3
                 ptbpHeart3.Visible = true;
                 ptbpHeart4.Visible = true;
                 ptbpHeart5.Visible = true;
+                lblPHP.Text = playerHP.ToString();
             }
             else if (playerHP == 4)
             {
@@ -219,6 +244,7 @@ namespace MultiMiniGame.Game3
                 ptbpHeart3.Visible = true;
                 ptbpHeart4.Visible = true;
                 ptbpHeart5.Visible = false;
+                lblPHP.Text = playerHP.ToString();
             }
             else if (playerHP == 3)
             {
@@ -227,6 +253,7 @@ namespace MultiMiniGame.Game3
                 ptbpHeart3.Visible = true;
                 ptbpHeart4.Visible = false;
                 ptbpHeart5.Visible = false;
+                lblPHP.Text = playerHP.ToString();
             }
             else if (playerHP == 2)
             {
@@ -235,6 +262,7 @@ namespace MultiMiniGame.Game3
                 ptbpHeart3.Visible = false;
                 ptbpHeart4.Visible = false;
                 ptbpHeart5.Visible = false;
+                lblPHP.Text = playerHP.ToString();
             }
             else if (playerHP == 1)
             {
@@ -243,32 +271,66 @@ namespace MultiMiniGame.Game3
                 ptbpHeart3.Visible = false;
                 ptbpHeart4.Visible = false;
                 ptbpHeart5.Visible = false;
+                lblPHP.Text = playerHP.ToString();
             }
         }
         private void bHealth()
         {
-            if (botHP == 5)
+            if (botHP == 20)
             {
-                //Full HP animation
+                ptbbHealth1.Visible = true;
+                ptbbHealth2.Visible = true;
+                ptbbHealth3.Visible = true;
+                ptbbHealth4.Visible = true;
+                ptbbHealth5.Visible = true;
+                lblBHP.Text = botHP.ToString();
             }
-            else if (botHP == 4)
+            else if (botHP >= 16)
             {
-                //4 HP animation
+                ptbbHealth1.Visible = true;
+                ptbbHealth2.Visible = true;
+                ptbbHealth3.Visible = true;
+                ptbbHealth4.Visible = true;
+                ptbbHealth5.Visible = false;
+                lblBHP.Text = botHP.ToString();
             }
-            else if (botHP == 3)
+            else if (botHP >= 12)
             {
-                //3 HP animation
+                ptbbHealth1.Visible = true;
+                ptbbHealth2.Visible = true;
+                ptbbHealth3.Visible = true;
+                ptbbHealth4.Visible = false;
+                ptbbHealth5.Visible = false;
+                lblBHP.Text = botHP.ToString();
             }
-            else if (botHP == 2)
+            else if (botHP >= 8)
             {
-                //2 HP animation
+                ptbbHealth1.Visible = true;
+                ptbbHealth2.Visible = true;
+                ptbbHealth3.Visible = false;
+                ptbbHealth4.Visible = false;
+                ptbbHealth5.Visible = false;
+                lblBHP.Text = botHP.ToString();
             }
-            else if (botHP == 1)
+            else if (botHP >= 1)
             {
-                //1 HP animation
+                ptbbHealth1.Visible = true;
+                ptbbHealth2.Visible = false;
+                ptbbHealth3.Visible = false;
+                ptbbHealth4.Visible = false;
+                ptbbHealth5.Visible = false;
+                lblBHP.Text = botHP.ToString();
+            }
+            else
+            {
+                ptbbHealth1.Visible = false;
+                ptbbHealth2.Visible = false;
+                ptbbHealth3.Visible = false;
+                ptbbHealth4.Visible = false;
+                ptbbHealth5.Visible = false;
+                lblBHP.Text = botHP.ToString();
             }
         }
-
 
 
     }

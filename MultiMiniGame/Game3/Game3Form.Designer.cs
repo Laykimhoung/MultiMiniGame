@@ -50,6 +50,13 @@
             ptbpHeart3 = new PictureBox();
             ptbpHeart4 = new PictureBox();
             ptbpHeart5 = new PictureBox();
+            ptbbHealth1 = new PictureBox();
+            ptbbHealth2 = new PictureBox();
+            ptbbHealth3 = new PictureBox();
+            ptbbHealth4 = new PictureBox();
+            ptbbHealth5 = new PictureBox();
+            lblPHP = new Label();
+            lblBHP = new Label();
             ((System.ComponentModel.ISupportInitialize)ptbBg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbPlayer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbBot).BeginInit();
@@ -61,6 +68,11 @@
             ((System.ComponentModel.ISupportInitialize)ptbpHeart3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbpHeart4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbpHeart5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbbHealth1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbbHealth2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbbHealth3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbbHealth4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ptbbHealth5).BeginInit();
             SuspendLayout();
             // 
             // btnAtk
@@ -258,11 +270,80 @@
             ptbpHeart5.TabIndex = 16;
             ptbpHeart5.TabStop = false;
             // 
+            // ptbbHealth1
+            // 
+            ptbbHealth1.Location = new Point(634, 123);
+            ptbbHealth1.Name = "ptbbHealth1";
+            ptbbHealth1.Size = new Size(40, 40);
+            ptbbHealth1.TabIndex = 17;
+            ptbbHealth1.TabStop = false;
+            // 
+            // ptbbHealth2
+            // 
+            ptbbHealth2.Location = new Point(680, 123);
+            ptbbHealth2.Name = "ptbbHealth2";
+            ptbbHealth2.Size = new Size(40, 40);
+            ptbbHealth2.TabIndex = 18;
+            ptbbHealth2.TabStop = false;
+            // 
+            // ptbbHealth3
+            // 
+            ptbbHealth3.Location = new Point(726, 123);
+            ptbbHealth3.Name = "ptbbHealth3";
+            ptbbHealth3.Size = new Size(40, 40);
+            ptbbHealth3.TabIndex = 19;
+            ptbbHealth3.TabStop = false;
+            // 
+            // ptbbHealth4
+            // 
+            ptbbHealth4.Location = new Point(772, 123);
+            ptbbHealth4.Name = "ptbbHealth4";
+            ptbbHealth4.Size = new Size(40, 40);
+            ptbbHealth4.TabIndex = 20;
+            ptbbHealth4.TabStop = false;
+            // 
+            // ptbbHealth5
+            // 
+            ptbbHealth5.Location = new Point(818, 123);
+            ptbbHealth5.Name = "ptbbHealth5";
+            ptbbHealth5.Size = new Size(40, 40);
+            ptbbHealth5.TabIndex = 21;
+            ptbbHealth5.TabStop = false;
+            // 
+            // lblPHP
+            // 
+            lblPHP.AutoSize = true;
+            lblPHP.BackColor = Color.Transparent;
+            lblPHP.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPHP.Location = new Point(254, 123);
+            lblPHP.Name = "lblPHP";
+            lblPHP.Size = new Size(26, 36);
+            lblPHP.TabIndex = 22;
+            lblPHP.Text = "5";
+            // 
+            // lblBHP
+            // 
+            lblBHP.AutoSize = true;
+            lblBHP.BackColor = Color.Transparent;
+            lblBHP.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblBHP.Location = new Point(591, 123);
+            lblBHP.Name = "lblBHP";
+            lblBHP.Size = new Size(37, 36);
+            lblBHP.TabIndex = 23;
+            lblBHP.Text = "20";
+            // 
             // Game3Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(925, 579);
+            Controls.Add(lblBHP);
+            Controls.Add(lblPHP);
+            Controls.Add(ptbbHealth5);
+            Controls.Add(ptbbHealth4);
+            Controls.Add(ptbbHealth3);
+            Controls.Add(ptbbHealth2);
+            Controls.Add(ptbbHealth1);
             Controls.Add(ptbpHeart5);
             Controls.Add(ptbpHeart4);
             Controls.Add(ptbpHeart3);
@@ -296,6 +377,11 @@
             ((System.ComponentModel.ISupportInitialize)ptbpHeart3).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbpHeart4).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbpHeart5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbbHealth1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbbHealth2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbbHealth3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbbHealth4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ptbbHealth5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -321,5 +407,12 @@
         private PictureBox ptbpHeart3;
         private PictureBox ptbpHeart4;
         private PictureBox ptbpHeart5;
+        private PictureBox ptbbHealth1;
+        private PictureBox ptbbHealth2;
+        private PictureBox ptbbHealth3;
+        private PictureBox ptbbHealth4;
+        private PictureBox ptbbHealth5;
+        private Label lblPHP;
+        private Label lblBHP;
     }
 }
