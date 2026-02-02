@@ -57,6 +57,9 @@
             ptbbHealth5 = new PictureBox();
             lblPHP = new Label();
             lblBHP = new Label();
+            pnlMessage = new Panel();
+            btnExit2 = new Button();
+            lblMessage = new Label();
             ((System.ComponentModel.ISupportInitialize)ptbBg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbPlayer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbBot).BeginInit();
@@ -73,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)ptbbHealth3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbbHealth4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbbHealth5).BeginInit();
+            pnlMessage.SuspendLayout();
             SuspendLayout();
             // 
             // btnAtk
@@ -222,17 +226,16 @@
             // 
             // btnPlayAgain
             // 
-            btnPlayAgain.BackColor = Color.Red;
+            btnPlayAgain.BackColor = Color.Lime;
             btnPlayAgain.FlatStyle = FlatStyle.Flat;
             btnPlayAgain.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnPlayAgain.ForeColor = SystemColors.ActiveCaptionText;
-            btnPlayAgain.Location = new Point(393, 251);
+            btnPlayAgain.Location = new Point(158, 86);
             btnPlayAgain.Name = "btnPlayAgain";
             btnPlayAgain.Size = new Size(144, 55);
             btnPlayAgain.TabIndex = 11;
             btnPlayAgain.Text = "លេងម្តងទៀត";
             btnPlayAgain.UseVisualStyleBackColor = false;
-            btnPlayAgain.Visible = false;
             btnPlayAgain.Click += btnPlayAgain_Click;
             // 
             // ptbpHeart1
@@ -337,11 +340,50 @@
             lblBHP.TabIndex = 23;
             lblBHP.Text = "20";
             // 
+            // pnlMessage
+            // 
+            pnlMessage.BackColor = SystemColors.ActiveBorder;
+            pnlMessage.Controls.Add(btnExit2);
+            pnlMessage.Controls.Add(lblMessage);
+            pnlMessage.Controls.Add(btnPlayAgain);
+            pnlMessage.Location = new Point(300, 251);
+            pnlMessage.Name = "pnlMessage";
+            pnlMessage.Size = new Size(307, 146);
+            pnlMessage.TabIndex = 24;
+            pnlMessage.Visible = false;
+            // 
+            // btnExit2
+            // 
+            btnExit2.BackColor = Color.OrangeRed;
+            btnExit2.FlatStyle = FlatStyle.Flat;
+            btnExit2.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExit2.ForeColor = SystemColors.ActiveCaptionText;
+            btnExit2.Location = new Point(5, 86);
+            btnExit2.Name = "btnExit2";
+            btnExit2.Size = new Size(144, 55);
+            btnExit2.TabIndex = 26;
+            btnExit2.Text = "ចាកចេញ";
+            btnExit2.UseVisualStyleBackColor = false;
+            btnExit2.Visible = false;
+            btnExit2.Click += btnExit2_Click;
+            // 
+            // lblMessage
+            // 
+            lblMessage.AutoSize = true;
+            lblMessage.BackColor = Color.Transparent;
+            lblMessage.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblMessage.Location = new Point(3, 33);
+            lblMessage.Name = "lblMessage";
+            lblMessage.Size = new Size(43, 36);
+            lblMessage.TabIndex = 25;
+            lblMessage.Text = "អ្នក";
+            // 
             // Game3Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(925, 579);
+            Controls.Add(pnlMessage);
             Controls.Add(lblBHP);
             Controls.Add(lblPHP);
             Controls.Add(ptbbHealth5);
@@ -354,7 +396,6 @@
             Controls.Add(ptbpHeart3);
             Controls.Add(ptbpHeart2);
             Controls.Add(ptbpHeart1);
-            Controls.Add(btnPlayAgain);
             Controls.Add(ptbBotShield);
             Controls.Add(ptbPAtk);
             Controls.Add(lblBot);
@@ -369,7 +410,7 @@
             Controls.Add(pictureBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Game3Form";
-            Text = "Game3Form";
+            Text = "មេវៃ";
             Load += Game3Form_Load;
             ((System.ComponentModel.ISupportInitialize)ptbBg).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbPlayer).EndInit();
@@ -387,6 +428,8 @@
             ((System.ComponentModel.ISupportInitialize)ptbbHealth3).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbbHealth4).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbbHealth5).EndInit();
+            pnlMessage.ResumeLayout(false);
+            pnlMessage.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -419,5 +462,8 @@
         private PictureBox ptbbHealth5;
         private Label lblPHP;
         private Label lblBHP;
+        private Panel pnlMessage;
+        private Button btnExit2;
+        private Label lblMessage;
     }
 }

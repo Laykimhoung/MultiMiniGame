@@ -43,7 +43,7 @@ namespace MultiMiniGame.Game3
                     if (botPowerUp == 1)
                     {
                         //Bot power up animation
-                        ptbBot.Image = Properties.Resources.Phase2;
+                        //ptbBot.Image = Properties.Resources.Phase2;
                         botPowerUp--;
                     }
                     botATK();
@@ -100,24 +100,24 @@ namespace MultiMiniGame.Game3
                 {
                     await Task.Delay(100);
                 }
-                ptbPlayer.Image = Properties.Resources.Origin;
+                //ptbPlayer.Image = Properties.Resources.Origin;
             }
             else if (botPick == 3)
             {
                 //Defend 2
-                ptbPlayer.Image = Properties.Resources.G1_Defend;
+                //ptbPlayer.Image = Properties.Resources.G1_Defend;
                 ptbBotShield.Visible = true;
                 await Task.Delay(3000);
-                ptbPlayer.Image = Properties.Resources.Origin;
+                //ptbPlayer.Image = Properties.Resources.Origin;
                 ptbBotShield.Visible = false;
             }
             else
             {
-                ptbPlayer.Image = Properties.Resources.G1_Defend;
+                //ptbPlayer.Image = Properties.Resources.G1_Defend;
                 botHP++;
                 bHealth();
                 await Task.Delay(3000);
-                ptbPlayer.Image = Properties.Resources.Origin;
+                //ptbPlayer.Image = Properties.Resources.Origin;
             }
             Enablebtns(true);
         }
@@ -299,7 +299,7 @@ namespace MultiMiniGame.Game3
                 ptbpHeart5.Visible = false;
                 if (playerHP >= 0)
                     lblPHP.Text = "0";
-
+                GameOver(true);
             }
         }
         private void bHealth()
@@ -357,7 +357,6 @@ namespace MultiMiniGame.Game3
                 ptbbHealth4.Visible = false;
                 ptbbHealth5.Visible = false;
                 lblBHP.Text = botHP.ToString();
-
             }
         }
 
@@ -367,10 +366,18 @@ namespace MultiMiniGame.Game3
             btnHeal.Enabled = enable;
             btnShield.Enabled = enable;
         }
-        private void GameOver()
+        private void GameOver(bool i)
         {
+            if (i)
+            {
+                lblMessage.Text = "អ្នកបានបរាជ័យ!";
+            }
+            else
+            {
+                lblMessage.Text = "អ្នកបានជ័យជម្នះ!";
+            }
             Enablebtns(false);
-            btnPlayAgain.Visible = true;
+            pnlMessage.Visible = true;
         }
 
         private void btnPlayAgain_Click(object sender, EventArgs e)
@@ -381,8 +388,13 @@ namespace MultiMiniGame.Game3
             pHealth();
             bHealth();
             Enablebtns(true);
-            btnPlayAgain.Visible = false;
-            ptbBot.Image = Properties.Resources.Phase1;
+            pnlMessage.Visible = false;
+            //ptbBot.Image = Properties.Resources.Phase1;
+        }
+
+        private void btnExit2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
