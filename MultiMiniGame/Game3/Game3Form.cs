@@ -10,7 +10,7 @@ namespace MultiMiniGame.Game3
 {
     public partial class Game3Form : Form
     {
-        int playerHP = 5, botHP = 5, botPowerUp = 1, movePhase = 1;
+        int playerHP = 5, botHP = 20, botPowerUp = 1, movePhase = 1;
         Random rnd = new Random();
 
         public Game3Form()
@@ -23,24 +23,21 @@ namespace MultiMiniGame.Game3
 
         }
 
-        private void btnAtk_Click(object sender, EventArgs e)
+        private async void btnAtk_Click(object sender, EventArgs e)
         {
             int botPick = rnd.Next(1, 5);
 
             if (botPick == 1 || botPick == 2)
             {
                 playerATK();
-                botHP--;
-                //Minus HP animation
-
-
-                if (botHP == 0)
+                while (fireballTimer.Enabled)
                 {
-                    MessageBox.Show("You Win!", "Victory", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    await Task.Delay(100);
                 }
+                botHP--;
+                bHealth();
 
-                if (botHP <= 2)
+                if (botHP <= 10)
                 {
                     if (botPowerUp == 1)
                     {
@@ -49,24 +46,21 @@ namespace MultiMiniGame.Game3
                         botPowerUp--;
                     }
                     botATK();
-                    playerHP = playerHP - 2;
-
-                    //Check HP and minus HP animation
-                    if (playerHP <= 0)
+                    while (BossATKTimer.Enabled)
                     {
-                        MessageBox.Show("You Lose!", "Defeat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        await Task.Delay(100);
                     }
+                    playerHP = playerHP - 2;
+                    pHealth();
                     return;
                 }
                 botATK();
-                playerHP--;
-                //Minus HP animation
-
-                //Check player HP
-                if (playerHP <= 0)
+                while (BossATKTimer.Enabled)
                 {
-                    MessageBox.Show("You Lose!", "Defeat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    await Task.Delay(100);
                 }
+                playerHP--;
+                pHealth();
             }
             else if (botPick == 3)
             {
@@ -74,22 +68,25 @@ namespace MultiMiniGame.Game3
 
 
                 playerATK();
+                while (BossATKTimer.Enabled)
+                {
+                    await Task.Delay(100);
+                }
+
             }
             else
             {
                 playerATK();
-                botHP--;
-                //Minus HP animation
-
-                //Check bot HP
-                if (botHP <= 0)
+                while (fireballTimer.Enabled)
                 {
-                    MessageBox.Show("You Win!", "Victory", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    await Task.Delay(100);
                 }
+                botHP--;
+                bHealth();
             }
         }
 
-        private void btnShield_Click(object sender, EventArgs e)
+        private async void btnShield_Click(object sender, EventArgs e)
         {
             int botPick = rnd.Next(1, 5);
 
@@ -99,6 +96,11 @@ namespace MultiMiniGame.Game3
 
 
                 botATK();
+                while (BossATKTimer.Enabled)
+                {
+                    await Task.Delay(100);
+                }
+
             }
             else if (botPick == 3)
             {
@@ -107,42 +109,39 @@ namespace MultiMiniGame.Game3
             else
             {
                 botHP++;
-                //Bot heal animation
-
+                bHealth();
             }
         }
 
-        private void btnHeal_Click(object sender, EventArgs e)
+        private async void btnHeal_Click(object sender, EventArgs e)
         {
             int botPick = rnd.Next(2, 5);
 
             if (botPick == 2)
             {
-                if (botHP <= 2)
+                if (botHP <= 10)
                 {
                     botATK();
-                    playerHP = playerHP - 2;
-
-                    //Check HP and minus HP animation
-                    if (playerHP <= 0)
+                    while (BossATKTimer.Enabled)
                     {
-                        MessageBox.Show("You Lose!", "Defeat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        await Task.Delay(100);
                     }
+                    playerHP = playerHP - 2;
+                    pHealth();
                     return;
                 }
                 botATK();
-                playerHP--;
-
-                //Check player HP
-                if (playerHP <= 0)
+                while (BossATKTimer.Enabled)
                 {
-                    MessageBox.Show("You Lose!", "Defeat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    await Task.Delay(100);
                 }
+                playerHP--;
+                pHealth();
             }
             else if (botPick == 3)
             {
-                //Heal player
                 playerHP++;
+                pHealth();
 
                 //Defend bot
 
@@ -150,7 +149,9 @@ namespace MultiMiniGame.Game3
             else
             {
                 playerHP++;
+                pHealth();
                 botHP++;
+                bHealth();
             }
         }
         private void btnExit_Click(object sender, EventArgs e)
@@ -179,7 +180,7 @@ namespace MultiMiniGame.Game3
         private void fireballTimer_Tick(object sender, EventArgs e)
         {
             int speed = 10; // Pixels move per tick
-            int targetX = 634;
+            int targetX = 620;
 
             if (ptbPAtk.Left < targetX)
             {
@@ -223,7 +224,114 @@ namespace MultiMiniGame.Game3
                     ptbBot.Location = new Point(680, 251);
                 }
             }
-
         }
+
+        private void pHealth()
+        {
+            if (playerHP == 5)
+            {
+                ptbpHeart1.Visible = true;
+                ptbpHeart2.Visible = true;
+                ptbpHeart3.Visible = true;
+                ptbpHeart4.Visible = true;
+                ptbpHeart5.Visible = true;
+                lblPHP.Text = playerHP.ToString();
+            }
+            else if (playerHP == 4)
+            {
+                ptbpHeart1.Visible = true;
+                ptbpHeart2.Visible = true;
+                ptbpHeart3.Visible = true;
+                ptbpHeart4.Visible = true;
+                ptbpHeart5.Visible = false;
+                lblPHP.Text = playerHP.ToString();
+            }
+            else if (playerHP == 3)
+            {
+                ptbpHeart1.Visible= true;
+                ptbpHeart2.Visible = true;
+                ptbpHeart3.Visible = true;
+                ptbpHeart4.Visible = false;
+                ptbpHeart5.Visible = false;
+                lblPHP.Text = playerHP.ToString();
+            }
+            else if (playerHP == 2)
+            {
+                ptbpHeart1.Visible = true;
+                ptbpHeart2.Visible = true;
+                ptbpHeart3.Visible = false;
+                ptbpHeart4.Visible = false;
+                ptbpHeart5.Visible = false;
+                lblPHP.Text = playerHP.ToString();
+            }
+            else if (playerHP == 1)
+            {
+                ptbpHeart1.Visible = false;
+                ptbpHeart2.Visible = false;
+                ptbpHeart3.Visible = false;
+                ptbpHeart4.Visible = false;
+                ptbpHeart5.Visible = false;
+                lblPHP.Text = playerHP.ToString();
+            }
+        }
+        private void bHealth()
+        {
+            if (botHP == 20)
+            {
+                ptbbHealth1.Visible = true;
+                ptbbHealth2.Visible = true;
+                ptbbHealth3.Visible = true;
+                ptbbHealth4.Visible = true;
+                ptbbHealth5.Visible = true;
+                lblBHP.Text = botHP.ToString();
+            }
+            else if (botHP >= 16)
+            {
+                ptbbHealth1.Visible = true;
+                ptbbHealth2.Visible = true;
+                ptbbHealth3.Visible = true;
+                ptbbHealth4.Visible = true;
+                ptbbHealth5.Visible = false;
+                lblBHP.Text = botHP.ToString();
+            }
+            else if (botHP >= 12)
+            {
+                ptbbHealth1.Visible = true;
+                ptbbHealth2.Visible = true;
+                ptbbHealth3.Visible = true;
+                ptbbHealth4.Visible = false;
+                ptbbHealth5.Visible = false;
+                lblBHP.Text = botHP.ToString();
+            }
+            else if (botHP >= 8)
+            {
+                ptbbHealth1.Visible = true;
+                ptbbHealth2.Visible = true;
+                ptbbHealth3.Visible = false;
+                ptbbHealth4.Visible = false;
+                ptbbHealth5.Visible = false;
+                lblBHP.Text = botHP.ToString();
+            }
+            else if (botHP >= 1)
+            {
+                ptbbHealth1.Visible = true;
+                ptbbHealth2.Visible = false;
+                ptbbHealth3.Visible = false;
+                ptbbHealth4.Visible = false;
+                ptbbHealth5.Visible = false;
+                lblBHP.Text = botHP.ToString();
+            }
+            else
+            {
+                ptbbHealth1.Visible = false;
+                ptbbHealth2.Visible = false;
+                ptbbHealth3.Visible = false;
+                ptbbHealth4.Visible = false;
+                ptbbHealth5.Visible = false;
+                lblBHP.Text = botHP.ToString();
+            }
+        }
+
+
     }
 }
