@@ -20,11 +20,14 @@ namespace MultiMiniGame.Game2
         private HashSet<int> usedQuestionIds = new HashSet<int>();
         private int currentQuestionIndex;
         private int currentLevel;
+        private int currentRound;
+        public int CurrentRound => currentRound;
         public int CurrentLevel => currentLevel;
 
         public void StartGame()
         {
             currentLevel = 1;
+            currentRound = 1;
             usedQuestionIds.Clear();
             LoadLevel();
         }
@@ -52,19 +55,20 @@ namespace MultiMiniGame.Game2
         }
         public GameState SubmitAnswer(int selectedIndex)
         {
-            // wrong answer
             if (!IsCorrect(selectedIndex))
                 return GameState.GameOver;
 
-            // correct answer, more questions in this level
-            if (HasNextQuestion())
-                return GameState.Playing;
+            currentRound++; // ⭐ THIS IS THE IMPORTANT PART
 
-            // finished this level
-            if (HasNextLevel())
-                return GameState.LevelCompleted;
+            if (currentRound <= 15)
+            {
+                if (HasNextQuestion())
+                    return GameState.Playing;
 
-            // finished last level (15)
+                if (HasNextLevel())
+                    return GameState.LevelCompleted;
+            }
+
             return GameState.GameWon;
         }
         public bool IsCorrect(int selectedIndex)

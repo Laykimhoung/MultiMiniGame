@@ -17,9 +17,9 @@ namespace MultiMiniGame.Game2
         private List<System.Windows.Forms.Label> questionLadder;
         private int[] moneyTable =
         {
-            100, 200, 300, 500,
-            1000, 2000, 4000, 8000, 16000,
-            32000, 64000, 125000, 250000, 500000, 1000000
+            10000, 20000, 30000, 50000,
+            100000, 200000, 400000, 800000, 1600000,
+            3200000, 6400000, 12500000, 25000000, 50000000, 100000000
         };
         public Game2Form()
         {
@@ -40,14 +40,20 @@ namespace MultiMiniGame.Game2
             lbShow.Parent = picBackGround;
             lbShow.BackColor = Color.Transparent;
 
-            panelQuestion.Visible = false;
-            lbQuestion.Visible = false;
-            lbShow.Visible = false;
-            btnA.Visible = btnB.Visible = btnC.Visible = btnD.Visible = false;
+            lbTotalMoney.Parent = picBackGround;
+            lbTotalMoney.BackColor = Color.Transparent;
+
+            lbTimer.Parent = picBackGround;
+            lbTimer.BackColor = Color.Transparent;
+
+            UnVisible();
+            btnLost.Visible = false;
+            roundTimer.Stop();
         }
         // ================= INIT =================
         private void InitGame()
         {
+
             game = new Game2Logic();
 
             questionLadder = new List<System.Windows.Forms.Label>
@@ -57,12 +63,21 @@ namespace MultiMiniGame.Game2
                 lbR11, lbR12, lbR13, lbR14, lbR15
             };
 
+            InitMoneyLadder();
             btnNextRound.Visible = false;
             btnStop.Visible = false;
             lbShow.Visible = false;
 
             StartGame();
         }
+        private void InitMoneyLadder()
+        {
+            for (int i = 0; i < questionLadder.Count; i++)
+            {
+                questionLadder[i].Text = $"{moneyTable[i]:N0}៛";
+            }
+        }
+
 
         // ================= GAME FLOW =================
         private void StartGame()
@@ -72,7 +87,10 @@ namespace MultiMiniGame.Game2
             HighlightLadder();
             ShowQuestion();
             StartTimer();
+            CanVisible();
+            lbShow.Visible = false;
         }
+
         private void ShowQuestion()
         {
             var q = game.GetCurrentQuestion();
@@ -123,11 +141,12 @@ namespace MultiMiniGame.Game2
 
                 case GameState.GameOver:
                     lbShow.Text = "Game Over!";
-                    btnNextRound.Enabled = false;
+                    btnNextRound.Visible = false;
+                    btnLost.Visible = true;
                     break;
 
                 case GameState.GameWon:
-                    lbShow.Text = "🎉 YOU WON 1,000,000!";
+                    lbShow.Text = " YOU WON 1,000,000!";
                     btnNextRound.Enabled = false;
                     break;
             }
@@ -141,10 +160,14 @@ namespace MultiMiniGame.Game2
             btnStop.Visible = false;
             lbShow.Visible = false;
 
-            game.NextQuestion();
-
-            if (!game.HasNextQuestion())
+            if (game.HasNextQuestion())
+            {
+                game.NextQuestion();
+            }
+            else
+            {
                 game.NextLevel();
+            }
 
             UpdateMoney();
             HighlightLadder();
@@ -159,7 +182,6 @@ namespace MultiMiniGame.Game2
             lbTimer.Text = timeLeft.ToString();
             roundTimer.Start();
         }
-
         private void roundTimer_Tick(object sender, EventArgs e)
         {
             timeLeft--;
@@ -169,7 +191,7 @@ namespace MultiMiniGame.Game2
             if (timeLeft <= 0)
             {
                 roundTimer.Stop();
-                lbShow.Text = "⏰ Time's up!";
+                lbShow.Text = "Time's up!";
                 lbShow.Visible = true;
                 DisableAnswerButtons();
             }
@@ -177,38 +199,27 @@ namespace MultiMiniGame.Game2
         // ================= UI HELPERS =================
         private void UpdateMoney()
         {
-            lbTotalMoney.Text = $"$ {moneyTable[game.CurrentLevel]}";
+            int earned = game.CurrentRound > 1
+         ? moneyTable[game.CurrentRound - 2]
+         : 0;
+
+            lbTotalMoney.Text = $"{earned:N0}៛";
         }
 
         private void HighlightLadder()
         {
             foreach (var lb in questionLadder)
-                lb.BackColor = System.Drawing.Color.Transparent;
+            {
+                lb.Parent = picBackGround;
+                lb.BackColor = Color.Transparent;
+                lb.ForeColor = Color.White;
+            }
 
-            int index = game.CurrentLevel - 1;
+            int index = game.CurrentRound - 1;
+
             if (index >= 0 && index < questionLadder.Count)
-                questionLadder[index].BackColor = System.Drawing.Color.Gold;
+                questionLadder[index].ForeColor = Color.Gold;
         }
-        private void ResetButtons()
-        {
-            EnableAnswerButtons();
-
-            btnA.VisualState = ButtonVisualState.Normal;
-            btnB.VisualState = ButtonVisualState.Normal;
-            btnC.VisualState = ButtonVisualState.Normal;
-            btnD.VisualState = ButtonVisualState.Normal;
-        }
-
-        private void DisableAnswerButtons()
-        {
-            btnA.Enabled = btnB.Enabled = btnC.Enabled = btnD.Enabled = false;
-        }
-
-        private void EnableAnswerButtons()
-        {
-            btnA.Enabled = btnB.Enabled = btnC.Enabled = btnD.Enabled = true;
-        }
-
         private btnGame2 GetButton(int index)
         {
             return index switch
@@ -229,11 +240,7 @@ namespace MultiMiniGame.Game2
             btnStart.Visible = false;
             StartGame();
         }
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Form1 mainform = new Form1();
-            mainform.Show();
-        }
+
         private void btnA_Click(object sender, EventArgs e) => HandleAnswer(0);
         private void btnB_Click(object sender, EventArgs e) => HandleAnswer(1);
         private void btnC_Click(object sender, EventArgs e) => HandleAnswer(2);
@@ -286,7 +293,39 @@ namespace MultiMiniGame.Game2
             btn.VisualState = ButtonVisualState.Normal;
             btn.Refresh();
         }
+        private void ResetButtons()
+        {
+            EnableAnswerButtons();
+            btnA.VisualState = ButtonVisualState.Normal;
+            btnB.VisualState = ButtonVisualState.Normal;
+            btnC.VisualState = ButtonVisualState.Normal;
+            btnD.VisualState = ButtonVisualState.Normal;
+        }
+        private void UnVisible()
+        {
+            btnA.Visible = btnB.Visible = btnC.Visible = btnD.Visible = false;
+            btn5050.Visible = btnCall.Visible = false;
+            lbR1.Visible = lbR2.Visible = lbR3.Visible = lbR4.Visible = lbR5.Visible = lbR6.Visible = lbR7.Visible = lbR8.Visible = lbR9.Visible = lbR10.Visible = lbR11.Visible = lbR12.Visible = lbR13.Visible = lbR14.Visible = lbR15.Visible = false;
+            lbShow.Visible = lbTotalMoney.Visible = lbTimer.Visible = lbQuestion.Visible = false;
+            panelQuestion.Visible = false;
+        }
+        private void CanVisible()
+        {
+            btnA.Visible = btnB.Visible = btnC.Visible = btnD.Visible = true;
+            btn5050.Visible = btnCall.Visible = true;
+            lbR1.Visible = lbR2.Visible = lbR3.Visible = lbR4.Visible = lbR5.Visible = lbR6.Visible = lbR7.Visible = lbR8.Visible = lbR9.Visible = lbR10.Visible = lbR11.Visible = lbR12.Visible = lbR13.Visible = lbR14.Visible = lbR15.Visible = true;
+            lbShow.Visible = lbTotalMoney.Visible = lbTimer.Visible = lbQuestion.Visible = true;
+            panelQuestion.Visible = true;
+        }
+        private void DisableAnswerButtons()
+        {
+            btnA.Enabled = btnB.Enabled = btnC.Enabled = btnD.Enabled = false;
+        }
 
+        private void EnableAnswerButtons()
+        {
+            btnA.Enabled = btnB.Enabled = btnC.Enabled = btnD.Enabled = true;
+        }
         private void btn5050_Click(object sender, EventArgs e)
         {
             var remove = game.GetFiftyFifty();
@@ -295,6 +334,16 @@ namespace MultiMiniGame.Game2
                 GetButton(i).Visible = false;
 
             btn5050.Enabled = false;
+        }
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Form1 mainform = new Form1();
+            mainform.Show();
+        }
+
+        private void btnLost_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

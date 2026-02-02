@@ -33,6 +33,7 @@
             btnStart = new Button();
             lbQuestion = new Label();
             panelQuestion = new Panel();
+            btnLost = new Button();
             btnExit = new Button();
             btnA = new btnGame2();
             btnB = new btnGame2();
@@ -109,6 +110,20 @@
             panelQuestion.Name = "panelQuestion";
             panelQuestion.Size = new Size(934, 113);
             panelQuestion.TabIndex = 11;
+            // 
+            // btnLost
+            // 
+            btnLost.BackColor = Color.Red;
+            btnLost.FlatStyle = FlatStyle.Flat;
+            btnLost.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLost.ForeColor = Color.White;
+            btnLost.Location = new Point(325, 226);
+            btnLost.Name = "btnLost";
+            btnLost.Size = new Size(276, 58);
+            btnLost.TabIndex = 39;
+            btnLost.Text = " សូមចូលរួមចោកស្តាយផង";
+            btnLost.UseVisualStyleBackColor = false;
+            btnLost.Click += btnLost_Click;
             // 
             // btnExit
             // 
@@ -211,7 +226,7 @@
             btnNextRound.FlatStyle = FlatStyle.Flat;
             btnNextRound.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnNextRound.ForeColor = Color.White;
-            btnNextRound.Location = new Point(513, 268);
+            btnNextRound.Location = new Point(392, 290);
             btnNextRound.Name = "btnNextRound";
             btnNextRound.Size = new Size(155, 58);
             btnNextRound.TabIndex = 18;
@@ -225,7 +240,7 @@
             btnStop.FlatStyle = FlatStyle.Flat;
             btnStop.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnStop.ForeColor = Color.White;
-            btnStop.Location = new Point(234, 268);
+            btnStop.Location = new Point(166, 290);
             btnStop.Name = "btnStop";
             btnStop.Size = new Size(164, 58);
             btnStop.TabIndex = 19;
@@ -262,24 +277,27 @@
             // lbTimer
             // 
             lbTimer.AutoSize = true;
-            lbTimer.Font = new Font("Times New Roman", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbTimer.Location = new Point(419, 34);
+            lbTimer.BackColor = Color.Black;
+            lbTimer.Font = new Font("Times New Roman", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbTimer.ForeColor = Color.White;
+            lbTimer.Location = new Point(392, 34);
             lbTimer.Name = "lbTimer";
-            lbTimer.Size = new Size(113, 42);
+            lbTimer.Size = new Size(126, 53);
             lbTimer.TabIndex = 22;
-            lbTimer.Text = "label1";
+            lbTimer.Text = "Time";
             // 
             // lbTotalMoney
             // 
             lbTotalMoney.AutoSize = true;
             lbTotalMoney.BackColor = Color.Black;
-            lbTotalMoney.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbTotalMoney.ForeColor = Color.White;
-            lbTotalMoney.Location = new Point(846, 12);
+            lbTotalMoney.Font = new Font("AKbalthom HighSchool", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbTotalMoney.ForeColor = Color.Lime;
+            lbTotalMoney.Location = new Point(823, 9);
             lbTotalMoney.Name = "lbTotalMoney";
-            lbTotalMoney.Size = new Size(63, 31);
+            lbTotalMoney.Size = new Size(69, 36);
             lbTotalMoney.TabIndex = 23;
             lbTotalMoney.Text = "Money";
+            lbTotalMoney.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbR1
             // 
@@ -292,6 +310,7 @@
             lbR1.Size = new Size(70, 31);
             lbR1.TabIndex = 24;
             lbR1.Text = "Round1";
+            lbR1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbR2
             // 
@@ -304,6 +323,7 @@
             lbR2.Size = new Size(71, 31);
             lbR2.TabIndex = 25;
             lbR2.Text = "Round2";
+            lbR2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbR3
             // 
@@ -316,6 +336,7 @@
             lbR3.Size = new Size(71, 31);
             lbR3.TabIndex = 26;
             lbR3.Text = "Round3";
+            lbR3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbR4
             // 
@@ -328,6 +349,7 @@
             lbR4.Size = new Size(71, 31);
             lbR4.TabIndex = 27;
             lbR4.Text = "Round4";
+            lbR4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbR5
             // 
@@ -340,6 +362,7 @@
             lbR5.Size = new Size(72, 31);
             lbR5.TabIndex = 28;
             lbR5.Text = "Round5";
+            lbR5.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbR6
             // 
@@ -352,6 +375,7 @@
             lbR6.Size = new Size(71, 31);
             lbR6.TabIndex = 29;
             lbR6.Text = "Round6";
+            lbR6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbR7
             // 
@@ -364,6 +388,7 @@
             lbR7.Size = new Size(71, 31);
             lbR7.TabIndex = 30;
             lbR7.Text = "Round7";
+            lbR7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbR8
             // 
@@ -376,6 +401,7 @@
             lbR8.Size = new Size(71, 31);
             lbR8.TabIndex = 31;
             lbR8.Text = "Round8";
+            lbR8.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbR9
             // 
@@ -388,6 +414,7 @@
             lbR9.Size = new Size(71, 31);
             lbR9.TabIndex = 32;
             lbR9.Text = "Round9";
+            lbR9.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbR10
             // 
@@ -400,6 +427,7 @@
             lbR10.Size = new Size(80, 31);
             lbR10.TabIndex = 33;
             lbR10.Text = "Round10";
+            lbR10.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbR11
             // 
@@ -412,6 +440,7 @@
             lbR11.Size = new Size(78, 31);
             lbR11.TabIndex = 34;
             lbR11.Text = "Round11";
+            lbR11.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbR12
             // 
@@ -424,6 +453,7 @@
             lbR12.Size = new Size(79, 31);
             lbR12.TabIndex = 35;
             lbR12.Text = "Round12";
+            lbR12.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbR13
             // 
@@ -436,6 +466,7 @@
             lbR13.Size = new Size(79, 31);
             lbR13.TabIndex = 36;
             lbR13.Text = "Round13";
+            lbR13.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbR14
             // 
@@ -448,6 +479,7 @@
             lbR14.Size = new Size(79, 31);
             lbR14.TabIndex = 37;
             lbR14.Text = "Round14";
+            lbR14.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbR15
             // 
@@ -455,7 +487,7 @@
             lbR15.BackColor = Color.Black;
             lbR15.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbR15.ForeColor = Color.White;
-            lbR15.Location = new Point(806, 47);
+            lbR15.Location = new Point(801, 58);
             lbR15.Name = "lbR15";
             lbR15.Size = new Size(80, 31);
             lbR15.TabIndex = 38;
@@ -471,6 +503,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(958, 588);
+            Controls.Add(btnLost);
             Controls.Add(lbR15);
             Controls.Add(lbR14);
             Controls.Add(lbR13);
@@ -545,5 +578,6 @@
         private Label lbR14;
         private Label lbR15;
         private System.Windows.Forms.Timer roundTimer;
+        private Button btnLost;
     }
 }
