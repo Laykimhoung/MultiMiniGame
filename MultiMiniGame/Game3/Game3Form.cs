@@ -25,6 +25,7 @@ namespace MultiMiniGame.Game3
 
         private async void btnAtk_Click(object sender, EventArgs e)
         {
+            Enablebtns(false);
             int botPick = rnd.Next(1, 5);
 
             if (botPick == 1 || botPick == 2)
@@ -68,7 +69,7 @@ namespace MultiMiniGame.Game3
 
 
                 playerATK();
-                while (BossATKTimer.Enabled)
+                while (fireballTimer.Enabled)
                 {
                     await Task.Delay(100);
                 }
@@ -84,12 +85,13 @@ namespace MultiMiniGame.Game3
                 botHP--;
                 bHealth();
             }
+            Enablebtns(true);
         }
 
         private async void btnShield_Click(object sender, EventArgs e)
         {
+            Enablebtns(false);
             int botPick = rnd.Next(1, 5);
-
             if (botPick == 1 || botPick == 2)
             {
                 //Defend player
@@ -111,10 +113,12 @@ namespace MultiMiniGame.Game3
                 botHP++;
                 bHealth();
             }
+            Enablebtns(true);
         }
 
         private async void btnHeal_Click(object sender, EventArgs e)
         {
+            Enablebtns(false);
             int botPick = rnd.Next(2, 5);
 
             if (botPick == 2)
@@ -153,6 +157,7 @@ namespace MultiMiniGame.Game3
                 botHP++;
                 bHealth();
             }
+            Enablebtns(true);
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -266,12 +271,23 @@ namespace MultiMiniGame.Game3
             }
             else if (playerHP == 1)
             {
-                ptbpHeart1.Visible = false;
+                ptbpHeart1.Visible = true;
                 ptbpHeart2.Visible = false;
                 ptbpHeart3.Visible = false;
                 ptbpHeart4.Visible = false;
                 ptbpHeart5.Visible = false;
                 lblPHP.Text = playerHP.ToString();
+            }
+            else
+            {
+                ptbpHeart1.Visible = false;
+                ptbpHeart2.Visible = false;
+                ptbpHeart3.Visible = false;
+                ptbpHeart4.Visible = false;
+                ptbpHeart5.Visible = false;
+                if (playerHP >= 0)
+                    lblPHP.Text = "0";
+
             }
         }
         private void bHealth()
@@ -329,9 +345,15 @@ namespace MultiMiniGame.Game3
                 ptbbHealth4.Visible = false;
                 ptbbHealth5.Visible = false;
                 lblBHP.Text = botHP.ToString();
+
             }
         }
 
-
+        private void Enablebtns(bool enable)
+        {
+            btnAtk.Enabled = enable;
+            btnHeal.Enabled = enable;
+            btnShield.Enabled = enable;
+        }
     }
 }

@@ -206,6 +206,7 @@
             ptbBotShield.Size = new Size(26, 275);
             ptbBotShield.TabIndex = 10;
             ptbBotShield.TabStop = false;
+            ptbBotShield.Visible = false;
             // 
             // fireballTimer
             // 
@@ -227,8 +228,9 @@
             btnPlayAgain.Name = "btnPlayAgain";
             btnPlayAgain.Size = new Size(144, 55);
             btnPlayAgain.TabIndex = 11;
-            btnPlayAgain.Text = "លេងម្តងទឿត";
+            btnPlayAgain.Text = "លេងម្តងទៀត";
             btnPlayAgain.UseVisualStyleBackColor = false;
+            btnPlayAgain.Visible = false;
             // 
             // ptbpHeart1
             // 
