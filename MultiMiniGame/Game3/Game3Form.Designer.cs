@@ -41,6 +41,7 @@
             lblBot = new Label();
             ptbPAtk = new PictureBox();
             pictureBox1 = new PictureBox();
+            pictureBox1 = new PictureBox();
             ptbBotShield = new PictureBox();
             fireballTimer = new System.Windows.Forms.Timer(components);
             BossATKTimer = new System.Windows.Forms.Timer(components);
@@ -60,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)ptbBot).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbPAtk).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbBotShield).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbpHeart1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbpHeart2).BeginInit();
@@ -73,22 +75,13 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Dock = DockStyle.Bottom;
-            pictureBox1.Location = new Point(0, 413);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(922, 80);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
             // btnAtk
             // 
             btnAtk.BackColor = Color.Red;
             btnAtk.FlatStyle = FlatStyle.Flat;
             btnAtk.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAtk.ForeColor = Color.Linen;
-            btnAtk.Location = new Point(240, 426);
+            btnAtk.Location = new Point(235, 508);
             btnAtk.Name = "btnAtk";
             btnAtk.Size = new Size(150, 55);
             btnAtk.TabIndex = 0;
@@ -98,8 +91,12 @@
             // 
             // ptbBg
             // 
-            ptbBg.Location = new Point(331, 251);
+            ptbBg.Dock = DockStyle.Fill;
+            ptbBg.Image = Properties.Resources.G3_Background;
+            ptbBg.Location = new Point(0, 0);
             ptbBg.Name = "ptbBg";
+            ptbBg.Size = new Size(925, 579);
+            ptbBg.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbBg.Size = new Size(925, 499);
             ptbBg.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbBg.TabIndex = 1;
@@ -111,7 +108,7 @@
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnExit.ForeColor = SystemColors.ControlText;
-            btnExit.Location = new Point(39, 426);
+            btnExit.Location = new Point(37, 508);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(110, 55);
             btnExit.TabIndex = 2;
@@ -125,6 +122,7 @@
             btnShield.FlatStyle = FlatStyle.Flat;
             btnShield.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnShield.ForeColor = SystemColors.Highlight;
+            btnShield.Location = new Point(506, 508);
             btnShield.Location = new Point(488, 508);
             btnShield.Name = "btnShield";
             btnShield.Size = new Size(150, 55);
@@ -139,6 +137,7 @@
             btnHeal.FlatStyle = FlatStyle.Flat;
             btnHeal.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnHeal.ForeColor = Color.Navy;
+            btnHeal.Location = new Point(720, 520);
             btnHeal.Location = new Point(721, 508);
             btnHeal.Name = "btnHeal";
             btnHeal.Size = new Size(150, 55);
@@ -192,6 +191,15 @@
             ptbPAtk.Size = new Size(50, 50);
             ptbPAtk.TabIndex = 9;
             ptbPAtk.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Bottom;
+            pictureBox1.Location = new Point(0, 499);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(925, 80);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -320,6 +328,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(925, 579);
+            ClientSize = new Size(925, 579);
             Controls.Add(pictureBox11);
             Controls.Add(pictureBox10);
             Controls.Add(pictureBox9);
@@ -340,10 +349,10 @@
             Controls.Add(btnHeal);
             Controls.Add(btnShield);
             Controls.Add(btnExit);
-            Controls.Add(ptbBg);
             Controls.Add(btnAtk);
             Controls.Add(ptbBg);
             Controls.Add(pictureBox1);
+            Controls.Add(ptbBg);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Game3Form";
             Text = "Game3Form";
@@ -352,6 +361,7 @@
             ((System.ComponentModel.ISupportInitialize)ptbPlayer).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbBot).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbPAtk).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbBotShield).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbpHeart1).EndInit();
@@ -369,8 +379,6 @@
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private Button btnAtk;
         private PictureBox ptbBg;
         private Button btnExit;
@@ -381,6 +389,7 @@
         private Label lblPlayer;
         private Label lblBot;
         private PictureBox ptbPAtk;
+        private PictureBox pictureBox1;
         //private PictureBox pictureBox1;
         private PictureBox ptbBotShield;
         private System.Windows.Forms.Timer fireballTimer;

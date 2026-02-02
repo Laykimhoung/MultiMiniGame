@@ -49,15 +49,15 @@ namespace MultiMiniGame.Game2
             Rectangle r = new Rectangle(2, 2, Width - 5, Height - 5);
             using GraphicsPath path = CreateHexPath(r);
 
-            // 🎮 COLORS BASED ON STATE
+            // COLORS BASED ON STATE
             Color top, mid, border;
 
             switch (VisualState)
             {
                 case ButtonVisualState.Hover:
-                    top = Color.FromArgb(0, 60, 180);
-                    mid = Color.FromArgb(0, 120, 230);
-                    border = Color.Gold;
+                    top = Color.Gold;
+                    mid = Color.FromArgb(240, 230, 140);
+                    border = Color.Silver;
                     break;
 
                 case ButtonVisualState.Selected:

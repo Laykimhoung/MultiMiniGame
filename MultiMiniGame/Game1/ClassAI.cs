@@ -10,7 +10,7 @@ namespace MultiMiniGame.Game1
     {
         private readonly HttpClient _http = new HttpClient { BaseAddress = new Uri("http://localhost:11434") };
         private List<object> _chatHistory = new List<object>(); // Store memory
-        private string _model = "llama3.2:1b";
+        private string _model = "phi3:mini";
 
         public async Task<string> GetResponseAsync(string prompt)
         {

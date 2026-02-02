@@ -97,8 +97,11 @@ Hint:";
             lblTitle.Parent = G1_Background;
             lblTitle.BackColor = Color.Transparent;
 
-            picSaba.Parent = rtbChat;
+            picSaba.Parent = G1_Background; ;
             picSaba.BackColor = Color.Transparent;
+
+            Saba.Parent = G1_Background;
+            Saba.BackColor = Color.Transparent;
 
             SoundPlayer g1_sound = new SoundPlayer(@"Sounds\G1_Sound.wav");
             g1_sound.PlayLooping();
