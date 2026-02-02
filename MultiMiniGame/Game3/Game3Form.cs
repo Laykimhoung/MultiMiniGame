@@ -32,13 +32,7 @@ namespace MultiMiniGame.Game3
                 playerATK();
                 botHP--;
                 //Minus HP animation
-
-
-                if (botHP == 0)
-                {
-                    MessageBox.Show("You Win!", "Victory", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
+                bHealth();
 
                 if (botHP <= 2)
                 {
@@ -52,21 +46,13 @@ namespace MultiMiniGame.Game3
                     playerHP = playerHP - 2;
 
                     //Check HP and minus HP animation
-                    if (playerHP <= 0)
-                    {
-                        MessageBox.Show("You Lose!", "Defeat", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    pHealth();
                     return;
                 }
                 botATK();
                 playerHP--;
                 //Minus HP animation
-
-                //Check player HP
-                if (playerHP <= 0)
-                {
-                    MessageBox.Show("You Lose!", "Defeat", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                pHealth();
             }
             else if (botPick == 3)
             {
@@ -80,12 +66,7 @@ namespace MultiMiniGame.Game3
                 playerATK();
                 botHP--;
                 //Minus HP animation
-
-                //Check bot HP
-                if (botHP <= 0)
-                {
-                    MessageBox.Show("You Win!", "Victory", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                bHealth();
             }
         }
 
@@ -108,7 +89,7 @@ namespace MultiMiniGame.Game3
             {
                 botHP++;
                 //Bot heal animation
-
+                bHealth();
             }
         }
 
@@ -124,33 +105,29 @@ namespace MultiMiniGame.Game3
                     playerHP = playerHP - 2;
 
                     //Check HP and minus HP animation
-                    if (playerHP <= 0)
-                    {
-                        MessageBox.Show("You Lose!", "Defeat", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    pHealth();
                     return;
                 }
                 botATK();
                 playerHP--;
 
                 //Check player HP
-                if (playerHP <= 0)
-                {
-                    MessageBox.Show("You Lose!", "Defeat", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                pHealth();
             }
             else if (botPick == 3)
             {
                 //Heal player
                 playerHP++;
-
+                pHealth();
                 //Defend bot
 
             }
             else
             {
                 playerHP++;
+                pHealth();
                 botHP++;
+                bHealth();
             }
         }
         private void btnExit_Click(object sender, EventArgs e)
@@ -223,7 +200,76 @@ namespace MultiMiniGame.Game3
                     ptbBot.Location = new Point(680, 251);
                 }
             }
-
         }
+
+        private void pHealth()
+        {
+            if (playerHP == 5)
+            {
+                ptbpHeart1.Visible = true;
+                ptbpHeart2.Visible = true;
+                ptbpHeart3.Visible = true;
+                ptbpHeart4.Visible = true;
+                ptbpHeart5.Visible = true;
+            }
+            else if (playerHP == 4)
+            {
+                ptbpHeart1.Visible = true;
+                ptbpHeart2.Visible = true;
+                ptbpHeart3.Visible = true;
+                ptbpHeart4.Visible = true;
+                ptbpHeart5.Visible = false;
+            }
+            else if (playerHP == 3)
+            {
+                ptbpHeart1.Visible= true;
+                ptbpHeart2.Visible = true;
+                ptbpHeart3.Visible = true;
+                ptbpHeart4.Visible = false;
+                ptbpHeart5.Visible = false;
+            }
+            else if (playerHP == 2)
+            {
+                ptbpHeart1.Visible = true;
+                ptbpHeart2.Visible = true;
+                ptbpHeart3.Visible = false;
+                ptbpHeart4.Visible = false;
+                ptbpHeart5.Visible = false;
+            }
+            else if (playerHP == 1)
+            {
+                ptbpHeart1.Visible = false;
+                ptbpHeart2.Visible = false;
+                ptbpHeart3.Visible = false;
+                ptbpHeart4.Visible = false;
+                ptbpHeart5.Visible = false;
+            }
+        }
+        private void bHealth()
+        {
+            if (botHP == 5)
+            {
+                //Full HP animation
+            }
+            else if (botHP == 4)
+            {
+                //4 HP animation
+            }
+            else if (botHP == 3)
+            {
+                //3 HP animation
+            }
+            else if (botHP == 2)
+            {
+                //2 HP animation
+            }
+            else if (botHP == 1)
+            {
+                //1 HP animation
+            }
+        }
+
+
+
     }
 }

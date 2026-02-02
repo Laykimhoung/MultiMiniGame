@@ -50,11 +50,6 @@
             ptbpHeart3 = new PictureBox();
             ptbpHeart4 = new PictureBox();
             ptbpHeart5 = new PictureBox();
-            pictureBox7 = new PictureBox();
-            pictureBox8 = new PictureBox();
-            pictureBox9 = new PictureBox();
-            pictureBox10 = new PictureBox();
-            pictureBox11 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)ptbBg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbPlayer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbBot).BeginInit();
@@ -66,11 +61,6 @@
             ((System.ComponentModel.ISupportInitialize)ptbpHeart3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbpHeart4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ptbpHeart5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             SuspendLayout();
             // 
             // btnAtk
@@ -93,7 +83,7 @@
             ptbBg.Image = Properties.Resources.G3_Background;
             ptbBg.Location = new Point(0, 0);
             ptbBg.Name = "ptbBg";
-            ptbBg.Size = new Size(925, 579);
+            ptbBg.Size = new Size(925, 499);
             ptbBg.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbBg.TabIndex = 1;
             ptbBg.TabStop = false;
@@ -207,12 +197,12 @@
             // 
             // fireballTimer
             // 
-            fireballTimer.Interval = 30;
+            fireballTimer.Interval = 20;
             fireballTimer.Tick += fireballTimer_Tick;
             // 
             // BossATKTimer
             // 
-            BossATKTimer.Interval = 30;
+            BossATKTimer.Interval = 20;
             BossATKTimer.Tick += BossATKTimer_Tick;
             // 
             // btnPlayAgain
@@ -268,56 +258,11 @@
             ptbpHeart5.TabIndex = 16;
             ptbpHeart5.TabStop = false;
             // 
-            // pictureBox7
-            // 
-            pictureBox7.Location = new Point(648, 123);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(40, 40);
-            pictureBox7.TabIndex = 17;
-            pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            pictureBox8.Location = new Point(694, 123);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(40, 40);
-            pictureBox8.TabIndex = 18;
-            pictureBox8.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            pictureBox9.Location = new Point(740, 123);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(40, 40);
-            pictureBox9.TabIndex = 19;
-            pictureBox9.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            pictureBox10.Location = new Point(786, 123);
-            pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(40, 40);
-            pictureBox10.TabIndex = 20;
-            pictureBox10.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            pictureBox11.Location = new Point(832, 123);
-            pictureBox11.Name = "pictureBox11";
-            pictureBox11.Size = new Size(40, 40);
-            pictureBox11.TabIndex = 21;
-            pictureBox11.TabStop = false;
-            // 
             // Game3Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(925, 579);
-            Controls.Add(pictureBox11);
-            Controls.Add(pictureBox10);
-            Controls.Add(pictureBox9);
-            Controls.Add(pictureBox8);
-            Controls.Add(pictureBox7);
             Controls.Add(ptbpHeart5);
             Controls.Add(ptbpHeart4);
             Controls.Add(ptbpHeart3);
@@ -351,11 +296,6 @@
             ((System.ComponentModel.ISupportInitialize)ptbpHeart3).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbpHeart4).EndInit();
             ((System.ComponentModel.ISupportInitialize)ptbpHeart5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -381,10 +321,5 @@
         private PictureBox ptbpHeart3;
         private PictureBox ptbpHeart4;
         private PictureBox ptbpHeart5;
-        private PictureBox pictureBox7;
-        private PictureBox pictureBox8;
-        private PictureBox pictureBox9;
-        private PictureBox pictureBox10;
-        private PictureBox pictureBox11;
     }
 }
