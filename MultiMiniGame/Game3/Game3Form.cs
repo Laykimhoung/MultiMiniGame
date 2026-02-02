@@ -21,7 +21,8 @@ namespace MultiMiniGame.Game3
 
         private void Game3Form_Load(object sender, EventArgs e)
         {
-
+            SoundPlayer sG3 = new SoundPlayer(@"Sounds\G3_VaiBoss.wav");
+            sG3.PlayLooping();
         }
 
         private async void btnAtk_Click(object sender, EventArgs e)
@@ -176,7 +177,8 @@ namespace MultiMiniGame.Game3
         {
             if (MessageBox.Show("គួរតែរត់គេច ឬអត់?", "រត់គេច", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Close();
+                Form1 form1 = new Form1();
+                form1.Show();
             }
         }
 
@@ -395,13 +397,8 @@ namespace MultiMiniGame.Game3
 
         private void btnExit2_Click(object sender, EventArgs e)
         {
-            Close();
-        }
-
-        private void Game3Form_Load(object sender, EventArgs e)
-        {
-            SoundPlayer sG3 = new SoundPlayer(@"Sounds\G3_VaiBoss.wav");
-            sG3.PlayLooping();
+            Form1 form1 = new Form1();
+            form1.Show();
         }
     }
 }

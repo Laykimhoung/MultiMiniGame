@@ -157,6 +157,7 @@
             // 
             // ptbBot
             // 
+            ptbBot.Image = Properties.Resources.G3_EyeofCthulhuPhase11;
             ptbBot.Location = new Point(680, 251);
             ptbBot.Name = "ptbBot";
             ptbBot.Size = new Size(162, 110);

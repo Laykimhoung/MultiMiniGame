@@ -9,6 +9,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Game1\Images\**" />
+    <Compile Remove="Game1\Sounds\**" />
+    <Compile Remove="Game2\Images\**" />
+    <Compile Remove="Game2\Sounds\**" />
+    <Compile Remove="Game3\Images\**" />
+    <Compile Remove="Game3\Sounds\**" />
+    <EmbeddedResource Remove="Game1\Images\**" />
+    <EmbeddedResource Remove="Game1\Sounds\**" />
+    <EmbeddedResource Remove="Game2\Images\**" />
+    <EmbeddedResource Remove="Game2\Sounds\**" />
+    <EmbeddedResource Remove="Game3\Images\**" />
+    <EmbeddedResource Remove="Game3\Sounds\**" />
+    <None Remove="Game1\Images\**" />
+    <None Remove="Game1\Sounds\**" />
+    <None Remove="Game2\Images\**" />
+    <None Remove="Game2\Sounds\**" />
+    <None Remove="Game3\Images\**" />
+    <None Remove="Game3\Sounds\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Sounds\G1_Sound.wav" />
     <None Remove="Sounds\G3_VaiBoss.wav" />
   </ItemGroup>
@@ -33,15 +54,6 @@
     <None Update="Sounds\soundtrack.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Game1\Images\" />
-    <Folder Include="Game1\Sounds\" />
-    <Folder Include="Game2\Images\" />
-    <Folder Include="Game2\Sounds\" />
-    <Folder Include="Game3\Images\" />
-    <Folder Include="Game3\Sounds\" />
   </ItemGroup>
 
   <ItemGroup>
