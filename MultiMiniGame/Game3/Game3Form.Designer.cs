@@ -147,6 +147,7 @@
             ptbPlayer.Location = new Point(64, 251);
             ptbPlayer.Name = "ptbPlayer";
             ptbPlayer.Size = new Size(150, 220);
+            ptbPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbPlayer.TabIndex = 5;
             ptbPlayer.TabStop = false;
             // 
@@ -155,6 +156,7 @@
             ptbBot.Location = new Point(680, 251);
             ptbBot.Name = "ptbBot";
             ptbBot.Size = new Size(162, 110);
+            ptbBot.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbBot.TabIndex = 6;
             ptbBot.TabStop = false;
             // 
@@ -231,6 +233,7 @@
             btnPlayAgain.Text = "លេងម្តងទៀត";
             btnPlayAgain.UseVisualStyleBackColor = false;
             btnPlayAgain.Visible = false;
+            btnPlayAgain.Click += btnPlayAgain_Click;
             // 
             // ptbpHeart1
             // 

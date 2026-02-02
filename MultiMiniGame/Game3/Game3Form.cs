@@ -43,7 +43,7 @@ namespace MultiMiniGame.Game3
                     if (botPowerUp == 1)
                     {
                         //Bot power up animation
-
+                        ptbBot.Image = Properties.Resources.Phase2;
                         botPowerUp--;
                     }
                     botATK();
@@ -65,15 +65,13 @@ namespace MultiMiniGame.Game3
             }
             else if (botPick == 3)
             {
-                //Defend bot
-
-
+                ptbBotShield.Visible = true;
                 playerATK();
                 while (fireballTimer.Enabled)
                 {
                     await Task.Delay(100);
                 }
-
+                ptbBotShield.Visible = false;
             }
             else
             {
@@ -95,29 +93,43 @@ namespace MultiMiniGame.Game3
             if (botPick == 1 || botPick == 2)
             {
                 //Defend player
-
+                ptbPlayer.Image = Properties.Resources.G1_CatchedSaba;
 
                 botATK();
                 while (BossATKTimer.Enabled)
                 {
                     await Task.Delay(100);
                 }
-
+                ptbPlayer.Image = Properties.Resources.Origin;
             }
             else if (botPick == 3)
             {
                 //Defend 2
+                ptbPlayer.Image = Properties.Resources.G1_Defend;
+                ptbBotShield.Visible = true;
+                await Task.Delay(3000);
+                ptbPlayer.Image = Properties.Resources.Origin;
+                ptbBotShield.Visible = false;
             }
             else
             {
+                ptbPlayer.Image = Properties.Resources.G1_Defend;
                 botHP++;
                 bHealth();
+                await Task.Delay(3000);
+                ptbPlayer.Image = Properties.Resources.Origin;
             }
             Enablebtns(true);
         }
 
         private async void btnHeal_Click(object sender, EventArgs e)
         {
+            if (playerHP == 5)
+            {
+                MessageBox.Show("អ្នកមានជីវិតពេញហើយ!", "ព័ត៌មាន", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             Enablebtns(false);
             int botPick = rnd.Next(2, 5);
 
@@ -146,9 +158,9 @@ namespace MultiMiniGame.Game3
             {
                 playerHP++;
                 pHealth();
-
-                //Defend bot
-
+                ptbBotShield.Visible = true;
+                await Task.Delay(3000);
+                ptbBotShield.Visible = false;
             }
             else
             {
@@ -253,7 +265,7 @@ namespace MultiMiniGame.Game3
             }
             else if (playerHP == 3)
             {
-                ptbpHeart1.Visible= true;
+                ptbpHeart1.Visible = true;
                 ptbpHeart2.Visible = true;
                 ptbpHeart3.Visible = true;
                 ptbpHeart4.Visible = false;
@@ -354,6 +366,23 @@ namespace MultiMiniGame.Game3
             btnAtk.Enabled = enable;
             btnHeal.Enabled = enable;
             btnShield.Enabled = enable;
+        }
+        private void GameOver()
+        {
+            Enablebtns(false);
+            btnPlayAgain.Visible = true;
+        }
+
+        private void btnPlayAgain_Click(object sender, EventArgs e)
+        {
+            playerHP = 5;
+            botHP = 20;
+            botPowerUp = 1;
+            pHealth();
+            bHealth();
+            Enablebtns(true);
+            btnPlayAgain.Visible = false;
+            ptbBot.Image = Properties.Resources.Phase1;
         }
     }
 }
