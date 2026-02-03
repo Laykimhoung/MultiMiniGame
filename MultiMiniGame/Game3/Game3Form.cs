@@ -11,7 +11,7 @@ namespace MultiMiniGame.Game3
 {
     public partial class Game3Form : Form
     {
-        int playerHP = 5, botHP = 15, botPowerUp = 1, movePhase = 1;
+        int playerHP = 5, botHP = 15, movePhase = 1;
         Random rnd = new Random();
 
         public Game3Form()
@@ -96,12 +96,7 @@ namespace MultiMiniGame.Game3
 
                 if (botHP <= 7)
                 {
-                    if (botPowerUp == 1)
-                    {
-                        //Bot power up animation
-                        ptbBot.Image = Properties.Resources.G3_EyeofCthulhuPhase2;
-                        botPowerUp--;
-                    }
+                    ptbBot.Image = Properties.Resources.G3_EyeofCthulhuPhase2;
                     botATK();
                     while (BossATKTimer.Enabled)
                     {
@@ -109,6 +104,7 @@ namespace MultiMiniGame.Game3
                     }
                     playerHP = playerHP - 2;
                     pHealth();
+                    Enablebtns(true);
                     return;
                 }
                 botATK();
@@ -201,6 +197,7 @@ namespace MultiMiniGame.Game3
                     }
                     playerHP = playerHP - 2;
                     pHealth();
+                    Enablebtns(true);
                     return;
                 }
                 botATK();
@@ -442,8 +439,7 @@ namespace MultiMiniGame.Game3
         private void btnPlayAgain_Click(object sender, EventArgs e)
         {
             playerHP = 5;
-            botHP = 20;
-            botPowerUp = 1;
+            botHP = 15;
             pHealth();
             bHealth();
             Enablebtns(true);
