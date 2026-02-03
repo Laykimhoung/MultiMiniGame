@@ -149,9 +149,9 @@
             // ptbPlayer
             // 
             ptbPlayer.Image = Properties.Resources.G3_Player;
-            ptbPlayer.Location = new Point(37, 284);
+            ptbPlayer.Location = new Point(25, 284);
             ptbPlayer.Name = "ptbPlayer";
-            ptbPlayer.Size = new Size(177, 194);
+            ptbPlayer.Size = new Size(189, 194);
             ptbPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbPlayer.TabIndex = 5;
             ptbPlayer.TabStop = false;
@@ -159,7 +159,7 @@
             // ptbBot
             // 
             ptbBot.Image = Properties.Resources.G3_EyeofCthulhuPhase11;
-            ptbBot.Location = new Point(680, 337);
+            ptbBot.Location = new Point(681, 287);
             ptbBot.Name = "ptbBot";
             ptbBot.Size = new Size(162, 110);
             ptbBot.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -172,7 +172,7 @@
             lblPlayer.BackColor = Color.Transparent;
             lblPlayer.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPlayer.ForeColor = SystemColors.HotTrack;
-            lblPlayer.Location = new Point(117, 245);
+            lblPlayer.Location = new Point(112, 245);
             lblPlayer.Name = "lblPlayer";
             lblPlayer.Size = new Size(45, 36);
             lblPlayer.TabIndex = 7;
@@ -184,7 +184,7 @@
             lblBot.BackColor = Color.Transparent;
             lblBot.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBot.ForeColor = Color.Red;
-            lblBot.Location = new Point(721, 267);
+            lblBot.Location = new Point(721, 245);
             lblBot.Name = "lblBot";
             lblBot.Size = new Size(72, 36);
             lblBot.TabIndex = 8;
@@ -193,9 +193,9 @@
             // ptbPAtk
             // 
             ptbPAtk.Image = Properties.Resources.G3_Fireball;
-            ptbPAtk.Location = new Point(209, 284);
+            ptbPAtk.Location = new Point(201, 287);
             ptbPAtk.Name = "ptbPAtk";
-            ptbPAtk.Size = new Size(94, 108);
+            ptbPAtk.Size = new Size(98, 105);
             ptbPAtk.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbPAtk.TabIndex = 9;
             ptbPAtk.TabStop = false;
@@ -214,9 +214,9 @@
             // ptbBotShield
             // 
             ptbBotShield.Image = Properties.Resources.G3_BossShield;
-            ptbBotShield.Location = new Point(648, 196);
+            ptbBotShield.Location = new Point(637, 267);
             ptbBotShield.Name = "ptbBotShield";
-            ptbBotShield.Size = new Size(26, 275);
+            ptbBotShield.Size = new Size(39, 220);
             ptbBotShield.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbBotShield.TabIndex = 10;
             ptbBotShield.TabStop = false;
@@ -366,9 +366,9 @@
             lblBHP.ForeColor = Color.Red;
             lblBHP.Location = new Point(592, 182);
             lblBHP.Name = "lblBHP";
-            lblBHP.Size = new Size(39, 36);
+            lblBHP.Size = new Size(37, 36);
             lblBHP.TabIndex = 23;
-            lblBHP.Text = "20";
+            lblBHP.Text = "15";
             // 
             // pnlMessage
             // 
@@ -394,7 +394,6 @@
             btnExit2.TabIndex = 26;
             btnExit2.Text = "ចាកចេញ";
             btnExit2.UseVisualStyleBackColor = false;
-            btnExit2.Visible = false;
             btnExit2.Click += btnExit2_Click;
             // 
             // lblMessage
