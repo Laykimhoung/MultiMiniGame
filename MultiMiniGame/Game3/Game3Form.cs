@@ -21,6 +21,60 @@ namespace MultiMiniGame.Game3
 
         private void Game3Form_Load(object sender, EventArgs e)
         {
+            ptbpHeart1.Parent = ptbBg;
+            ptbpHeart1.BackColor = Color.Transparent;
+
+            ptbpHeart2.Parent = ptbBg;
+            ptbpHeart2.BackColor = Color.Transparent;
+
+            ptbpHeart3.Parent = ptbBg;
+            ptbpHeart3.BackColor = Color.Transparent;
+
+            ptbpHeart4.Parent = ptbBg;
+            ptbpHeart4.BackColor = Color.Transparent;
+
+            ptbpHeart5.Parent = ptbBg;
+            ptbpHeart5.BackColor = Color.Transparent;
+
+            ptbbHealth1.Parent = ptbBg;
+            ptbbHealth1.BackColor = Color.Transparent;
+
+            ptbbHealth2.Parent = ptbBg;
+            ptbbHealth2.BackColor = Color.Transparent;
+
+            ptbbHealth3.Parent = ptbBg;
+            ptbbHealth3.BackColor = Color.Transparent;
+
+            ptbbHealth4.Parent = ptbBg;
+            ptbbHealth4.BackColor = Color.Transparent;
+
+            ptbbHealth5.Parent = ptbBg;
+            ptbbHealth5.BackColor = Color.Transparent;
+
+            ptbPlayer.Parent = ptbBg;
+            ptbPlayer.BackColor = Color.Transparent;
+
+            ptbBot.Parent = ptbBg;
+            ptbBot.BackColor = Color.Transparent;
+
+            ptbPAtk.Parent = ptbBg;
+            ptbPAtk.BackColor = Color.Transparent;
+
+            ptbBotShield.Parent = ptbBg;
+            ptbBotShield.BackColor = Color.Transparent;
+
+            lblPHP.Parent = ptbBg;
+            lblPHP.BackColor = Color.Transparent;
+
+            lblBHP.Parent = ptbBg;
+            lblBHP.BackColor = Color.Transparent;
+
+            lblPlayer.Parent = ptbBg;
+            lblPlayer.BackColor = Color.Transparent;
+
+            lblBot.Parent = ptbBg;
+            lblBot.BackColor = Color.Transparent;
+
             SoundPlayer sG3 = new SoundPlayer(@"Sounds\G3_VaiBoss.wav");
             sG3.PlayLooping();
         }
@@ -309,7 +363,7 @@ namespace MultiMiniGame.Game3
         }
         private void bHealth()
         {
-            if (botHP == 20)
+            if (botHP == 15)
             {
                 ptbbHealth1.Visible = true;
                 ptbbHealth2.Visible = true;
@@ -318,7 +372,7 @@ namespace MultiMiniGame.Game3
                 ptbbHealth5.Visible = true;
                 lblBHP.Text = botHP.ToString();
             }
-            else if (botHP >= 16)
+            else if (botHP >= 12)
             {
                 ptbbHealth1.Visible = true;
                 ptbbHealth2.Visible = true;
@@ -327,7 +381,7 @@ namespace MultiMiniGame.Game3
                 ptbbHealth5.Visible = false;
                 lblBHP.Text = botHP.ToString();
             }
-            else if (botHP >= 12)
+            else if (botHP >= 9)
             {
                 ptbbHealth1.Visible = true;
                 ptbbHealth2.Visible = true;
@@ -336,7 +390,7 @@ namespace MultiMiniGame.Game3
                 ptbbHealth5.Visible = false;
                 lblBHP.Text = botHP.ToString();
             }
-            else if (botHP >= 8)
+            else if (botHP >= 6)
             {
                 ptbbHealth1.Visible = true;
                 ptbbHealth2.Visible = true;
