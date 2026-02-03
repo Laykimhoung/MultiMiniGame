@@ -103,6 +103,16 @@ namespace MultiMiniGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap G3_BossShield {
+            get {
+                object obj = ResourceManager.GetObject("G3_BossShield", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap G3_EyeofCthulhuPhase1 {
             get {
                 object obj = ResourceManager.GetObject("G3_EyeofCthulhuPhase1", resourceCulture);
@@ -136,6 +146,56 @@ namespace MultiMiniGame.Properties {
         internal static System.Drawing.Bitmap G3_EyeofCthulhuPhase21 {
             get {
                 object obj = ResourceManager.GetObject("G3_EyeofCthulhuPhase21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap G3_Fireball {
+            get {
+                object obj = ResourceManager.GetObject("G3_Fireball", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap G3_Heart {
+            get {
+                object obj = ResourceManager.GetObject("G3_Heart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap G3_Player {
+            get {
+                object obj = ResourceManager.GetObject("G3_Player", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap G3_PlayerDie {
+            get {
+                object obj = ResourceManager.GetObject("G3_PlayerDie", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap G3_PlayerShield {
+            get {
+                object obj = ResourceManager.GetObject("G3_PlayerShield", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
