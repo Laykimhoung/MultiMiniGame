@@ -169,10 +169,11 @@
             // 
             lblPlayer.AutoSize = true;
             lblPlayer.BackColor = Color.Transparent;
-            lblPlayer.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPlayer.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPlayer.ForeColor = SystemColors.HotTrack;
             lblPlayer.Location = new Point(116, 208);
             lblPlayer.Name = "lblPlayer";
-            lblPlayer.Size = new Size(43, 36);
+            lblPlayer.Size = new Size(45, 36);
             lblPlayer.TabIndex = 7;
             lblPlayer.Text = "អ្នក";
             // 
@@ -180,10 +181,11 @@
             // 
             lblBot.AutoSize = true;
             lblBot.BackColor = Color.Transparent;
-            lblBot.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblBot.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBot.ForeColor = Color.Red;
             lblBot.Location = new Point(731, 208);
             lblBot.Name = "lblBot";
-            lblBot.Size = new Size(69, 36);
+            lblBot.Size = new Size(72, 36);
             lblBot.TabIndex = 8;
             lblBot.Text = "បិសាច";
             // 
@@ -217,12 +219,12 @@
             // 
             // fireballTimer
             // 
-            fireballTimer.Interval = 20;
+            fireballTimer.Interval = 15;
             fireballTimer.Tick += fireballTimer_Tick;
             // 
             // BossATKTimer
             // 
-            BossATKTimer.Interval = 20;
+            BossATKTimer.Interval = 15;
             BossATKTimer.Tick += BossATKTimer_Tick;
             // 
             // btnPlayAgain
@@ -323,10 +325,11 @@
             // 
             lblPHP.AutoSize = true;
             lblPHP.BackColor = Color.Transparent;
-            lblPHP.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPHP.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPHP.ForeColor = Color.Red;
             lblPHP.Location = new Point(254, 123);
             lblPHP.Name = "lblPHP";
-            lblPHP.Size = new Size(26, 36);
+            lblPHP.Size = new Size(27, 36);
             lblPHP.TabIndex = 22;
             lblPHP.Text = "5";
             // 
@@ -334,10 +337,11 @@
             // 
             lblBHP.AutoSize = true;
             lblBHP.BackColor = Color.Transparent;
-            lblBHP.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblBHP.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBHP.ForeColor = Color.Red;
             lblBHP.Location = new Point(591, 123);
             lblBHP.Name = "lblBHP";
-            lblBHP.Size = new Size(37, 36);
+            lblBHP.Size = new Size(39, 36);
             lblBHP.TabIndex = 23;
             lblBHP.Text = "20";
             // 
@@ -384,6 +388,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(925, 579);
+            Controls.Add(ptbBot);
             Controls.Add(pnlMessage);
             Controls.Add(lblBHP);
             Controls.Add(lblPHP);
@@ -401,7 +406,6 @@
             Controls.Add(ptbPAtk);
             Controls.Add(lblBot);
             Controls.Add(lblPlayer);
-            Controls.Add(ptbBot);
             Controls.Add(ptbPlayer);
             Controls.Add(btnHeal);
             Controls.Add(btnShield);
