@@ -148,9 +148,10 @@
             // 
             // ptbPlayer
             // 
-            ptbPlayer.Location = new Point(64, 251);
+            ptbPlayer.Image = Properties.Resources.G3_Player;
+            ptbPlayer.Location = new Point(37, 284);
             ptbPlayer.Name = "ptbPlayer";
-            ptbPlayer.Size = new Size(150, 220);
+            ptbPlayer.Size = new Size(177, 194);
             ptbPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbPlayer.TabIndex = 5;
             ptbPlayer.TabStop = false;
@@ -158,7 +159,7 @@
             // ptbBot
             // 
             ptbBot.Image = Properties.Resources.G3_EyeofCthulhuPhase11;
-            ptbBot.Location = new Point(680, 251);
+            ptbBot.Location = new Point(680, 337);
             ptbBot.Name = "ptbBot";
             ptbBot.Size = new Size(162, 110);
             ptbBot.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -171,7 +172,7 @@
             lblPlayer.BackColor = Color.Transparent;
             lblPlayer.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPlayer.ForeColor = SystemColors.HotTrack;
-            lblPlayer.Location = new Point(116, 208);
+            lblPlayer.Location = new Point(117, 245);
             lblPlayer.Name = "lblPlayer";
             lblPlayer.Size = new Size(45, 36);
             lblPlayer.TabIndex = 7;
@@ -183,7 +184,7 @@
             lblBot.BackColor = Color.Transparent;
             lblBot.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBot.ForeColor = Color.Red;
-            lblBot.Location = new Point(731, 208);
+            lblBot.Location = new Point(721, 267);
             lblBot.Name = "lblBot";
             lblBot.Size = new Size(72, 36);
             lblBot.TabIndex = 8;
@@ -191,9 +192,11 @@
             // 
             // ptbPAtk
             // 
-            ptbPAtk.Location = new Point(220, 284);
+            ptbPAtk.Image = Properties.Resources.G3_Fireball;
+            ptbPAtk.Location = new Point(209, 284);
             ptbPAtk.Name = "ptbPAtk";
-            ptbPAtk.Size = new Size(50, 50);
+            ptbPAtk.Size = new Size(94, 108);
+            ptbPAtk.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbPAtk.TabIndex = 9;
             ptbPAtk.TabStop = false;
             // 
@@ -210,9 +213,11 @@
             // 
             // ptbBotShield
             // 
+            ptbBotShield.Image = Properties.Resources.G3_BossShield;
             ptbBotShield.Location = new Point(648, 196);
             ptbBotShield.Name = "ptbBotShield";
             ptbBotShield.Size = new Size(26, 275);
+            ptbBotShield.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbBotShield.TabIndex = 10;
             ptbBotShield.TabStop = false;
             ptbBotShield.Visible = false;
@@ -243,81 +248,101 @@
             // 
             // ptbpHeart1
             // 
-            ptbpHeart1.Location = new Point(24, 123);
+            ptbpHeart1.Image = Properties.Resources.G3_Heart;
+            ptbpHeart1.Location = new Point(25, 182);
             ptbpHeart1.Name = "ptbpHeart1";
             ptbpHeart1.Size = new Size(40, 40);
+            ptbpHeart1.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbpHeart1.TabIndex = 12;
             ptbpHeart1.TabStop = false;
             // 
             // ptbpHeart2
             // 
-            ptbpHeart2.Location = new Point(70, 123);
+            ptbpHeart2.Image = Properties.Resources.G3_Heart;
+            ptbpHeart2.Location = new Point(71, 182);
             ptbpHeart2.Name = "ptbpHeart2";
             ptbpHeart2.Size = new Size(40, 40);
+            ptbpHeart2.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbpHeart2.TabIndex = 13;
             ptbpHeart2.TabStop = false;
             // 
             // ptbpHeart3
             // 
-            ptbpHeart3.Location = new Point(116, 123);
+            ptbpHeart3.Image = Properties.Resources.G3_Heart;
+            ptbpHeart3.Location = new Point(117, 182);
             ptbpHeart3.Name = "ptbpHeart3";
             ptbpHeart3.Size = new Size(40, 40);
+            ptbpHeart3.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbpHeart3.TabIndex = 14;
             ptbpHeart3.TabStop = false;
             // 
             // ptbpHeart4
             // 
-            ptbpHeart4.Location = new Point(162, 123);
+            ptbpHeart4.Image = Properties.Resources.G3_Heart;
+            ptbpHeart4.Location = new Point(163, 182);
             ptbpHeart4.Name = "ptbpHeart4";
             ptbpHeart4.Size = new Size(40, 40);
+            ptbpHeart4.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbpHeart4.TabIndex = 15;
             ptbpHeart4.TabStop = false;
             // 
             // ptbpHeart5
             // 
-            ptbpHeart5.Location = new Point(208, 123);
+            ptbpHeart5.Image = Properties.Resources.G3_Heart;
+            ptbpHeart5.Location = new Point(209, 182);
             ptbpHeart5.Name = "ptbpHeart5";
             ptbpHeart5.Size = new Size(40, 40);
+            ptbpHeart5.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbpHeart5.TabIndex = 16;
             ptbpHeart5.TabStop = false;
             // 
             // ptbbHealth1
             // 
-            ptbbHealth1.Location = new Point(634, 123);
+            ptbbHealth1.Image = Properties.Resources.G3_Heart;
+            ptbbHealth1.Location = new Point(635, 182);
             ptbbHealth1.Name = "ptbbHealth1";
             ptbbHealth1.Size = new Size(40, 40);
+            ptbbHealth1.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbbHealth1.TabIndex = 17;
             ptbbHealth1.TabStop = false;
             // 
             // ptbbHealth2
             // 
-            ptbbHealth2.Location = new Point(680, 123);
+            ptbbHealth2.Image = Properties.Resources.G3_Heart;
+            ptbbHealth2.Location = new Point(681, 182);
             ptbbHealth2.Name = "ptbbHealth2";
             ptbbHealth2.Size = new Size(40, 40);
+            ptbbHealth2.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbbHealth2.TabIndex = 18;
             ptbbHealth2.TabStop = false;
             // 
             // ptbbHealth3
             // 
-            ptbbHealth3.Location = new Point(726, 123);
+            ptbbHealth3.Image = Properties.Resources.G3_Heart;
+            ptbbHealth3.Location = new Point(727, 182);
             ptbbHealth3.Name = "ptbbHealth3";
             ptbbHealth3.Size = new Size(40, 40);
+            ptbbHealth3.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbbHealth3.TabIndex = 19;
             ptbbHealth3.TabStop = false;
             // 
             // ptbbHealth4
             // 
-            ptbbHealth4.Location = new Point(772, 123);
+            ptbbHealth4.Image = Properties.Resources.G3_Heart;
+            ptbbHealth4.Location = new Point(773, 182);
             ptbbHealth4.Name = "ptbbHealth4";
             ptbbHealth4.Size = new Size(40, 40);
+            ptbbHealth4.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbbHealth4.TabIndex = 20;
             ptbbHealth4.TabStop = false;
             // 
             // ptbbHealth5
             // 
-            ptbbHealth5.Location = new Point(818, 123);
+            ptbbHealth5.Image = Properties.Resources.G3_Heart;
+            ptbbHealth5.Location = new Point(819, 182);
             ptbbHealth5.Name = "ptbbHealth5";
             ptbbHealth5.Size = new Size(40, 40);
+            ptbbHealth5.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbbHealth5.TabIndex = 21;
             ptbbHealth5.TabStop = false;
             // 
@@ -327,7 +352,7 @@
             lblPHP.BackColor = Color.Transparent;
             lblPHP.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPHP.ForeColor = Color.Red;
-            lblPHP.Location = new Point(254, 123);
+            lblPHP.Location = new Point(255, 182);
             lblPHP.Name = "lblPHP";
             lblPHP.Size = new Size(27, 36);
             lblPHP.TabIndex = 22;
@@ -339,7 +364,7 @@
             lblBHP.BackColor = Color.Transparent;
             lblBHP.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBHP.ForeColor = Color.Red;
-            lblBHP.Location = new Point(591, 123);
+            lblBHP.Location = new Point(592, 182);
             lblBHP.Name = "lblBHP";
             lblBHP.Size = new Size(39, 36);
             lblBHP.TabIndex = 23;
