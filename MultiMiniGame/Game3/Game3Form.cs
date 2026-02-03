@@ -11,7 +11,7 @@ namespace MultiMiniGame.Game3
 {
     public partial class Game3Form : Form
     {
-        int playerHP = 5, botHP = 20, botPowerUp = 1, movePhase = 1;
+        int playerHP = 5, botHP = 15, botPowerUp = 1, movePhase = 1;
         Random rnd = new Random();
 
         public Game3Form()
@@ -28,9 +28,9 @@ namespace MultiMiniGame.Game3
         private async void btnAtk_Click(object sender, EventArgs e)
         {
             Enablebtns(false);
-            int botPick = rnd.Next(1, 5);
+            int botPick = rnd.Next(1, 4);
 
-            if (botPick == 1 || botPick == 2)
+            if (botPick == 1)
             {
                 playerATK();
                 while (fireballTimer.Enabled)
@@ -40,12 +40,12 @@ namespace MultiMiniGame.Game3
                 botHP--;
                 bHealth();
 
-                if (botHP <= 10)
+                if (botHP <= 7)
                 {
                     if (botPowerUp == 1)
                     {
                         //Bot power up animation
-                        //ptbBot.Image = Properties.Resources.Phase2;
+                        ptbBot.Image = Properties.Resources.G3_EyeofCthulhuPhase2;
                         botPowerUp--;
                     }
                     botATK();
@@ -65,7 +65,7 @@ namespace MultiMiniGame.Game3
                 playerHP--;
                 pHealth();
             }
-            else if (botPick == 3)
+            else if (botPick == 2)
             {
                 ptbBotShield.Visible = true;
                 playerATK();
@@ -116,7 +116,8 @@ namespace MultiMiniGame.Game3
             else
             {
                 //ptbPlayer.Image = Properties.Resources.G1_Defend;
-                botHP++;
+                if (botHP < 15)
+                    botHP++;
                 bHealth();
                 await Task.Delay(3000);
                 //ptbPlayer.Image = Properties.Resources.Origin;
@@ -137,7 +138,7 @@ namespace MultiMiniGame.Game3
 
             if (botPick == 2)
             {
-                if (botHP <= 10)
+                if (botHP <= 7)
                 {
                     botATK();
                     while (BossATKTimer.Enabled)
@@ -168,7 +169,8 @@ namespace MultiMiniGame.Game3
             {
                 playerHP++;
                 pHealth();
-                botHP++;
+                if (botHP < 15)
+                    botHP++;
                 bHealth();
             }
             Enablebtns(true);
@@ -392,7 +394,7 @@ namespace MultiMiniGame.Game3
             bHealth();
             Enablebtns(true);
             pnlMessage.Visible = false;
-            //ptbBot.Image = Properties.Resources.Phase1;
+            ptbBot.Image = Properties.Resources.G3_EyeofCthulhuPhase1;
         }
 
         private void btnExit2_Click(object sender, EventArgs e)
