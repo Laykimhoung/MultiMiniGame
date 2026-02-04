@@ -137,7 +137,7 @@ namespace MultiMiniGame.Game2
             switch (result)
             {
                 case GameState.Playing:
-                    lbShow.Text = "Correct!";
+                    lbShow.Text = "អបអរសាទរ";
                     break;
 
                 case GameState.LevelCompleted:
@@ -371,7 +371,23 @@ namespace MultiMiniGame.Game2
             foreach (var i in remove)
                 GetButton(i).Visible = false;
 
-            btn5050.Enabled = false;
+            btn5050.Visible = false;
+        }
+        private void btnCall_Click(object sender, EventArgs e)
+        {
+            var q = game.GetCurrentQuestion();
+            if (q == null) return;
+
+            string[] sounds = new string[4]
+            {
+                @"Sounds\sound0.wav",
+                @"Sounds\sound1.wav",
+                @"Sounds\sound2.wav",
+                @"Sounds\sound3.wav"
+            };
+            new System.Media.SoundPlayer(sounds[q.CorrectIndex]).Play();
+
+            btnCall.Visible = false;
         }
         private void btnExit_Click(object sender, EventArgs e)
         {

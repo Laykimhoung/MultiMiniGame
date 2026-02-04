@@ -212,8 +212,8 @@
             lbShow.AutoSize = true;
             lbShow.BackColor = SystemColors.ActiveCaptionText;
             lbShow.Font = new Font("Khmer OS Bokor", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbShow.ForeColor = Color.White;
-            lbShow.Location = new Point(248, 84);
+            lbShow.ForeColor = Color.Gold;
+            lbShow.Location = new Point(392, 84);
             lbShow.Name = "lbShow";
             lbShow.Size = new Size(91, 67);
             lbShow.TabIndex = 17;
@@ -273,6 +273,7 @@
             btnCall.TabIndex = 21;
             btnCall.Text = "ទេរកជំនួយ";
             btnCall.UseVisualStyleBackColor = false;
+            btnCall.Click += btnCall_Click;
             // 
             // lbTimer
             // 
@@ -280,7 +281,7 @@
             lbTimer.BackColor = Color.Black;
             lbTimer.Font = new Font("Times New Roman", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbTimer.ForeColor = Color.White;
-            lbTimer.Location = new Point(392, 34);
+            lbTimer.Location = new Point(392, 25);
             lbTimer.Name = "lbTimer";
             lbTimer.Size = new Size(126, 53);
             lbTimer.TabIndex = 22;
@@ -290,11 +291,11 @@
             // 
             lbTotalMoney.AutoSize = true;
             lbTotalMoney.BackColor = Color.Black;
-            lbTotalMoney.Font = new Font("AKbalthom HighSchool", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbTotalMoney.Font = new Font("AKbalthom HighSchool", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbTotalMoney.ForeColor = Color.Lime;
-            lbTotalMoney.Location = new Point(823, 9);
+            lbTotalMoney.Location = new Point(801, 0);
             lbTotalMoney.Name = "lbTotalMoney";
-            lbTotalMoney.Size = new Size(69, 36);
+            lbTotalMoney.Size = new Size(98, 50);
             lbTotalMoney.TabIndex = 23;
             lbTotalMoney.Text = "Money";
             lbTotalMoney.TextAlign = ContentAlignment.MiddleCenter;
@@ -318,7 +319,7 @@
             lbR2.BackColor = Color.Black;
             lbR2.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbR2.ForeColor = Color.White;
-            lbR2.Location = new Point(860, 280);
+            lbR2.Location = new Point(852, 280);
             lbR2.Name = "lbR2";
             lbR2.Size = new Size(71, 31);
             lbR2.TabIndex = 25;
@@ -344,7 +345,7 @@
             lbR4.BackColor = Color.Black;
             lbR4.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbR4.ForeColor = Color.White;
-            lbR4.Location = new Point(860, 249);
+            lbR4.Location = new Point(851, 249);
             lbR4.Name = "lbR4";
             lbR4.Size = new Size(71, 31);
             lbR4.TabIndex = 27;
@@ -370,7 +371,7 @@
             lbR6.BackColor = Color.Black;
             lbR6.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbR6.ForeColor = Color.White;
-            lbR6.Location = new Point(860, 218);
+            lbR6.Location = new Point(851, 218);
             lbR6.Name = "lbR6";
             lbR6.Size = new Size(71, 31);
             lbR6.TabIndex = 29;
@@ -396,7 +397,7 @@
             lbR8.BackColor = Color.Black;
             lbR8.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbR8.ForeColor = Color.White;
-            lbR8.Location = new Point(860, 187);
+            lbR8.Location = new Point(851, 187);
             lbR8.Name = "lbR8";
             lbR8.Size = new Size(71, 31);
             lbR8.TabIndex = 31;
@@ -422,7 +423,7 @@
             lbR10.BackColor = Color.Black;
             lbR10.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbR10.ForeColor = Color.White;
-            lbR10.Location = new Point(859, 156);
+            lbR10.Location = new Point(851, 156);
             lbR10.Name = "lbR10";
             lbR10.Size = new Size(80, 31);
             lbR10.TabIndex = 33;
@@ -448,7 +449,7 @@
             lbR12.BackColor = Color.Black;
             lbR12.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbR12.ForeColor = Color.White;
-            lbR12.Location = new Point(860, 120);
+            lbR12.Location = new Point(852, 120);
             lbR12.Name = "lbR12";
             lbR12.Size = new Size(79, 31);
             lbR12.TabIndex = 35;
@@ -474,7 +475,7 @@
             lbR14.BackColor = Color.Black;
             lbR14.Font = new Font("Khmer OS Siemreap", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbR14.ForeColor = Color.White;
-            lbR14.Location = new Point(860, 89);
+            lbR14.Location = new Point(852, 89);
             lbR14.Name = "lbR14";
             lbR14.Size = new Size(79, 31);
             lbR14.TabIndex = 37;
