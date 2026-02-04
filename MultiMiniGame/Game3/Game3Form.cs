@@ -83,7 +83,6 @@ namespace MultiMiniGame.Game3
         {
             Enablebtns(false);
             int botPick = rnd.Next(1, 4);
-
             if (botPick == 1)
             {
                 playerATK();
@@ -93,10 +92,13 @@ namespace MultiMiniGame.Game3
                 }
                 botHP--;
                 bHealth();
-
-                if (botHP <= 7)
+                if (botHP == 0) return;
+                if (botHP == 7)
                 {
                     ptbBot.Image = Properties.Resources.G3_EyeofCthulhuPhase2;
+                }
+                if (botHP <= 7)
+                {
                     botATK();
                     while (BossATKTimer.Enabled)
                     {
@@ -134,6 +136,10 @@ namespace MultiMiniGame.Game3
                 }
                 botHP--;
                 bHealth();
+                if (botHP == 7)
+                {
+                    ptbBot.Image = Properties.Resources.G3_EyeofCthulhuPhase2;
+                }
             }
             Enablebtns(true);
         }
@@ -144,33 +150,31 @@ namespace MultiMiniGame.Game3
             int botPick = rnd.Next(1, 5);
             if (botPick == 1 || botPick == 2)
             {
-                //Defend player
-                ptbPlayer.Image = Properties.Resources.G1_CatchedSaba;
-
+                ptbPlayer.Image = Properties.Resources.G3_PlayerShield;
                 botATK();
                 while (BossATKTimer.Enabled)
                 {
                     await Task.Delay(100);
                 }
-                //ptbPlayer.Image = Properties.Resources.Origin;
+                ptbPlayer.Image = Properties.Resources.G3_Player;
             }
             else if (botPick == 3)
             {
                 //Defend 2
-                //ptbPlayer.Image = Properties.Resources.G1_Defend;
+                ptbPlayer.Image = Properties.Resources.G3_PlayerShield;
                 ptbBotShield.Visible = true;
-                await Task.Delay(3000);
-                //ptbPlayer.Image = Properties.Resources.Origin;
+                await Task.Delay(1500);
+                ptbPlayer.Image = Properties.Resources.G3_Player;
                 ptbBotShield.Visible = false;
             }
             else
             {
-                //ptbPlayer.Image = Properties.Resources.G1_Defend;
+                ptbPlayer.Image = Properties.Resources.G3_PlayerShield;
                 if (botHP < 15)
                     botHP++;
                 bHealth();
-                await Task.Delay(3000);
-                //ptbPlayer.Image = Properties.Resources.Origin;
+                await Task.Delay(1500);
+                ptbPlayer.Image = Properties.Resources.G3_Player;
             }
             Enablebtns(true);
         }
@@ -213,7 +217,7 @@ namespace MultiMiniGame.Game3
                 playerHP++;
                 pHealth();
                 ptbBotShield.Visible = true;
-                await Task.Delay(3000);
+                await Task.Delay(1500);
                 ptbBotShield.Visible = false;
             }
             else
@@ -246,7 +250,7 @@ namespace MultiMiniGame.Game3
         private void botATK()
         {
             movePhase = 1;
-            ptbBot.Location = new Point(680, 251);
+            ptbBot.Location = new Point(680, 287);
             BossATKTimer.Start();
         }
 
@@ -271,30 +275,30 @@ namespace MultiMiniGame.Game3
         {
             if (movePhase == 1)
             {
-                //(680, 251) -> (-146, 312)
+                //(680, 287) -> (-146, 312)
                 if (ptbBot.Left > -146)
                 {
                     ptbBot.Left -= 15; // Speed
-                    ptbBot.Top += 1;   // Adjustment
+                    ptbBot.Top += 1;
                 }
                 else
                 {
-                    ptbBot.Location = new Point(915, 172);
+                    ptbBot.Location = new Point(915, 200);
                     movePhase = 2;
                 }
             }
             else if (movePhase == 2)
             {
-                //(915, 172) -> (680, 251)
+                //(915, 172) -> (680, 287)
                 if (ptbBot.Left > 680)
                 {
-                    ptbBot.Left -= 15;
+                    ptbBot.Left -= 14;
                     ptbBot.Top += 5;
                 }
                 else
                 {
                     BossATKTimer.Stop();
-                    ptbBot.Location = new Point(680, 251);
+                    ptbBot.Location = new Point(680, 287);
                 }
             }
         }
@@ -354,7 +358,10 @@ namespace MultiMiniGame.Game3
                 ptbpHeart4.Visible = false;
                 ptbpHeart5.Visible = false;
                 if (playerHP >= 0)
+                {
                     lblPHP.Text = "0";
+                    lblPHP.Text = playerHP.ToString();
+                }
                 GameOver(true);
             }
         }
@@ -413,6 +420,7 @@ namespace MultiMiniGame.Game3
                 ptbbHealth4.Visible = false;
                 ptbbHealth5.Visible = false;
                 lblBHP.Text = botHP.ToString();
+                GameOver(false);
             }
         }
 
@@ -426,10 +434,12 @@ namespace MultiMiniGame.Game3
         {
             if (i)
             {
+                ptbPlayer.Image = Properties.Resources.G3_PlayerDie;
                 lblMessage.Text = "អ្នកបានបរាជ័យ!";
             }
             else
             {
+                ptbBot.Visible = false;
                 lblMessage.Text = "អ្នកបានជ័យជម្នះ!";
             }
             Enablebtns(false);
@@ -443,7 +453,9 @@ namespace MultiMiniGame.Game3
             pHealth();
             bHealth();
             Enablebtns(true);
+            ptbBot.Visible = true;
             pnlMessage.Visible = false;
+            ptbPlayer.Image = Properties.Resources.G3_Player;
             ptbBot.Image = Properties.Resources.G3_EyeofCthulhuPhase1;
         }
 
@@ -451,6 +463,19 @@ namespace MultiMiniGame.Game3
         {
             Form1 form1 = new Form1();
             form1.Show();
+        }
+
+        private void ptbpHeart1_Click(object sender, EventArgs e)
+        {
+            int Cheat = rnd.Next(0, 5);
+            if (Cheat == 4)
+            {
+                if (playerHP < 5)
+                {
+                    playerHP++;
+                    pHealth();
+                }
+            }
         }
     }
 }
