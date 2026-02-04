@@ -76,14 +76,16 @@
             // 
             // btnGame3
             // 
+            btnGame3.BackColor = Color.Red;
             btnGame3.FlatStyle = FlatStyle.Flat;
-            btnGame3.Font = new Font("Khmer OS Siemreap", 13.8F);
+            btnGame3.Font = new Font("Khmer OS Muol", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGame3.ForeColor = Color.Black;
             btnGame3.Location = new Point(395, 459);
             btnGame3.Name = "btnGame3";
             btnGame3.Size = new Size(232, 74);
             btnGame3.TabIndex = 3;
-            btnGame3.Text = "Game 3";
-            btnGame3.UseVisualStyleBackColor = true;
+            btnGame3.Text = "ហាមចូល មេវៃ";
+            btnGame3.UseVisualStyleBackColor = false;
             btnGame3.Click += btnGame3_Click;
             // 
             // lbWelcome
