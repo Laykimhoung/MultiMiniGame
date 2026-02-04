@@ -22,7 +22,7 @@
 
 ## Features
 
-- Multiple mini-games bundled in one project.    
+- Multiple mini-games bundled in one project.  
 
 ---
 
