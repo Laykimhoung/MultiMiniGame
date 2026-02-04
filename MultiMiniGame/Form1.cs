@@ -14,6 +14,7 @@ namespace MultiMiniGame
         public Form1()
         {
             InitializeComponent();
+            this.Text = "Multi Mini Game Collection";
         }
         private void Form1_Load(object sender, EventArgs e)
         {

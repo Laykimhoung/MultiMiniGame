@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             picBackGround = new PictureBox();
             btnGame1 = new Button();
             btnGame2 = new Button();
@@ -139,6 +140,7 @@
             Controls.Add(btnGame2);
             Controls.Add(btnGame1);
             Controls.Add(picBackGround);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;

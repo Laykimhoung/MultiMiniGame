@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game2Form));
             picBackGround = new PictureBox();
             btnStart = new Button();
             lbQuestion = new Label();
@@ -548,6 +549,7 @@
             Controls.Add(panelQuestion);
             Controls.Add(btnStart);
             Controls.Add(picBackGround);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Game2Form";
             Text = "Game2Form";
             Load += Game2Form_Load;

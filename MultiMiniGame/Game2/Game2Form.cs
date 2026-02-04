@@ -32,6 +32,7 @@ namespace MultiMiniGame.Game2
         {
             InitializeComponent();
             InitGame();
+            this.Text = "Who Wants to Be a Millionaire";
         }
         private void Game2Form_Load(object sender, EventArgs e)
         {
