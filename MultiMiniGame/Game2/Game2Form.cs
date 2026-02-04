@@ -94,6 +94,7 @@ namespace MultiMiniGame.Game2
         private void ShowQuestion()
         {
             var q = game.GetCurrentQuestion();
+            if (q == null) return;
             lbQuestion.Text = q.QuestionText;
 
             lbQuestion.Text = q.QuestionText;
@@ -103,10 +104,15 @@ namespace MultiMiniGame.Game2
             btnD.Text = "  D. " + q.Answers[3];
 
             ResetButtons();
+            ResetFiftyFifty();
         }
         // ================= ANSWER =================
+        private bool answerLocked = false;
         private void HandleAnswer(int index)
         {
+            if (answerLocked) return;
+            answerLocked = true;
+
             roundTimer.Stop();
 
             GameState result = game.SubmitAnswer(index);
@@ -156,6 +162,9 @@ namespace MultiMiniGame.Game2
         // ================= NEXT =================
         private void btnNextRound_Click(object sender, EventArgs e)
         {
+            answerLocked = false;
+            ForceResetButtonState();
+
             btnNextRound.Visible = false;
             btnStop.Visible = false;
             lbShow.Visible = false;
@@ -173,6 +182,18 @@ namespace MultiMiniGame.Game2
             HighlightLadder();
             ShowQuestion();
             StartTimer();
+        }
+        private void ForceResetButtonState()
+        {
+            btnA.VisualState = ButtonVisualState.Normal;
+            btnB.VisualState = ButtonVisualState.Normal;
+            btnC.VisualState = ButtonVisualState.Normal;
+            btnD.VisualState = ButtonVisualState.Normal;
+
+            btnA.Refresh();
+            btnB.Refresh();
+            btnC.Refresh();
+            btnD.Refresh();
         }
         // ================= TIMER =================
         int timeLeft;
@@ -247,48 +268,56 @@ namespace MultiMiniGame.Game2
         private void btnD_Click(object sender, EventArgs e) => HandleAnswer(3);
         private void btnA_MouseHover(object sender, EventArgs e)
         {
+            if (answerLocked) return;
             var btn = (btnGame2)sender;
             btn.VisualState = ButtonVisualState.Hover;
             btn.Refresh();
         }
         private void btnA_MouseLeave(object sender, EventArgs e)
         {
+            if (answerLocked) return;
             var btn = (btnGame2)sender;
             btn.VisualState = ButtonVisualState.Normal;
             btn.Refresh();
         }
         private void btnB_MouseHover(object sender, EventArgs e)
         {
+            if (answerLocked) return;
             var btn = (btnGame2)sender;
             btn.VisualState = ButtonVisualState.Hover;
             btn.Refresh();
         }
         private void btnB_MouseLeave(object sender, EventArgs e)
         {
+            if (answerLocked) return;
             var btn = (btnGame2)sender;
             btn.VisualState = ButtonVisualState.Normal;
             btn.Refresh();
         }
         private void btnC_MouseHover(object sender, EventArgs e)
         {
+            if (answerLocked) return;
             var btn = (btnGame2)sender;
             btn.VisualState = ButtonVisualState.Hover;
             btn.Refresh();
         }
         private void btnC_MouseLeave(object sender, EventArgs e)
         {
+            if (answerLocked) return;
             var btn = (btnGame2)sender;
             btn.VisualState = ButtonVisualState.Normal;
             btn.Refresh();
         }
         private void btnD_MouseHover(object sender, EventArgs e)
         {
+            if (answerLocked) return;
             var btn = (btnGame2)sender;
             btn.VisualState = ButtonVisualState.Hover;
             btn.Refresh();
         }
         private void btnD_MouseLeave(object sender, EventArgs e)
         {
+            if (answerLocked) return;
             var btn = (btnGame2)sender;
             btn.VisualState = ButtonVisualState.Normal;
             btn.Refresh();
@@ -326,7 +355,15 @@ namespace MultiMiniGame.Game2
         {
             btnA.Enabled = btnB.Enabled = btnC.Enabled = btnD.Enabled = true;
         }
+        private void ResetFiftyFifty()
+        {
+            btn5050.Enabled = true;
 
+            btnA.Visible = true;
+            btnB.Visible = true;
+            btnC.Visible = true;
+            btnD.Visible = true;
+        }
         private void btn5050_Click(object sender, EventArgs e)
         {
             var remove = game.GetFiftyFifty();

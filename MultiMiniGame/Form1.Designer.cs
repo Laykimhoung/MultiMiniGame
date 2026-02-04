@@ -78,7 +78,7 @@
             // 
             btnGame3.BackColor = Color.Red;
             btnGame3.FlatStyle = FlatStyle.Flat;
-            btnGame3.Font = new Font("Khmer OS Muol", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGame3.Font = new Font("Khmer OS Siemreap", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGame3.ForeColor = Color.Black;
             btnGame3.Location = new Point(395, 459);
             btnGame3.Name = "btnGame3";
