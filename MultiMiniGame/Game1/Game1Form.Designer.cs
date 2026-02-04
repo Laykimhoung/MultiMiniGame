@@ -148,6 +148,7 @@
             picSaba.SizeMode = PictureBoxSizeMode.StretchImage;
             picSaba.TabIndex = 8;
             picSaba.TabStop = false;
+            picSaba.Click += picSaba_Click;
             // 
             // Saba
             // 

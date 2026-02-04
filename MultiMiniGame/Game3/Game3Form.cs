@@ -92,6 +92,7 @@ namespace MultiMiniGame.Game3
                 }
                 botHP--;
                 bHealth();
+                if (botHP == 0) return;
                 if (botHP == 7)
                 {
                     ptbBot.Image = Properties.Resources.G3_EyeofCthulhuPhase2;
@@ -149,9 +150,7 @@ namespace MultiMiniGame.Game3
             int botPick = rnd.Next(1, 5);
             if (botPick == 1 || botPick == 2)
             {
-                //Defend player
                 ptbPlayer.Image = Properties.Resources.G3_PlayerShield;
-
                 botATK();
                 while (BossATKTimer.Enabled)
                 {
@@ -164,7 +163,7 @@ namespace MultiMiniGame.Game3
                 //Defend 2
                 ptbPlayer.Image = Properties.Resources.G3_PlayerShield;
                 ptbBotShield.Visible = true;
-                await Task.Delay(3000);
+                await Task.Delay(1500);
                 ptbPlayer.Image = Properties.Resources.G3_Player;
                 ptbBotShield.Visible = false;
             }
@@ -174,7 +173,7 @@ namespace MultiMiniGame.Game3
                 if (botHP < 15)
                     botHP++;
                 bHealth();
-                await Task.Delay(3000);
+                await Task.Delay(1500);
                 ptbPlayer.Image = Properties.Resources.G3_Player;
             }
             Enablebtns(true);
@@ -218,7 +217,7 @@ namespace MultiMiniGame.Game3
                 playerHP++;
                 pHealth();
                 ptbBotShield.Visible = true;
-                await Task.Delay(3000);
+                await Task.Delay(1500);
                 ptbBotShield.Visible = false;
             }
             else
@@ -421,6 +420,7 @@ namespace MultiMiniGame.Game3
                 ptbbHealth4.Visible = false;
                 ptbbHealth5.Visible = false;
                 lblBHP.Text = botHP.ToString();
+                GameOver(false);
             }
         }
 
@@ -463,6 +463,19 @@ namespace MultiMiniGame.Game3
         {
             Form1 form1 = new Form1();
             form1.Show();
+        }
+
+        private void ptbpHeart1_Click(object sender, EventArgs e)
+        {
+            int Cheat = rnd.Next(0, 5);
+            if (Cheat == 4)
+            {
+                if (playerHP < 5)
+                {
+                    playerHP++;
+                    pHealth();
+                }
+            }
         }
     }
 }

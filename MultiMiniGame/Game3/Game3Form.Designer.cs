@@ -256,6 +256,7 @@
             ptbpHeart1.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbpHeart1.TabIndex = 12;
             ptbpHeart1.TabStop = false;
+            ptbpHeart1.Click += ptbpHeart1_Click;
             // 
             // ptbpHeart2
             // 

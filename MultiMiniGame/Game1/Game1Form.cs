@@ -11,6 +11,7 @@ namespace MultiMiniGame.Game1
 {
     public partial class Game1Form : Form
     {
+        Random _Cheat = new Random();
         Random _random = new Random();
         string[] words = { "Apple", "Banana", "Orange", "Mango", "Grape", "Lemon",
     "Dog","Cat","Cow","Pig","Fish","Bird","Duck","Horse","Rabbit","Chicken",
@@ -105,6 +106,15 @@ Hint:";
 
             SoundPlayer g1_sound = new SoundPlayer(@"Sounds\G1_Sound.wav");
             g1_sound.PlayLooping();
+        }
+
+        private void picSaba_Click(object sender, EventArgs e)
+        {
+            int Cheat = _Cheat.Next(0, 9);
+            if (Cheat == 5)
+            {
+                MessageBox.Show($"Cheat Activated!\nThe Word is {rndWord}", "Cheat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
