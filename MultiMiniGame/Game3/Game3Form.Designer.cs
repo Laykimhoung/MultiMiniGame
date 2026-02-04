@@ -159,7 +159,7 @@
             // ptbBot
             // 
             ptbBot.Image = Properties.Resources.G3_EyeofCthulhuPhase11;
-            ptbBot.Location = new Point(681, 287);
+            ptbBot.Location = new Point(680, 287);
             ptbBot.Name = "ptbBot";
             ptbBot.Size = new Size(162, 110);
             ptbBot.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -172,7 +172,7 @@
             lblPlayer.BackColor = Color.Transparent;
             lblPlayer.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPlayer.ForeColor = SystemColors.HotTrack;
-            lblPlayer.Location = new Point(112, 245);
+            lblPlayer.Location = new Point(91, 245);
             lblPlayer.Name = "lblPlayer";
             lblPlayer.Size = new Size(45, 36);
             lblPlayer.TabIndex = 7;
@@ -199,6 +199,7 @@
             ptbPAtk.SizeMode = PictureBoxSizeMode.StretchImage;
             ptbPAtk.TabIndex = 9;
             ptbPAtk.TabStop = false;
+            ptbPAtk.Visible = false;
             // 
             // pictureBox1
             // 
@@ -401,7 +402,7 @@
             lblMessage.AutoSize = true;
             lblMessage.BackColor = Color.Transparent;
             lblMessage.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMessage.Location = new Point(3, 33);
+            lblMessage.Location = new Point(28, 33);
             lblMessage.Name = "lblMessage";
             lblMessage.Size = new Size(43, 36);
             lblMessage.TabIndex = 25;
