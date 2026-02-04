@@ -104,5 +104,6 @@ namespace MultiMiniGame.Game2
                 .Take(2)
                 .ToArray();
         }
+
     }
 }

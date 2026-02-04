@@ -226,7 +226,7 @@
             btnNextRound.FlatStyle = FlatStyle.Flat;
             btnNextRound.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnNextRound.ForeColor = Color.White;
-            btnNextRound.Location = new Point(392, 290);
+            btnNextRound.Location = new Point(374, 268);
             btnNextRound.Name = "btnNextRound";
             btnNextRound.Size = new Size(155, 58);
             btnNextRound.TabIndex = 18;
@@ -240,7 +240,7 @@
             btnStop.FlatStyle = FlatStyle.Flat;
             btnStop.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnStop.ForeColor = Color.White;
-            btnStop.Location = new Point(166, 290);
+            btnStop.Location = new Point(172, 268);
             btnStop.Name = "btnStop";
             btnStop.Size = new Size(164, 58);
             btnStop.TabIndex = 19;

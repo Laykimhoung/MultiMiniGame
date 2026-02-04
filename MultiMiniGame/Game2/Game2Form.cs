@@ -326,6 +326,7 @@ namespace MultiMiniGame.Game2
         {
             btnA.Enabled = btnB.Enabled = btnC.Enabled = btnD.Enabled = true;
         }
+
         private void btn5050_Click(object sender, EventArgs e)
         {
             var remove = game.GetFiftyFifty();
