@@ -62,8 +62,10 @@
             lbR14 = new Label();
             lbR15 = new Label();
             roundTimer = new System.Windows.Forms.Timer(components);
+            vdoIntro = new LibVLCSharp.WinForms.VideoView();
             ((System.ComponentModel.ISupportInitialize)picBackGround).BeginInit();
             panelQuestion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)vdoIntro).BeginInit();
             SuspendLayout();
             // 
             // picBackGround
@@ -499,11 +501,22 @@
             roundTimer.Interval = 1000;
             roundTimer.Tick += roundTimer_Tick;
             // 
+            // vdoIntro
+            // 
+            vdoIntro.BackColor = Color.Black;
+            vdoIntro.Location = new Point(645, 268);
+            vdoIntro.MediaPlayer = null;
+            vdoIntro.Name = "vdoIntro";
+            vdoIntro.Size = new Size(94, 57);
+            vdoIntro.TabIndex = 40;
+            vdoIntro.Text = "videoView1";
+            // 
             // Game2Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(958, 588);
+            Controls.Add(vdoIntro);
             Controls.Add(btnLost);
             Controls.Add(lbR15);
             Controls.Add(lbR14);
@@ -541,6 +554,7 @@
             ((System.ComponentModel.ISupportInitialize)picBackGround).EndInit();
             panelQuestion.ResumeLayout(false);
             panelQuestion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)vdoIntro).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -580,5 +594,6 @@
         private Label lbR15;
         private System.Windows.Forms.Timer roundTimer;
         private Button btnLost;
+        private LibVLCSharp.WinForms.VideoView vdoIntro;
     }
 }

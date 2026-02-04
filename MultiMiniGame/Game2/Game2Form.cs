@@ -6,13 +6,20 @@ using System.Drawing;
 using System.Reflection.Emit;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using LibVLCSharp.Shared;
+using LibVLCSharp.WinForms;
 using static MultiMiniGame.Game2.Game2Logic;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
+
 
 namespace MultiMiniGame.Game2
 {
     public partial class Game2Form : Form
     {
+        private LibVLC _libVLC;
+        private MediaPlayer _mediaPlayer;
+
         Game2Logic game = new Game2Logic();
         private List<System.Windows.Forms.Label> questionLadder;
         private int[] moneyTable =
@@ -48,7 +55,29 @@ namespace MultiMiniGame.Game2
 
             UnVisible();
             btnLost.Visible = false;
-            roundTimer.Stop();
+            roundTimer.Stop() ;
+
+            vdoIntro.Dock = DockStyle.Fill;
+            Core.Initialize();
+
+            _libVLC = new LibVLC();
+            _mediaPlayer = new MediaPlayer(_libVLC);
+
+            vdoIntro.MediaPlayer = _mediaPlayer;
+            string videoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"Videos","Game2_Intro.mp4");
+
+            var media = new Media(_libVLC, new Uri(videoPath));
+            _mediaPlayer.Play(media);
+
+            _mediaPlayer.EndReached += MediaPlayer_EndReached;
+        }
+        private void MediaPlayer_EndReached(object sender, EventArgs e)
+        {
+            // Must use Invoke because VLC runs on another thread
+            Invoke(new Action(() =>
+            {
+                vdoIntro.Visible = false;
+            }));
         }
         // ================= INIT =================
         private void InitGame()
