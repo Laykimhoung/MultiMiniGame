@@ -72,7 +72,7 @@
             btnGame2.Name = "btnGame2";
             btnGame2.Size = new Size(232, 74);
             btnGame2.TabIndex = 2;
-            btnGame2.Text = "ហ្គេមមហាសេដ្ឋី";
+            btnGame2.Text = "ហ្គេម មហាសេដ្ឋី";
             btnGame2.UseVisualStyleBackColor = false;
             btnGame2.Click += btnGame2_Click;
             // 
@@ -112,7 +112,7 @@
             btnGame4.Name = "btnGame4";
             btnGame4.Size = new Size(232, 74);
             btnGame4.TabIndex = 5;
-            btnGame4.Text = "Game4";
+            btnGame4.Text = "ហ្គេម បុកប៉ើង";
             btnGame4.UseVisualStyleBackColor = false;
             btnGame4.Click += btnGame4_Click;
             // 

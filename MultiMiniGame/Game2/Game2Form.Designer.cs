@@ -216,7 +216,7 @@
             lbShow.BackColor = SystemColors.ActiveCaptionText;
             lbShow.Font = new Font("Khmer OS Bokor", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbShow.ForeColor = Color.Gold;
-            lbShow.Location = new Point(392, 84);
+            lbShow.Location = new Point(208, 84);
             lbShow.Name = "lbShow";
             lbShow.Size = new Size(91, 67);
             lbShow.TabIndex = 17;

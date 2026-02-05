@@ -128,10 +128,10 @@ namespace MultiMiniGame.Game2
             lbQuestion.Text = q.QuestionText;
 
             lbQuestion.Text = q.QuestionText;
-            btnA.Text = "  A. " + q.Answers[0];
-            btnB.Text = "  B. " + q.Answers[1];
-            btnC.Text = "  C. " + q.Answers[2];
-            btnD.Text = "  D. " + q.Answers[3];
+            btnA.Text = "   A. " + q.Answers[0];
+            btnB.Text = "   B. " + q.Answers[1];
+            btnC.Text = "   C. " + q.Answers[2];
+            btnD.Text = "   D. " + q.Answers[3];
 
             ResetButtons();
             ResetFiftyFifty();
@@ -140,6 +140,7 @@ namespace MultiMiniGame.Game2
         SoundPlayer G2_Correct = new SoundPlayer(@"Sounds\G2_Correct.wav");
         SoundPlayer G2_begin = new SoundPlayer(@"Sounds\G2_begin.wav");
         SoundPlayer G2_level = new SoundPlayer(@"Sounds\G2_level.wav");
+        SoundPlayer G2_Wrong = new SoundPlayer(@"Sounds\Cat_laugh.wav");
         private bool answerLocked = false;
         private void HandleAnswer(int index)
         {
@@ -184,6 +185,7 @@ namespace MultiMiniGame.Game2
                     lbShow.Text = "Game Over!";
                     btnNextRound.Visible = false;
                     btnLost.Visible = true;
+                    G2_Wrong.Play();
                     break;
 
                 case GameState.GameWon:
@@ -237,7 +239,7 @@ namespace MultiMiniGame.Game2
         int timeLeft;
         private void StartTimer()
         {
-            timeLeft = 60;
+            timeLeft = 90;
             lbTimer.Text = timeLeft.ToString();
             roundTimer.Start();
         }
@@ -250,9 +252,11 @@ namespace MultiMiniGame.Game2
             if (timeLeft <= 0)
             {
                 roundTimer.Stop();
-                lbShow.Text = "Time's up!";
+                lbShow.Text = "ចូលរួមសោកស្តាយផង​ អ្នកអស់នាទីហើយ";
                 lbShow.Visible = true;
                 DisableAnswerButtons();
+                SoundPlayer G2_TimeUp = new SoundPlayer(@"Sounds\wwe-bell.wav");
+                G2_TimeUp.Play();
             }
         }
         // ================= UI HELPERS =================

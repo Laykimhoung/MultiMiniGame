@@ -30,6 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Sounds\Cat_laugh.wav" />
     <None Remove="Sounds\G1_Sound.wav" />
     <None Remove="Sounds\G2_begin.wav" />
     <None Remove="Sounds\G2_Correct.wav" />
@@ -40,10 +41,14 @@
     <None Remove="Sounds\G4_Hit_Score.wav" />
     <None Remove="Sounds\G4_Lose.wav" />
     <None Remove="Sounds\Game2_btnStart.wav" />
+    <None Remove="Sounds\wwe-bell.wav" />
     <None Remove="Videos\Game2_Intro.mp4" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Sounds\Cat_laugh.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Sounds\G1_Sound.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -72,6 +77,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Sounds\Game2_btnStart.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\wwe-bell.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Videos\Game2_Intro.mp4">
