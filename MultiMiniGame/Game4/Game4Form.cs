@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Media;
 using System.Text;
 using System.Windows.Forms;
 
@@ -30,7 +31,7 @@ namespace MultiMiniGame.Game4
             ball.Top = 425;
             player.Left = 427;
             lblScore.Text = "Score: " + score + "  --  PRESS ENTER TO START";
-            ball.Parent = this;
+            ball.Parent = bg;
             ball.BackColor = Color.Transparent;
         }
 
@@ -46,7 +47,7 @@ namespace MultiMiniGame.Game4
             ball.Top = 425;
             player.Left = 427;
             gameTimer.Start();
-            foreach (Control x in this.Controls)
+            foreach (Control x in bg.Controls)
             {
                 if (x is PictureBox && (string)x.Tag == "blocks")
                 {
@@ -60,6 +61,8 @@ namespace MultiMiniGame.Game4
             isGameOver = true;
             gameTimer.Stop();
             lblScore.Text = "Score: " + score + " " + message;
+            SoundPlayer G4_Game_Over_Sound = new SoundPlayer(@"Sounds\G4_Lose.wav");
+            G4_Game_Over_Sound.Play();
         }
 
         private void PlaceBlocks(bool resetGame = true)
@@ -68,7 +71,7 @@ namespace MultiMiniGame.Game4
             {
                 foreach (PictureBox pb in blockArray)
                 {
-                    if (pb != null && this.Controls.Contains(pb))
+                    if (pb != null && bg.Controls.Contains(pb))
                         this.Controls.Remove(pb);
                 }
             }
@@ -81,7 +84,7 @@ namespace MultiMiniGame.Game4
                 blockArray[i].Height = 20;
                 blockArray[i].Width = 100;
                 blockArray[i].Tag = "blocks";
-                blockArray[i].BackColor = Color.White;
+                blockArray[i].BackColor = Color.White;              
                 foreach (Control x in this.Controls)
                 {
                     if (x is PictureBox && (string)x.Tag == "blocks")
@@ -101,7 +104,8 @@ namespace MultiMiniGame.Game4
                     a++;
                     blockArray[i].Left = left;
                     blockArray[i].Top = top;
-                    this.Controls.Add(blockArray[i]);
+                    bg.Controls.Add(blockArray[i]);
+                    blockArray[i].BringToFront();
                     left = left + 125;
                 }
             }
@@ -144,22 +148,25 @@ namespace MultiMiniGame.Game4
 
             ball.Left += ballx;
             ball.Top += bally;
+            SoundPlayer G4_Ball = new SoundPlayer(@"Sounds\G4_Bouncing_Platform.wav");
 
             if (ball.Left < 0 || ball.Right > 950)
             {
                 ballx = -ballx;
+                G4_Ball.Play();
             }
             if (ball.Top < 0)
             {
                 bally = -bally;
+                G4_Ball.Play();
             }
 
             if (ball.Bounds.IntersectsWith(player.Bounds))
             {
                 ball.Top = 427;
-
                 bally = rnd.Next(5, 10) * -1;
-
+                SoundPlayer G4_Bouncing_Metal = new SoundPlayer(@"Sounds\G4_Bouncing_Metal.wav");
+                G4_Bouncing_Metal.Play();
                 if (ballx < 0)
                 {
                     ballx = rnd.Next(5, 10) * -1;
@@ -170,16 +177,16 @@ namespace MultiMiniGame.Game4
                 }
             }
 
-            foreach (Control x in this.Controls.OfType<PictureBox>().Where(pb => (string)pb.Tag == "blocks").ToArray())
+            foreach (Control x in bg.Controls.OfType<PictureBox>().Where(pb => (string)pb.Tag == "blocks").ToArray())
             {
                 if (ball.Bounds.IntersectsWith(x.Bounds))
                 {
                     score += 1;
                     blocksRemaining -= 1;
                     bally = -bally;
-                    this.Controls.Remove(x);
-                    // sound effect can be added here
-
+                    bg.Controls.Remove(x);
+                    SoundPlayer G4_Breaking_Glass = new SoundPlayer(@"Sounds\G4_Hit_Score.wav");
+                    G4_Breaking_Glass.Play();
                 }
             }
 

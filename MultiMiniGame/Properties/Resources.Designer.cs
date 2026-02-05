@@ -213,6 +213,16 @@ namespace MultiMiniGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap G4_bg {
+            get {
+                object obj = ResourceManager.GetObject("G4_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Gam4_ball {
             get {
                 object obj = ResourceManager.GetObject("Gam4_ball", resourceCulture);

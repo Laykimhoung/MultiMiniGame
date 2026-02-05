@@ -29,14 +29,17 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game4Form));
             lblScore = new Label();
             ball = new PictureBox();
             player = new PictureBox();
             gameTimer = new System.Windows.Forms.Timer(components);
             pictureBox1 = new PictureBox();
+            bg = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)ball).BeginInit();
             ((System.ComponentModel.ISupportInitialize)player).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bg).BeginInit();
             SuspendLayout();
             // 
             // lblScore
@@ -90,6 +93,16 @@
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
+            // bg
+            // 
+            bg.Image = Properties.Resources.G4_bg;
+            bg.Location = new Point(-6, 0);
+            bg.Name = "bg";
+            bg.Size = new Size(963, 466);
+            bg.SizeMode = PictureBoxSizeMode.StretchImage;
+            bg.TabIndex = 4;
+            bg.TabStop = false;
+            // 
             // Game4Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -100,7 +113,9 @@
             Controls.Add(ball);
             Controls.Add(lblScore);
             Controls.Add(pictureBox1);
+            Controls.Add(bg);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "Game4Form";
             Text = "Breakout Game";
@@ -109,6 +124,7 @@
             ((System.ComponentModel.ISupportInitialize)ball).EndInit();
             ((System.ComponentModel.ISupportInitialize)player).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bg).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -120,5 +136,6 @@
         private PictureBox player;
         private System.Windows.Forms.Timer gameTimer;
         private PictureBox pictureBox1;
+        private PictureBox bg;
     }
 }

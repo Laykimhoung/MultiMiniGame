@@ -31,7 +31,14 @@
 
   <ItemGroup>
     <None Remove="Sounds\G1_Sound.wav" />
+    <None Remove="Sounds\G2_begin.wav" />
+    <None Remove="Sounds\G2_Correct.wav" />
+    <None Remove="Sounds\G2_level.wav" />
     <None Remove="Sounds\G3_VaiBoss.wav" />
+    <None Remove="Sounds\G4_Bouncing_Metal.wav" />
+    <None Remove="Sounds\G4_Bouncing_Platform.wav" />
+    <None Remove="Sounds\G4_Hit_Score.wav" />
+    <None Remove="Sounds\G4_Lose.wav" />
     <None Remove="Sounds\Game2_btnStart.wav" />
     <None Remove="Videos\Game2_Intro.mp4" />
   </ItemGroup>
@@ -40,7 +47,28 @@
     <Content Include="Sounds\G1_Sound.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Sounds\G2_begin.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\G2_Correct.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\G2_level.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Sounds\G3_VaiBoss.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\G4_Bouncing_Metal.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\G4_Bouncing_Platform.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\G4_Hit_Score.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\G4_Lose.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Sounds\Game2_btnStart.wav">

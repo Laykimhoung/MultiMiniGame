@@ -137,6 +137,9 @@ namespace MultiMiniGame.Game2
             ResetFiftyFifty();
         }
         // ================= ANSWER =================
+        SoundPlayer G2_Correct = new SoundPlayer(@"Sounds\G2_Correct.wav");
+        SoundPlayer G2_begin = new SoundPlayer(@"Sounds\G2_begin.wav");
+        SoundPlayer G2_level = new SoundPlayer(@"Sounds\G2_level.wav");
         private bool answerLocked = false;
         private void HandleAnswer(int index)
         {
@@ -159,20 +162,22 @@ namespace MultiMiniGame.Game2
             else
             {
                 clicked.VisualState = ButtonVisualState.Correct;
-            }
-
+                G2_begin.Stop();
+            }         
             DisableAnswerButtons();
             btnNextRound.Visible = true;
 
             switch (result)
             {
                 case GameState.Playing:
-                    lbShow.Text = "អបអរសាទរ";
+                    lbShow.Text = "អបអរសាទរ";                    
+                    G2_Correct.Play();
                     break;
 
                 case GameState.LevelCompleted:
                     lbShow.Text = "Level Completed!";
                     btnStop.Visible = true;
+                    G2_level.Play();
                     break;
 
                 case GameState.GameOver:
@@ -212,6 +217,9 @@ namespace MultiMiniGame.Game2
             HighlightLadder();
             ShowQuestion();
             StartTimer();
+            G2_Correct.Stop();
+            G2_level.Stop();
+            G2_begin.Play();
         }
         private void ForceResetButtonState()
         {
