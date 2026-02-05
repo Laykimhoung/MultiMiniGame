@@ -32,6 +32,7 @@
   <ItemGroup>
     <None Remove="Sounds\G1_Sound.wav" />
     <None Remove="Sounds\G3_VaiBoss.wav" />
+    <None Remove="Sounds\Game2_btnStart.wav" />
     <None Remove="Videos\Game2_Intro.mp4" />
   </ItemGroup>
 
@@ -40,6 +41,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Sounds\G3_VaiBoss.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Game2_btnStart.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Videos\Game2_Intro.mp4">

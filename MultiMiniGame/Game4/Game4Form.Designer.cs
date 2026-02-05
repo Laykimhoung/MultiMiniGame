@@ -53,20 +53,24 @@
             // ball
             // 
             ball.BackColor = Color.FromArgb(255, 128, 0);
+            ball.Image = Properties.Resources.Gam4_ball;
             ball.Location = new Point(468, 425);
             ball.Margin = new Padding(3, 2, 3, 2);
             ball.Name = "ball";
             ball.Size = new Size(20, 20);
+            ball.SizeMode = PictureBoxSizeMode.StretchImage;
             ball.TabIndex = 1;
             ball.TabStop = false;
             // 
             // player
             // 
             player.BackColor = SystemColors.ControlLightLight;
+            player.Image = Properties.Resources.Game4Ground;
             player.Location = new Point(427, 444);
             player.Margin = new Padding(3, 2, 3, 2);
             player.Name = "player";
             player.Size = new Size(100, 20);
+            player.SizeMode = PictureBoxSizeMode.StretchImage;
             player.TabIndex = 2;
             player.TabStop = false;
             // 
@@ -78,9 +82,11 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = SystemColors.ActiveCaption;
+            pictureBox1.Image = Properties.Resources.lavaGame4;
             pictureBox1.Location = new Point(-6, 472);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(963, 34);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 

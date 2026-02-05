@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Media;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -289,6 +290,8 @@ namespace MultiMiniGame.Game2
             btnA.Visible = btnB.Visible = btnC.Visible = btnD.Visible = true;
             btnStart.Visible = false;
             StartGame();
+            SoundPlayer G2_Strat = new SoundPlayer(@"Sounds\Game2_btnStart.wav");
+            G2_Strat.Play();
         }
 
         private void btnA_Click(object sender, EventArgs e) => HandleAnswer(0);

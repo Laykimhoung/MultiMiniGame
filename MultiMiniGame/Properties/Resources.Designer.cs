@@ -73,6 +73,16 @@ namespace MultiMiniGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ball_game4 {
+            get {
+                object obj = ResourceManager.GetObject("Ball_game4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap G1_Background {
             get {
                 object obj = ResourceManager.GetObject("G1_Background", resourceCulture);
@@ -203,6 +213,16 @@ namespace MultiMiniGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Gam4_ball {
+            get {
+                object obj = ResourceManager.GetObject("Gam4_ball", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Game2_BackGround {
             get {
                 object obj = ResourceManager.GetObject("Game2_BackGround", resourceCulture);
@@ -236,6 +256,26 @@ namespace MultiMiniGame.Properties {
         internal static System.Drawing.Bitmap game2panelQuesion {
             get {
                 object obj = ResourceManager.GetObject("game2panelQuesion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Game4Ground {
+            get {
+                object obj = ResourceManager.GetObject("Game4Ground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lavaGame4 {
+            get {
+                object obj = ResourceManager.GetObject("lavaGame4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

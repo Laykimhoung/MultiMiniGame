@@ -30,6 +30,8 @@ namespace MultiMiniGame.Game4
             ball.Top = 425;
             player.Left = 427;
             lblScore.Text = "Score: " + score + "  --  PRESS ENTER TO START";
+            ball.Parent = this;
+            ball.BackColor = Color.Transparent;
         }
 
         private void setupGame()
