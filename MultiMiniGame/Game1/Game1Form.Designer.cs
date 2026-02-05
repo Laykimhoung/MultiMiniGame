@@ -49,10 +49,10 @@
             rtbChat.BackColor = Color.MintCream;
             rtbChat.BorderStyle = BorderStyle.None;
             rtbChat.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rtbChat.Location = new Point(171, 69);
+            rtbChat.Location = new Point(264, 44);
             rtbChat.Name = "rtbChat";
             rtbChat.ReadOnly = true;
-            rtbChat.Size = new Size(530, 530);
+            rtbChat.Size = new Size(588, 626);
             rtbChat.TabIndex = 0;
             rtbChat.Text = "";
             // 
@@ -60,7 +60,7 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitle.Location = new Point(353, 34);
+            lblTitle.Location = new Point(471, 9);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(212, 32);
             lblTitle.TabIndex = 1;
@@ -70,9 +70,9 @@
             // 
             txtInput.BackColor = Color.MintCream;
             txtInput.Font = new Font("Times New Roman", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtInput.Location = new Point(171, 605);
+            txtInput.Location = new Point(264, 676);
             txtInput.Name = "txtInput";
-            txtInput.Size = new Size(446, 34);
+            txtInput.Size = new Size(492, 34);
             txtInput.TabIndex = 2;
             // 
             // btnSend
@@ -81,9 +81,9 @@
             btnSend.Enabled = false;
             btnSend.FlatStyle = FlatStyle.Flat;
             btnSend.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSend.Location = new Point(623, 605);
+            btnSend.Location = new Point(762, 676);
             btnSend.Name = "btnSend";
-            btnSend.Size = new Size(80, 34);
+            btnSend.Size = new Size(90, 34);
             btnSend.TabIndex = 3;
             btnSend.Text = "Send";
             btnSend.UseVisualStyleBackColor = false;
@@ -94,9 +94,9 @@
             btnExit.BackColor = Color.Red;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnExit.Location = new Point(171, 645);
+            btnExit.Location = new Point(264, 716);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(100, 34);
+            btnExit.Size = new Size(110, 34);
             btnExit.TabIndex = 4;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = false;
@@ -107,9 +107,9 @@
             btnInfo.BackColor = Color.Yellow;
             btnInfo.FlatStyle = FlatStyle.Flat;
             btnInfo.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnInfo.Location = new Point(576, 645);
+            btnInfo.Location = new Point(722, 716);
             btnInfo.Name = "btnInfo";
-            btnInfo.Size = new Size(125, 34);
+            btnInfo.Size = new Size(130, 34);
             btnInfo.TabIndex = 5;
             btnInfo.Text = "Game Info";
             btnInfo.UseVisualStyleBackColor = false;
@@ -120,9 +120,9 @@
             btnStart.BackColor = Color.LawnGreen;
             btnStart.FlatStyle = FlatStyle.Flat;
             btnStart.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnStart.Location = new Point(277, 645);
+            btnStart.Location = new Point(380, 716);
             btnStart.Name = "btnStart";
-            btnStart.Size = new Size(293, 34);
+            btnStart.Size = new Size(336, 34);
             btnStart.TabIndex = 6;
             btnStart.Text = "Start / Restart";
             btnStart.UseVisualStyleBackColor = false;
@@ -134,7 +134,7 @@
             G1_Background.Image = Properties.Resources.G1_Background;
             G1_Background.Location = new Point(0, 0);
             G1_Background.Name = "G1_Background";
-            G1_Background.Size = new Size(887, 715);
+            G1_Background.Size = new Size(1082, 772);
             G1_Background.SizeMode = PictureBoxSizeMode.CenterImage;
             G1_Background.TabIndex = 7;
             G1_Background.TabStop = false;
@@ -142,9 +142,9 @@
             // picSaba
             // 
             picSaba.Image = Properties.Resources.G1_CatchedSaba;
-            picSaba.Location = new Point(677, 0);
+            picSaba.Location = new Point(850, 44);
             picSaba.Name = "picSaba";
-            picSaba.Size = new Size(210, 347);
+            picSaba.Size = new Size(220, 350);
             picSaba.SizeMode = PictureBoxSizeMode.StretchImage;
             picSaba.TabIndex = 8;
             picSaba.TabStop = false;
@@ -153,9 +153,9 @@
             // Saba
             // 
             Saba.Image = Properties.Resources.Saba;
-            Saba.Location = new Point(-41, 441);
+            Saba.Location = new Point(-37, 395);
             Saba.Name = "Saba";
-            Saba.Size = new Size(256, 238);
+            Saba.Size = new Size(300, 300);
             Saba.SizeMode = PictureBoxSizeMode.StretchImage;
             Saba.TabIndex = 9;
             Saba.TabStop = false;
@@ -164,7 +164,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(887, 715);
+            ClientSize = new Size(1082, 772);
             Controls.Add(Saba);
             Controls.Add(picSaba);
             Controls.Add(btnStart);
