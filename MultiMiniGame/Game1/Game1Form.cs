@@ -36,7 +36,7 @@ Hint:";
         {
             string input = txtInput.Text;
             if (string.IsNullOrWhiteSpace(input)) return;
-            if (input == $"{rndWord}$" || input == "KBATI")
+            if (input == $"{rndWord}?" || input == "KBATI")
             {
                 AddMessage("You Win", $"Congratulations! The word is {rndWord}!");
                 MessageBox.Show($"You guessed the word correctly!\nThe Word is {rndWord}", "Congratulations!", MessageBoxButtons.OK, MessageBoxIcon.Information);
