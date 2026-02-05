@@ -6,6 +6,8 @@ namespace MultiMiniGame
     using MultiMiniGame.Game1;
     using MultiMiniGame.Game2;
     using MultiMiniGame.Game3;
+    using MultiMiniGame.Game4;
+    using MultiMiniGame.Game5;
 
     public partial class Form1 : Form
     {
@@ -44,6 +46,20 @@ namespace MultiMiniGame
             bg.Stop();
             Game3Form game3 = new Game3Form();
             game3.Show();
+        }
+
+        private void btnGame4_Click(object sender, EventArgs e)
+        {
+            bg.Stop();
+            Game4Form game4 = new Game4Form();
+            game4.Show();
+        }
+
+        private void btnGame5_Click(object sender, EventArgs e)
+        {
+            bg.Stop();
+            Game5Form game5 = new Game5Form();
+            game5.Show();
         }
     }
 }

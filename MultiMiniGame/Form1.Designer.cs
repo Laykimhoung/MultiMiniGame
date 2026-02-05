@@ -55,7 +55,7 @@
             btnGame1.BackColor = Color.Gold;
             btnGame1.FlatStyle = FlatStyle.Flat;
             btnGame1.Font = new Font("Khmer OS Siemreap", 13.8F);
-            btnGame1.Location = new Point(217, 310);
+            btnGame1.Location = new Point(217, 284);
             btnGame1.Name = "btnGame1";
             btnGame1.Size = new Size(232, 74);
             btnGame1.TabIndex = 1;
@@ -69,7 +69,7 @@
             btnGame2.FlatStyle = FlatStyle.Flat;
             btnGame2.Font = new Font("Khmer OS Siemreap", 13.8F);
             btnGame2.ForeColor = Color.White;
-            btnGame2.Location = new Point(398, 409);
+            btnGame2.Location = new Point(396, 378);
             btnGame2.Name = "btnGame2";
             btnGame2.Size = new Size(232, 74);
             btnGame2.TabIndex = 2;
@@ -83,7 +83,7 @@
             btnGame3.FlatStyle = FlatStyle.Flat;
             btnGame3.Font = new Font("Khmer OS Siemreap", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGame3.ForeColor = Color.Black;
-            btnGame3.Location = new Point(598, 310);
+            btnGame3.Location = new Point(598, 284);
             btnGame3.Name = "btnGame3";
             btnGame3.Size = new Size(232, 74);
             btnGame3.TabIndex = 3;
@@ -109,24 +109,26 @@
             btnGame4.FlatStyle = FlatStyle.Flat;
             btnGame4.Font = new Font("Khmer OS Siemreap", 13.8F);
             btnGame4.ForeColor = Color.White;
-            btnGame4.Location = new Point(217, 504);
+            btnGame4.Location = new Point(217, 469);
             btnGame4.Name = "btnGame4";
             btnGame4.Size = new Size(232, 74);
             btnGame4.TabIndex = 5;
             btnGame4.Text = "Game4";
             btnGame4.UseVisualStyleBackColor = false;
+            btnGame4.Click += btnGame4_Click;
             // 
             // btnGame5
             // 
             btnGame5.BackColor = Color.Pink;
             btnGame5.FlatStyle = FlatStyle.Flat;
             btnGame5.Font = new Font("Khmer OS Siemreap", 13.8F);
-            btnGame5.Location = new Point(598, 504);
+            btnGame5.Location = new Point(598, 478);
             btnGame5.Name = "btnGame5";
             btnGame5.Size = new Size(232, 74);
             btnGame5.TabIndex = 6;
             btnGame5.Text = "Game5";
             btnGame5.UseVisualStyleBackColor = false;
+            btnGame5.Click += btnGame5_Click;
             // 
             // Form1
             // 

@@ -12,7 +12,6 @@ using LibVLCSharp.WinForms;
 using static MultiMiniGame.Game2.Game2Logic;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
 
-
 namespace MultiMiniGame.Game2
 {
     public partial class Game2Form : Form
