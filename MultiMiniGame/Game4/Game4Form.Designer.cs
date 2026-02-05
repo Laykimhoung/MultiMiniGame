@@ -98,7 +98,7 @@
             bg.Image = Properties.Resources.G4_bg;
             bg.Location = new Point(-6, 0);
             bg.Name = "bg";
-            bg.Size = new Size(963, 466);
+            bg.Size = new Size(963, 473);
             bg.SizeMode = PictureBoxSizeMode.StretchImage;
             bg.TabIndex = 4;
             bg.TabStop = false;
