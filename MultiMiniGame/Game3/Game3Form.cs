@@ -236,6 +236,7 @@ namespace MultiMiniGame.Game3
             {
                 Form1 form1 = new Form1();
                 form1.Show();
+                this.Close();
             }
         }
 
@@ -463,6 +464,7 @@ namespace MultiMiniGame.Game3
         {
             Form1 form1 = new Form1();
             form1.Show();
+            this.Close();
         }
 
         private void ptbpHeart1_Click(object sender, EventArgs e)

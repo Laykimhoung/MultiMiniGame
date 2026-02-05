@@ -35,6 +35,7 @@
             btnGame3 = new Button();
             lbWelcome = new Label();
             btnGame4 = new Button();
+            btnExit = new Button();
             ((System.ComponentModel.ISupportInitialize)picBackGround).BeginInit();
             SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             btnGame1.BackColor = Color.Gold;
             btnGame1.FlatStyle = FlatStyle.Flat;
             btnGame1.Font = new Font("Khmer OS Siemreap", 13.8F);
-            btnGame1.Location = new Point(245, 345);
+            btnGame1.Location = new Point(245, 322);
             btnGame1.Name = "btnGame1";
             btnGame1.Size = new Size(232, 74);
             btnGame1.TabIndex = 1;
@@ -68,7 +69,7 @@
             btnGame2.FlatStyle = FlatStyle.Flat;
             btnGame2.Font = new Font("Khmer OS Siemreap", 13.8F);
             btnGame2.ForeColor = Color.White;
-            btnGame2.Location = new Point(566, 345);
+            btnGame2.Location = new Point(566, 322);
             btnGame2.Name = "btnGame2";
             btnGame2.Size = new Size(232, 74);
             btnGame2.TabIndex = 2;
@@ -82,7 +83,7 @@
             btnGame3.FlatStyle = FlatStyle.Flat;
             btnGame3.Font = new Font("Khmer OS Siemreap", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGame3.ForeColor = Color.Black;
-            btnGame3.Location = new Point(245, 473);
+            btnGame3.Location = new Point(245, 450);
             btnGame3.Name = "btnGame3";
             btnGame3.Size = new Size(232, 74);
             btnGame3.TabIndex = 3;
@@ -96,7 +97,7 @@
             lbWelcome.BackColor = SystemColors.ButtonHighlight;
             lbWelcome.Font = new Font("Khmer OS Bokor", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbWelcome.ForeColor = Color.Black;
-            lbWelcome.Location = new Point(217, 116);
+            lbWelcome.Location = new Point(218, 137);
             lbWelcome.Name = "lbWelcome";
             lbWelcome.Size = new Size(596, 83);
             lbWelcome.TabIndex = 4;
@@ -108,7 +109,7 @@
             btnGame4.FlatStyle = FlatStyle.Flat;
             btnGame4.Font = new Font("Khmer OS Siemreap", 13.8F);
             btnGame4.ForeColor = Color.White;
-            btnGame4.Location = new Point(566, 473);
+            btnGame4.Location = new Point(566, 450);
             btnGame4.Name = "btnGame4";
             btnGame4.Size = new Size(232, 74);
             btnGame4.TabIndex = 5;
@@ -116,11 +117,26 @@
             btnGame4.UseVisualStyleBackColor = false;
             btnGame4.Click += btnGame4_Click;
             // 
+            // btnExit
+            // 
+            btnExit.BackColor = Color.Red;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Font = new Font("Khmer OS Siemreap", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExit.ForeColor = Color.White;
+            btnExit.Location = new Point(12, 12);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(303, 54);
+            btnExit.TabIndex = 6;
+            btnExit.Text = "ចាកចេញ ដោយស្របច្បាប់";
+            btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1032, 590);
+            Controls.Add(btnExit);
             Controls.Add(btnGame4);
             Controls.Add(lbWelcome);
             Controls.Add(btnGame3);
@@ -144,5 +160,6 @@
         private Button btnGame3;
         private Label lbWelcome;
         private Button btnGame4;
+        private Button btnExit;
     }
 }

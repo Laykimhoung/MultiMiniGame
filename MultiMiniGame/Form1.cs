@@ -15,7 +15,7 @@ namespace MultiMiniGame
         public Form1()
         {
             InitializeComponent();
-            this.Text = "Multi Mini Game Collection";
+            this.Text = "MENU: Multi Min Game";
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -31,6 +31,7 @@ namespace MultiMiniGame
             bg.Stop();
             Game1Form game1 = new Game1Form();
             game1.Show();
+            this.Hide();
         }
 
         private void btnGame2_Click(object sender, EventArgs e)
@@ -38,6 +39,7 @@ namespace MultiMiniGame
             bg.Stop();
             Game2Form game2 = new Game2Form();
             game2.Show();
+            this.Hide();
         }
 
         private void btnGame3_Click(object sender, EventArgs e)
@@ -45,6 +47,7 @@ namespace MultiMiniGame
             bg.Stop();
             Game3Form game3 = new Game3Form();
             game3.Show();
+            this.Hide();
         }
 
         private void btnGame4_Click(object sender, EventArgs e)
@@ -52,6 +55,13 @@ namespace MultiMiniGame
             bg.Stop();
             Game4.Game4Form game4 = new Game4.Game4Form();
             game4.Show();
+            this.Hide();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            bg.Stop();
+            this.Close();
         }
     }
 }

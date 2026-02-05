@@ -30,7 +30,7 @@ namespace MultiMiniGame.Game4
             ball.Left = 468;
             ball.Top = 425;
             player.Left = 427;
-            lblScore.Text = "Score: " + score + "  --  PRESS ENTER TO START";
+            lblScore.Text = "Score: " + score + "  --  PRESS ENTER TO START |  PRESS ESC TO BACK TO MENU GAME ";
             ball.Parent = bg;
             ball.BackColor = Color.Transparent;
         }
@@ -85,7 +85,7 @@ namespace MultiMiniGame.Game4
                 blockArray[i].Width = 100;
                 blockArray[i].Tag = "blocks";
                 blockArray[i].BackColor = Color.White;              
-                foreach (Control x in bg.Controls)
+                foreach (Control x in this.Controls)
                 {
                     if (x is PictureBox && (string)x.Tag == "blocks")
                     {
@@ -197,7 +197,7 @@ namespace MultiMiniGame.Game4
 
             if (ball.Top > 450)
             {
-                gameOver("GAME OVER!!! PRESS ENTER TO TRY AGAIN!");
+                gameOver("GAME OVER!!! PRESS ENTER TO TRY AGAIN! | PRESS ESC TO BACK TO MENU GAME");
             }
         }
 
@@ -218,6 +218,12 @@ namespace MultiMiniGame.Game4
             if (e.KeyCode == Keys.D)
             {
                 goRight = true;
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                Form1 f1 = new Form1();
+                f1.Show();
+                this.Close();
             }
         }
 

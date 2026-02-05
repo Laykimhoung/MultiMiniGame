@@ -68,6 +68,7 @@ Hint:";
         {
             Form1 f1 = new Form1();
             f1.Show();
+            this.Close();
         }
         private void AddMessage(string sender, string msg)
         {

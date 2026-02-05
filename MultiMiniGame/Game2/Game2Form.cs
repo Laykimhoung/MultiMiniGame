@@ -56,7 +56,7 @@ namespace MultiMiniGame.Game2
 
             UnVisible();
             btnLost.Visible = false;
-            roundTimer.Stop() ;
+            roundTimer.Stop();
 
             vdoIntro.Dock = DockStyle.Fill;
             Core.Initialize();
@@ -65,7 +65,7 @@ namespace MultiMiniGame.Game2
             _mediaPlayer = new MediaPlayer(_libVLC);
 
             vdoIntro.MediaPlayer = _mediaPlayer;
-            string videoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"Videos","Game2_Intro.mp4");
+            string videoPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Videos", "Game2_Intro.mp4");
 
             var media = new Media(_libVLC, new Uri(videoPath));
             _mediaPlayer.Play(media);
@@ -141,6 +141,7 @@ namespace MultiMiniGame.Game2
         SoundPlayer G2_begin = new SoundPlayer(@"Sounds\G2_begin.wav");
         SoundPlayer G2_level = new SoundPlayer(@"Sounds\G2_level.wav");
         SoundPlayer G2_Wrong = new SoundPlayer(@"Sounds\Cat_laugh.wav");
+        SoundPlayer G2_final = new SoundPlayer(@"Sounds\G2_final.wav");
         private bool answerLocked = false;
         private void HandleAnswer(int index)
         {
@@ -164,33 +165,38 @@ namespace MultiMiniGame.Game2
             {
                 clicked.VisualState = ButtonVisualState.Correct;
                 G2_begin.Stop();
-            }         
+            }
             DisableAnswerButtons();
             btnNextRound.Visible = true;
 
             switch (result)
             {
                 case GameState.Playing:
-                    lbShow.Text = "អបអរសាទរ";                    
+                    lbShow.Text = "អបអរសាទរ ចម្លើយរបស់អ្នកត្រឹមត្រូវហើយ";
                     G2_Correct.Play();
                     break;
 
                 case GameState.LevelCompleted:
-                    lbShow.Text = "Level Completed!";
+                    lbShow.Text = "អបអរសាទ​រ អ្នកឆ្លងផុតបានមួយកម្រិតទៀតហើយ";
                     btnStop.Visible = true;
                     G2_level.Play();
                     break;
 
                 case GameState.GameOver:
-                    lbShow.Text = "Game Over!";
+                    lbShow.Text = "សូមចូលរួមសោកស្តាយផង អ្នកអស់ឧកាសហើយ";
                     btnNextRound.Visible = false;
                     btnLost.Visible = true;
                     G2_Wrong.Play();
                     break;
 
                 case GameState.GameWon:
-                    lbShow.Text = " YOU WON 1,000,000!";
+                    lbShow.Text = "អបអរសាទរទឹកប្រាក់ 100,000,000៛​ បានក្ជាយជារបស់អ្នកហើយ";
                     btnNextRound.Enabled = false;
+                    G2_final.Play();
+                    btnNextRound.Visible = false;
+                    lbR1.Visible = lbR2.Visible = lbR3.Visible = lbR4.Visible = lbR5.Visible = lbR6.Visible = lbR7.Visible = lbR8.Visible = lbR9.Visible = lbR10.Visible = lbR11.Visible = lbR12.Visible = lbR13.Visible = lbR14.Visible = lbR15.Visible = lbTotalMoney.Visible = false;
+                    btnLost.Visible = true;
+                    btnLost.Text = "ត្រលប់ក្រោយ";
                     break;
             }
 
@@ -239,7 +245,7 @@ namespace MultiMiniGame.Game2
         int timeLeft;
         private void StartTimer()
         {
-            timeLeft = 90;
+            timeLeft = 60;
             lbTimer.Text = timeLeft.ToString();
             roundTimer.Start();
         }
@@ -304,6 +310,11 @@ namespace MultiMiniGame.Game2
             StartGame();
             SoundPlayer G2_Strat = new SoundPlayer(@"Sounds\Game2_btnStart.wav");
             G2_Strat.Play();
+        }
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            SoundPlayer G2_Stop = new SoundPlayer(@"Sounds\warning.wav");
+            G2_Stop.Play();
         }
 
         private void btnA_Click(object sender, EventArgs e) => HandleAnswer(0);
@@ -424,10 +435,10 @@ namespace MultiMiniGame.Game2
 
             string[] sounds = new string[4]
             {
-                @"Sounds\sound0.wav",
-                @"Sounds\sound1.wav",
-                @"Sounds\sound2.wav",
-                @"Sounds\sound3.wav"
+                @"Sounds\Answer A.wav",
+                @"Sounds\Answer B.wav",
+                @"Sounds\Answer C.wav",
+                @"Sounds\Answer D.wav"
             };
             new System.Media.SoundPlayer(sounds[q.CorrectIndex]).Play();
 
@@ -437,11 +448,15 @@ namespace MultiMiniGame.Game2
         {
             Form1 mainform = new Form1();
             mainform.Show();
+            this.Close();
         }
 
         private void btnLost_Click(object sender, EventArgs e)
         {
-            Close();
+            G2_final.Stop();
+            Form1 f1 = new Form1();
+            f1.Show();
+            this.Close();
         }
     }
 }
