@@ -51,7 +51,7 @@ namespace MultiMiniGame
         private void btnGame4_Click(object sender, EventArgs e)
         {
             bg.Stop();
-            Game4Form game4 = new Game4Form();
+            Game4.Game4Form game4 = new Game4.Game4Form();
             game4.Show();
         }
 
