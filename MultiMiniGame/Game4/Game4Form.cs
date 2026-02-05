@@ -85,7 +85,7 @@ namespace MultiMiniGame.Game4
                 blockArray[i].Width = 100;
                 blockArray[i].Tag = "blocks";
                 blockArray[i].BackColor = Color.White;              
-                foreach (Control x in this.Controls)
+                foreach (Control x in bg.Controls)
                 {
                     if (x is PictureBox && (string)x.Tag == "blocks")
                     {
