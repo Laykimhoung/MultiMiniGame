@@ -7,7 +7,6 @@ namespace MultiMiniGame
     using MultiMiniGame.Game2;
     using MultiMiniGame.Game3;
     using MultiMiniGame.Game4;
-    using MultiMiniGame.Game5;
 
     public partial class Form1 : Form
     {
