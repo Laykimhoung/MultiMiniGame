@@ -54,12 +54,5 @@ namespace MultiMiniGame
             Game4.Game4Form game4 = new Game4.Game4Form();
             game4.Show();
         }
-
-        private void btnGame5_Click(object sender, EventArgs e)
-        {
-            bg.Stop();
-            Game5Form game5 = new Game5Form();
-            game5.Show();
-        }
     }
 }
