@@ -88,8 +88,9 @@ Hint:";
                 "1. Click 'Start Game' to begin.\n" +
                 "2. You will receive a hint for a secret word.\n" +
                 "3. Type your guess in the input box and click 'Send'.\n" +
-                "4. If you guess correctly, you'll be congratulated!\n\n" +
-                "5. The AI in this is small. If there is a problem click Restart" +
+                "4. If you guess correctly, you'll be congratulated!\n" +
+                "5. The AI in this is small. If there is a problem click Restart\n" +
+                "6. Make sure you open Docker run Ollama before playing. Check our GitHub ReadMe for more info.\n\n"+
                 "Enjoy the game and have fun guessing!";
             MessageBox.Show(info, "Game Instructions", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
