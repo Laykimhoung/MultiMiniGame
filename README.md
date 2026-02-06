@@ -67,7 +67,7 @@ _ Download Ollama in Docker
 
 ## Contact
 
-https://www.facebook.com/Xakuraii
-https://web.facebook.com/kKBATI
+- https://www.facebook.com/Xakuraii
+- https://web.facebook.com/kKBATI
 
 ---
