@@ -61,7 +61,7 @@ namespace MultiMiniGame
         private void btnExit_Click(object sender, EventArgs e)
         {
             bg.Stop();
-            this.Close();
+            Application.Exit();
         }
     }
 }
