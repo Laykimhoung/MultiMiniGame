@@ -47,13 +47,6 @@ namespace MultiMiniGame.Game4
             ball.Top = 425;
             player.Left = 427;
             gameTimer.Start();
-            foreach (Control x in bg.Controls)
-            {
-                if (x is PictureBox && (string)x.Tag == "blocks")
-                {
-                    x.BackColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
-                }
-            }
         }
 
         private void gameOver(string message)
@@ -84,14 +77,7 @@ namespace MultiMiniGame.Game4
                 blockArray[i].Height = 20;
                 blockArray[i].Width = 100;
                 blockArray[i].Tag = "blocks";
-                blockArray[i].BackColor = Color.White;              
-                foreach (Control x in this.Controls)
-                {
-                    if (x is PictureBox && (string)x.Tag == "blocks")
-                    {
-                        x.BackColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
-                    }
-                }
+                blockArray[i].BackColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));              
                 if (a == 7)
                 {
                     top = top + 40;
