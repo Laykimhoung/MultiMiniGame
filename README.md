@@ -23,6 +23,10 @@
 ## Features
 
 - Multiple mini-games bundled in one project.  
+- Game 1: Guess The Word
+- Game 2: Who Wants to Be a Millionair
+- Game 3: Boss Attack
+- Game 4: Breakout
 
 ---
 
@@ -42,7 +46,13 @@
 1. Clone the repository:  
    ```bas
    git clone https://github.com/Laykimhoung/MultiMiniGame.git
-
+   
+2. To be able to play Guess The Word game you need to
+_ Download Docker
+_ Download Ollama in Docker
+   ```bas
+   docker run -d -v ollama_data:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+   docker exec -it ollama ollama pull phi3:mini
 
 ---
 
