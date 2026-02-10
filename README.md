@@ -20,7 +20,7 @@
 
 - Multiple mini-games bundled in one project.  
 - Game 1: Guess The Word
-- Game 2: Who Wants to Be a Millionair
+- Game 2: Who Wants to Be a Millionaire
 - Game 3: Boss Attack
 - Game 4: Breakout
 
@@ -64,5 +64,6 @@ _ Download Ollama in Docker
 
 - https://www.facebook.com/Xakuraii
 - https://web.facebook.com/kKBATI
+- https://www.facebook.com/iamrith
 
 ---
