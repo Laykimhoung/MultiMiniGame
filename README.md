@@ -2,7 +2,7 @@
 
 ![.NET](https://img.shields.io/badge/.NET-10-blue) ![C#](https://img.shields.io/badge/C%23-9c27b0) ![License](https://img.shields.io/badge/License-MIT-green)  
 
-**MultiMiniGame** is a collection of mini-games developed in C# using .NET. The project demonstrates game logic, interactive UI, and multimedia integration for fun and learning.
+**MultiMiniGame** is a team collaboration project developed in **C# using .NET** during our **second year of university**. The project consists of multiple mini-games created to practice and apply core programming concepts.
 
 ---
 
@@ -11,11 +11,7 @@
 - [Features](#features)  
 - [Technologies Used](#technologies-used)  
 - [Installation](#installation)  
-- [Usage](#usage)  
 - [Screenshots](#screenshots)  
-- [Game Structure](#game-structure)  
-- [Contributing](#contributing)  
-- [License](#license)  
 - [Contact](#contact)  
 
 ---
@@ -34,10 +30,9 @@
 
 - **Language:** C#  
 - **Framework:** .NET 10  
-- **IDE:** Visual Studio 2022  
+- **IDE:** Visual Studio 2022 / 2026  
 - **Libraries:**  
   - [`LibVLCSharp`] for video/audio playback  
-  - WinForms for UI  
 
 ---
 
