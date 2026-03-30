@@ -48,7 +48,7 @@ namespace MultiMiniGame.Game2
                 Id = 5,
                 Level = 1,
                 QuestionText = "តើភ្នំខ្ពស់បំផុតនៅកម្ពុជាជាភ្នំអ្វី?",
-                Answers = new[] { "ភ្នំអរ៉ាល់", "ភ្នំបូកគោ", "ភ្នំគូលែន", "ភ្នំដងរែក" },
+                Answers = new[] { "ភ្នំឱរ៉ាល់", "ភ្នំបូកគោ", "ភ្នំគូលែន", "ភ្នំដងរែក" },
                 CorrectIndex = 0
             },
             new Question {
@@ -228,7 +228,7 @@ namespace MultiMiniGame.Game2
                 Level = 3,
                 QuestionText = "តើប្រាសាទអង្គរវត្តមានប្រវែងបណ្តោយប៉ុន្មានម៉ែត្រ?",
                 Answers = new[] { "1000m", "1200m", "1500m", "2000m" },
-                CorrectIndex = 1
+                CorrectIndex = 2
             }
         };
     }
