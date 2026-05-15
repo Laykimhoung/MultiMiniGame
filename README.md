@@ -70,9 +70,17 @@ _ Download Ollama in Docker
 ---
 ## Developers
 
-- Lay Kimhoung
-  - Menu Game + Game 2
-- Horn Sereyboth
-  - Game 1 + Game 3
-- Prak Channarith
-  - Game 4
+### 👨‍💻 Lay Kimhoung
+- Project Leader
+- GitHub Repository Management
+- Folder Structure Organization
+- Main Menu System
+- Game 2 Development
+
+### 👨‍💻 Horn Sereyboth
+- Game 1 Development
+- Game 3 Development
+- AI Integration using Ollama Docker
+
+### 👨‍💻 Prak Channarith
+- Game 4 Development
