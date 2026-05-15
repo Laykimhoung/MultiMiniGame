@@ -1,6 +1,6 @@
 # MultiMiniGame 🎮
 
-![.NET](https://img.shields.io/badge/.NET-10-blue) ![C#](https://img.shields.io/badge/C%23-9c27b0) ![License](https://img.shields.io/badge/License-MIT-green)  
+![.NET](https://img.shields.io/badge/.NET-10-blue) ![C#](https://img.shields.io/badge/C%23-9c27b0) ![Windows Forms](https://img.shields.io/badge/Windows%20Forms-red) ![License](https://img.shields.io/badge/License-MIT-green)  
 
 **MultiMiniGame** is a team collaboration project developed in **C# using .NET** during our **second year of university**. The project consists of multiple mini-games created to practice and apply core programming concepts.
 
@@ -11,8 +11,9 @@
 - [Features](#features)  
 - [Technologies Used](#technologies-used)  
 - [Installation](#installation)  
-- [Screenshots](#screenshots)  
-- [Contact](#contact)  
+- [Game UI](#game-ui)  
+- [Contact](#contact)
+- [Developers](#developers)
 
 ---
 
@@ -51,8 +52,8 @@ _ Download Ollama in Docker
 
 ---
 
-## Screenshots
-
+## Game UI
+<img width="1028" height="625" alt="Screenshot 2026-05-16 012520" src="https://github.com/user-attachments/assets/ae78b4b0-1229-4289-87c2-bd260ac78a6e" />
 <img width="1081" height="806" alt="Screenshot 2026-02-05 185118" src="https://github.com/user-attachments/assets/deaa5cc2-5d58-44ff-80a8-1ddf8d26051a" />
 <img width="960" height="624" alt="Screenshot 2026-02-06 100013" src="https://github.com/user-attachments/assets/9e29431a-309c-43c0-ac76-4abbbbf9b004" />
 <img width="922" height="619" alt="Screenshot 2026-02-05 185246" src="https://github.com/user-attachments/assets/80e87980-1dd1-4f16-b722-35011d047b0c" />
@@ -62,8 +63,16 @@ _ Download Ollama in Docker
 
 ## Contact
 
-- https://www.facebook.com/Xakuraii
-- https://web.facebook.com/kKBATI
-- https://www.facebook.com/iamrith
+- https://www.facebook.com/Xakuraii (lay Kimhoung)
+- https://web.facebook.com/kKBATI (Horn Sereyboth)
+- https://www.facebook.com/iamrith (Prak Channarith)
 
 ---
+## Developers
+
+- Lay Kimhoung
+  - Menu Game + Game 2
+- Horn Sereyboth
+  - Game 1 + Game 3
+- Prak Channarith
+  - Game 4
